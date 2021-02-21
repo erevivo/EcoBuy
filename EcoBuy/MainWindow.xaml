@@ -80,8 +80,7 @@
                              VerticalAlignment="Top"
                              Width="1904"
                              Grid.ColumnSpan="3"
-                             Grid.RowSpan="2"
-                             Loaded="MainUI_Loaded" />
+                             Grid.RowSpan="2" />
         <UserControls:HeaderUC Visibility="Visible"
                                Grid.ColumnSpan="3"
                                HorizontalAlignment="Left"
