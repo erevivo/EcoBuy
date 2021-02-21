@@ -29,10 +29,5 @@ namespace EcoBuy
         {
             this.Close();
         }
-
-        private void MainUI_Loaded(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
 }
