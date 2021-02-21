@@ -1,0 +1,47 @@
+﻿<UserControl x:Class="EcoBuy.UserControls.HeaderUC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:EcoBuy.UserControls"
+             mc:Ignorable="d"
+             d:DesignHeight="192"
+             d:DesignWidth="1920">
+    <Grid ShowGridLines="False">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="5*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+        <local:MenuUC  Grid.Column="1"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       Width="1100" />
+        <Image Source="/Images/logo.png"
+               HorizontalAlignment="Center"
+               Height="109"
+               VerticalAlignment="Center"
+               Width="227"
+               Grid.Column="2"
+               Margin="24,10,23,73" />
+        <local:DigitalClock HorizontalAlignment="Left"
+                            Height="405"
+                            VerticalAlignment="Top"
+                            Width="374"
+                            Grid.ColumnSpan="2"
+                            Margin="3,-119,0,-94" />
+        <Label Name="wish"
+               FontSize="26"
+               FlowDirection="RightToLeft"
+               Grid.Column="1"
+               HorizontalAlignment="Center"
+               Margin="1226,106,102,32"
+               VerticalAlignment="Center"
+               Width="318"
+               Height="54"
+               Grid.ColumnSpan="2" />
+    </Grid>
+</UserControl>

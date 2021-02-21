@@ -1,0 +1,54 @@
+﻿<UserControl x:Class="EcoBuy.UserControls.MainUI"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:EcoBuy.UserControls"
+             mc:Ignorable="d"
+             d:DesignHeight="864"
+             d:DesignWidth="1920">
+    <Grid ShowGridLines="False">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+        <local:PieChartUI Height="auto"
+                          Margin="0"
+                          Grid.Row="0"
+                          Grid.Column="0"
+                          VerticalAlignment="Stretch"
+                          Width="auto" />
+        <local:AveragePurchaseUC Height="auto"
+                                 Margin="0"
+                                 Grid.Row="1"
+                                 Grid.Column="0"
+                                 VerticalAlignment="Stretch"
+                                 Width="auto" />
+        <local:SearchEngineUI Height="auto"
+                              Margin="0,0,0,0"
+                              Grid.Row="0"
+                              Grid.Column="1"
+                              VerticalAlignment="Stretch"
+                              Width="auto"
+                              Grid.ColumnSpan="2" />
+        <local:LastPurchaseUI Height="auto"
+                              Margin="10,0,0,0"
+                              Grid.Row="1"
+                              Grid.Column="2"
+                              VerticalAlignment="Stretch"
+                              Width="auto" />
+        <local:ShopRecoUI HorizontalAlignment="Center"
+                          Height="auto"
+                          Margin="0"
+                          Grid.Row="1"
+                          Grid.Column="1"
+                          VerticalAlignment="Stretch"
+                          Width="auto" />
+    </Grid>
+</UserControl>

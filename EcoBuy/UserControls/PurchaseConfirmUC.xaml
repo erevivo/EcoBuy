@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="EcoBuy.UserControls.PurchaseConfirmUC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:EcoBuy.UserControls"
+             mc:Ignorable="d"
+             d:DesignHeight="864"
+             d:DesignWidth="1920"
+             Background="red">
+    <Grid>
+        <Label Content="הוספת פריט חדש"
+               FontSize="90"
+               Width="750"
+               Height="150"
+               FlowDirection="RightToLeft"
+               VerticalAlignment="Top"
+               HorizontalAlignment="Center"
+               Margin="561,39,609,0" />
+        <local:UserControlBG Height="600"
+                             Margin="246,219,246,45" />
+    </Grid>
+</UserControl>
