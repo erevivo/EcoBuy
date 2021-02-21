@@ -15,7 +15,8 @@
             <Grid x:Name="grid"
                   RenderTransformOrigin="0.5,0.5">
                 <Grid.Resources>
-                    <Storyboard x:Key="sb2"></Storyboard>
+                    <Storyboard x:Key="sb2">
+                    </Storyboard>
                 </Grid.Resources>
                 <Grid.RenderTransform>
                     <TransformGroup>
@@ -62,7 +63,7 @@
                  ItemTemplate="{StaticResource MessagesDataTemplate}"
                  Grid.ColumnSpan="2"></ListBox>
         <Image Margin="-204,0,672,0"
-               Source="/Images/Untitled-3.png"
+               Source="/Images/rss-title.png"
                Stretch="Fill" />
     </Grid>
 </UserControl>

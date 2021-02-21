@@ -6,8 +6,6 @@
         xmlns:local="clr-namespace:EcoBuy"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:c1="http://schemas.componentone.com/winfx/2006/xaml"
-        xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
-        xmlns:PdfViewer="clr-namespace:Syncfusion.Windows.PdfViewer;assembly=Syncfusion.PdfViewer.WPF"
         xmlns:UserControls="clr-namespace:EcoBuy.UserControls"
         x:Class="EcoBuy.MainWindow"
         mc:Ignorable="d"
@@ -21,6 +19,7 @@
         Width="1920"
         Height="1080"
         WindowState="Maximized"
+        ResizeMode="NoResize"
         WindowStyle="None"
         Background="#f5f5f7">
     <Window.Resources>
@@ -69,7 +68,7 @@
         <Image Grid.ColumnSpan="3"
                Margin="620,0,10,0"
                Grid.RowSpan="2"
-               Source="C:\Users\Evyatar\Desktop\פרוייקט חלונות\Depositphotos_158921118_xl-2015.png"
+               Source="/Images/main-bg.png"
                Stretch="Fill"
                Opacity="0.4"
                Grid.Row="1" />
