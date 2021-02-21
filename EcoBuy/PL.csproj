@@ -84,6 +84,11 @@
     </ApplicationDefinition>
     <Compile Include="Converters\RemoveNewlinesConverter.cs" />
     <Compile Include="Expressions\ExpressionHelpers.cs" />
+    <Compile Include="Models\EcoDB.Designer.cs" />
+    <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\Purchases.cs" />
+    <Compile Include="Models\Stores.cs" />
+    <Compile Include="Models\StoresProductcs.cs" />
     <Compile Include="UserControls\AddItemUC.xaml.cs">
       <DependentUpon>AddItemUC.xaml</DependentUpon>
     </Compile>
@@ -256,7 +261,6 @@
     <Resource Include="Images\logo.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Model\" />
     <Folder Include="Views\" />
   </ItemGroup>
   <ItemGroup>
