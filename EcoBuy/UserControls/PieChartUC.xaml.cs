@@ -20,11 +20,9 @@ namespace EcoBuy.UserControls
     /// <summary>
     /// Interaction logic for PieChartUI.xaml
     /// </summary>
-    public partial class PieChartUI : UserControl
+    public partial class PieChartUC : UserControl
     {
-        public int Food { get; set; }
-
-        public PieChartUI()
+        public PieChartUC()
         {
             InitializeComponent();
         PointLabel = chartPoint =>

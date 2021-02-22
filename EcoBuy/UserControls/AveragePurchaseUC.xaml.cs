@@ -18,14 +18,14 @@ using System.Windows.Shapes;
 namespace EcoBuy.UserControls
 {
     /// <summary>
-    /// Interaction logic for PieChartUI.xaml
+    /// Interaction logic for AveragePurchaseUC.xaml
     /// </summary>
     public partial class AveragePurchaseUC : UserControl
     {
         public AveragePurchaseUC()
         {
             InitializeComponent();
-
+            
             SeriesCollection = new SeriesCollection
             {
                 new LineSeries

@@ -27,12 +27,10 @@ namespace EcoBuy.Models
             this.ImageUrl = ImageUrl;
             Category = category;
         }
-
         public override string ToString()
         {
             return base.ToString();
         }
-
     }
 
 

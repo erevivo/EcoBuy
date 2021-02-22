@@ -1,0 +1,84 @@
+﻿<UserControl x:Class="EcoBuy.UserControls.PieChartUC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:EcoBuy.UserControls"
+             xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+             mc:Ignorable="d"
+             d:DesignHeight="410"
+             d:DesignWidth="610"
+             d:DataContext="{d:DesignInstance local:PieChartUC}">
+
+    <Border BorderThickness="2"
+                CornerRadius="20"
+                BorderBrush="#e0e6ed"
+                Background="white"
+                Margin="10">
+        <Border.Effect>
+            <DropShadowEffect BlurRadius="10" ShadowDepth="6" Color="#adadad"/>
+        </Border.Effect>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="4*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+
+            <Label Content="התפלגות הקניות שלך" Height="61"
+                   FontSize="32" FlowDirection="RightToLeft" 
+                   VerticalAlignment="Top" HorizontalContentAlignment="Center" 
+                   Grid.Column="1"/>
+
+            <!-- Pie Chart -->
+            <lvc:PieChart DataClick="Chart_OnDataClick" DataTooltip="{x:Null}"
+                          Hoverable="False" LegendLocation="Bottom"
+                          Grid.Column="1" Margin="0 50 0 10">
+
+                <lvc:PieChart.Series>
+
+                    <lvc:PieSeries Title="חשמל" 
+                               Values="{Binding CategoryPieChartModel.ElectricityDataSeries}" 
+                               DataLabels="True"
+                               LabelPoint="{Binding PointLabel}"/>
+
+                    <lvc:PieSeries Title="אופנה" 
+                               Values="{Binding CategoryPieChartModel.FashionDataSeries}" 
+                               DataLabels="True"
+                               LabelPoint="{Binding PointLabel}"/>
+
+                    <lvc:PieSeries Title="מזון" 
+                               Values="{Binding CategoryPieChartModel.FoodDataSeries}" 
+                               DataLabels="True"
+                               LabelPoint="{Binding PointLabel}"/>
+
+                    <lvc:PieSeries Title="בריאות" 
+                               Values="{Binding CategoryPieChartModel.HealthDataSeries}" 
+                               DataLabels="True"
+                               LabelPoint="{Binding PointLabel}"/>
+
+                </lvc:PieChart.Series>
+
+            </lvc:PieChart>
+
+            <!-- Dates Range List -->
+            <ListBox Style="{StaticResource MaterialDesignChoiceChipListBox}"
+                     x:Name="RadioButtonGroupChoiceChip"
+                     FlowDirection="RightToLeft" 
+                     Grid.Column="2" Margin="0 120 15 0">
+
+                <ListBoxItem Content="היום" />
+                <ListBoxItem Content="השבוע" />
+                <ListBoxItem Content="החודש" />
+
+            </ListBox>
+
+            <TextBlock FontSize="18" Height="27" Foreground="#320b86"
+                   VerticalAlignment="Bottom" FlowDirection="RightToLeft"
+                   TextDecorations="Underline" Text="לפי מוצר>>" Margin="0 0 0 7"/>
+
+        </Grid>
+    </Border>
+
+</UserControl>
