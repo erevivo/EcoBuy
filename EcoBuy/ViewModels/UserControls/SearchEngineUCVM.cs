@@ -20,7 +20,7 @@ namespace EcoBuy.ViewModels
 
         private void Search()
         {
-            
+
         }
     }
 }
