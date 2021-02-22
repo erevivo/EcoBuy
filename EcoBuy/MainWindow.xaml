@@ -47,24 +47,11 @@
     <Grid ShowGridLines="False">
         <Grid.RowDefinitions>
             <RowDefinition Height="1.5*" />
-            <RowDefinition Height="4*" />
-            <RowDefinition Height="4*" />
-            <RowDefinition Height="0.5*" />
+            <RowDefinition Height="8*" />
+            <RowDefinition Height=".5*" />
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*" />
-            <ColumnDefinition Width="1*" />
-            <ColumnDefinition Width="1*" />
-        </Grid.ColumnDefinitions>
-        <Button Style="{StaticResource MaterialDesignFlatDarkBgButton}"
-                ToolTip="יציאה"
-                Grid.Row="0"
-                Content="X"
-                HorizontalAlignment="Left"
-                Margin="18,10,0,0"
-                VerticalAlignment="Top"
-                Width="64"
-                Click="Button_Click" />
+
+        <!-- Background -->
         <Image Grid.ColumnSpan="3"
                Margin="620,0,10,0"
                Grid.RowSpan="2"
@@ -72,38 +59,55 @@
                Stretch="Fill"
                Opacity="0.4"
                Grid.Row="1" />
-        <UserControls:MainUI Visibility="Visible"
-                             HorizontalAlignment="Left"
-                             Height="859"
-                             Margin="10,0,0,0"
-                             Grid.Row="1"
-                             VerticalAlignment="Top"
-                             Width="1904"
-                             Grid.ColumnSpan="3"
-                             Grid.RowSpan="2" />
-        <UserControls:HeaderUC Visibility="Visible"
-                               Grid.ColumnSpan="3"
-                               HorizontalAlignment="Left"
-                               Height="161"
-                               VerticalAlignment="Top"
-                               Width="1914" />
-        <UserControls:AddItemUC Visibility="Hidden"
-                                HorizontalAlignment="Left"
-                                Height="859"
-                                Margin="10,0,0,0"
-                                Grid.Row="1"
-                                VerticalAlignment="Top"
-                                Width="1904"
-                                Grid.ColumnSpan="3"
-                                Grid.RowSpan="2" />
-        <UserControls:Footer Visibility="Visible"
-                             HorizontalAlignment="Center"
-                             Height="54"
-                             Margin="10,0,0,0"
-                             Grid.Row="3"
-                             VerticalAlignment="Center"
-                             Width="1920"
-                             Grid.ColumnSpan="3"
-                             Grid.RowSpan="2" />
+
+        <!-- Header -->
+        <UserControls:HeaderUC Height="161" Width="1914" Visibility="Visible"
+                               HorizontalAlignment="Left" VerticalAlignment="Top"
+                               Grid.ColumnSpan="3" />
+        
+        <Button Style="{StaticResource MaterialDesignFlatDarkBgButton}"
+                Width="64" Margin="18,10,0,0" Content="X" ToolTip="יציאה"
+                HorizontalAlignment="Left" VerticalAlignment="Top"
+                Grid.Row="0" Click="Button_Click" />
+
+        <!-- Main UI Grid-->
+        <Grid x:Name="MainUIGrid" ShowGridLines="False" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+
+            <UserControls:SearchEngineUI Height="auto" Width="auto" Margin="0,0,0,0"
+                                         VerticalAlignment="Stretch"
+                                         Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" />
+
+            <UserControls:PieChartUI Height="auto" Width="auto" Margin="0"
+                                     VerticalAlignment="Stretch"
+                                     Grid.Row="0" Grid.Column="0" />
+
+            <UserControls:LastPurchaseUI Height="auto" Width="auto" Margin="10,0,0,0"
+                                         VerticalAlignment="Stretch"
+                                         Grid.Row="1" Grid.Column="2" />
+
+            <UserControls:ShopRecoUI Height="auto" Width="auto" Margin="0" 
+                                     HorizontalAlignment="Center" VerticalAlignment="Stretch"
+                                     Grid.Row="1" Grid.Column="1" />
+
+            <UserControls:AveragePurchaseUC Height="auto" Width="auto" Margin="0"
+                                            VerticalAlignment="Stretch"
+                                            Grid.Row="1" Grid.Column="0" />
+
+        </Grid>
+
+
+        <UserControls:Footer Height="54" Width="1920" Margin="10,0,0,0" 
+                             HorizontalAlignment="Center" VerticalAlignment="Center"
+                             Grid.Row="3" Visibility="Visible"
+                             Grid.ColumnSpan="3" Grid.RowSpan="2" />
     </Grid>
 </Window>

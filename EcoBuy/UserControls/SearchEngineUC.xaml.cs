@@ -13,10 +13,5 @@ namespace EcoBuy.UserControls
             InitializeComponent();
             this.DataContext = new SearchEngineUCVM();
         }
-
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
     }
 }
