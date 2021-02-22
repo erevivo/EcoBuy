@@ -16,18 +16,13 @@ using System.Windows.Shapes;
 namespace EcoBuy.UserControls
 {
     /// <summary>
-    /// Interaction logic for MenuUC.xaml
+    /// Interaction logic for AllPurchases.xaml
     /// </summary>
-    public partial class MenuUC : UserControl
+    public partial class AllPurchases : UserControl
     {
-        public MenuUC()
+        public AllPurchases()
         {
             InitializeComponent();
-        }
-
-        private void MainClick(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

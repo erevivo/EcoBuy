@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="EcoBuy.UserControls.PurchaseConfirmUC"
+﻿<UserControl x:Class="EcoBuy.UserControls.AllPurchases"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
@@ -17,14 +17,14 @@
         </Style>
     </UserControl.Resources>
     <Grid>
-        <Label Content="אישור קניה"
+        <Label Content="כל הקניות שלך"
                FontSize="90"
-               Width="750"
+               Width="606"
                Height="150"
                FlowDirection="RightToLeft"
                VerticalAlignment="Top"
                HorizontalAlignment="Center"
-               Margin="484,59,686,0" />
+               Margin="628,59,686,0" />
         <local:UserControlBG Margin="207,247,204,112"/>
         <Grid>
             <Grid Margin="0,300,286,110"
