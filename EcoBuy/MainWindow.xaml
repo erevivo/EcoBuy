@@ -45,7 +45,7 @@
         <!-- ComboBox, RadioButton, CheckBox, etc... -->
     </Window.Resources>
     <Grid ShowGridLines="False">
-       
+
         <Grid.RowDefinitions>
             <RowDefinition Height="1.5*" />
             <RowDefinition Height="4*" />
@@ -56,7 +56,7 @@
             <ColumnDefinition Width="1*" />
             <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
-        
+
         <Button Style="{StaticResource MaterialDesignFlatDarkBgButton}"
                 ToolTip="יציאה"
                 Grid.Row="0"
@@ -73,15 +73,15 @@
                Stretch="Fill"
                Opacity="0.4"
                Grid.Row="1" />
-        <UserControls:MainUI Visibility="Hidden"
+        <UserControls:MainUI Visibility="Visible"
                              HorizontalAlignment="Left"
                              Height="859"
-                             Margin="10,0,0,0"
+                             Margin="5,0,0,0"
                              Grid.Row="1"
                              VerticalAlignment="Top"
                              Width="1904"
-                             Grid.ColumnSpan="3"
-                             Grid.RowSpan="2" />
+                             Grid.ColumnSpan="2"
+                             Grid.RowSpan="2" Loaded="MainUI_Loaded" />
         <UserControls:HeaderUC Visibility="Visible"
                                Grid.ColumnSpan="3"
                                HorizontalAlignment="Left"
@@ -89,15 +89,6 @@
                                VerticalAlignment="Top"
                                Width="1914" />
         <UserControls:AddItemUC Visibility="Hidden"
-                                HorizontalAlignment="Left"
-                                Height="859"
-                                Margin="10,0,0,0"
-                                Grid.Row="1"
-                                VerticalAlignment="Top"
-                                Width="1904"
-                                Grid.ColumnSpan="3"
-                                Grid.RowSpan="2" />
-        <UserControls:PurchaseConfirmUC Visibility="Visible"
                                 HorizontalAlignment="Left"
                                 Height="859"
                                 Margin="10,0,0,0"

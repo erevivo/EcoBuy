@@ -95,6 +95,9 @@
     <Compile Include="UserControls\AddShoppingListUC.xaml.cs">
       <DependentUpon>AddShoppingListUC.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\AllPurchases.xaml.cs">
+      <DependentUpon>AllPurchases.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\AveragePurchaseUC.xaml.cs">
       <DependentUpon>AveragePurchaseUC.xaml</DependentUpon>
     </Compile>
@@ -159,6 +162,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\AddShoppingListUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\AllPurchases.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

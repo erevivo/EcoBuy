@@ -12,8 +12,7 @@
     <Grid>
         <local:UserControlBG Height="410"
                              Width="610"
-                             VerticalAlignment="Center"
-                             Loaded="UserControlBG_Loaded" />
+                             VerticalAlignment="Center"/>
         <Label Content="התפלגות הקניות שלך"
                FontSize="32"
                Margin="113,32,136,0"

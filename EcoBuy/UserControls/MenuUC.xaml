@@ -32,7 +32,7 @@
                 Height="70"
                 Width="250"
                 materialDesign:ButtonAssist.CornerRadius="0"
-                ToolTip="MaterialDesignRaisedDarkButton with Round Corners">
+                ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Click="ConfirmClick">
             <TextBlock FontFamily="/EcoBuy;component/Fonts/#Heebo"
                        FontSize="28"
                        Text="אישור קניה" />
