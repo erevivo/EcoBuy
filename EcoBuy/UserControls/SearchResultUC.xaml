@@ -26,6 +26,7 @@
                   HeadersVisibility="All"
                   Height="180"
                   Width="1050">
+            
             <DataGrid.Resources>
                 <!-- put here bidding-->
                 <!--<domain:BindingProxy
@@ -35,12 +36,12 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Image}"
                                     Header="תמונה"
-                                    Width="70"
+                                    Width="100"
                                     ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
                                     EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" />
                 <!-- if you want to use the pop up style (MaterialDesignDataGridTextColumnPopupEditingStyle), you must use MaterialDataGridTextColumn -->
                 <materialDesign:DataGridTextColumn Header="מק&quot;ט"
-                                                   Width="80"
+                                                   Width="130"
                                                    ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
                                                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}">
                     <materialDesign:DataGridTextColumn.Binding>
@@ -53,7 +54,19 @@
                 </materialDesign:DataGridTextColumn>
                 <!-- set a max length to get an indicator in the editor -->
                 <DataGridTextColumn Header="שם המוצר"
-                                    Width="100"
+                                    Width="226"
+                                    ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
+                                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}">
+                    <DataGridTextColumn.Binding>
+                        <Binding Path="Amount">
+                            <Binding.ValidationRules>
+                                <!--     <domain:NotEmptyValidationRule xmlns:domain="clr-namespace:MaterialDesignDemo.Domain" /> -->
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </DataGridTextColumn.Binding>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="קטגוריה"
+                                    Width="226"
                                     ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
                                     EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}">
                     <DataGridTextColumn.Binding>
@@ -65,7 +78,7 @@
                     </DataGridTextColumn.Binding>
                 </DataGridTextColumn>
                 <DataGridTextColumn Header="נקנה בתאריך"
-                                    Width="100"
+                                    Width="200"
                                     ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
                                     EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}">
                     <DataGridTextColumn.Binding>
@@ -76,8 +89,8 @@
                         </Binding>
                     </DataGridTextColumn.Binding>
                 </DataGridTextColumn>
-                <DataGridTextColumn Header="שם המוצר"
-                                    Width="100"
+                <DataGridTextColumn Header="חנות"
+                                    Width="200"
                                     ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
                                     EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}">
                     <DataGridTextColumn.Binding>
@@ -88,8 +101,8 @@
                         </Binding>
                     </DataGridTextColumn.Binding>
                 </DataGridTextColumn>
-                <DataGridTextColumn Header="שם המוצר"
-                                    Width="100"
+                <DataGridTextColumn Header="מחיר"
+                                    Width=""
                                     ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
                                     EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}">
                     <DataGridTextColumn.Binding>
@@ -100,84 +113,7 @@
                         </Binding>
                     </DataGridTextColumn.Binding>
                 </DataGridTextColumn>
-                <DataGridTextColumn Header="שם המוצר"
-                                    Width="100"
-                                    ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
-                                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}">
-                    <DataGridTextColumn.Binding>
-                        <Binding Path="Amount">
-                            <Binding.ValidationRules>
-                                <!--     <domain:NotEmptyValidationRule xmlns:domain="clr-namespace:MaterialDesignDemo.Domain" /> -->
-                            </Binding.ValidationRules>
-                        </Binding>
-                    </DataGridTextColumn.Binding>
-                </DataGridTextColumn>
-                <DataGridTextColumn Header="שם המוצר"
-                                    Width="100"
-                                    ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
-                                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}">
-                    <DataGridTextColumn.Binding>
-                        <Binding Path="Amount">
-                            <Binding.ValidationRules>
-                                <!--     <domain:NotEmptyValidationRule xmlns:domain="clr-namespace:MaterialDesignDemo.Domain" /> -->
-                            </Binding.ValidationRules>
-                        </Binding>
-                    </DataGridTextColumn.Binding>
-                </DataGridTextColumn>
-                <materialDesign:DataGridTextColumn Binding="{Binding Numeric}"
-                                                   Header="כמות"
-                                                   Width="120"
-                                                   EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}">
-                    <DataGridTextColumn.HeaderStyle>
-                        <Style TargetType="{x:Type DataGridColumnHeader}"
-                               BasedOn="{StaticResource MaterialDesignDataGridColumnHeader}">
-                            <Setter Property="HorizontalContentAlignment"
-                                    Value="Right" />
-                            <Setter Property="ContentTemplate">
-                                <Setter.Value>
-                                    <DataTemplate>
-                                        <TextBlock TextWrapping="Wrap"
-                                                   Text="{Binding}"
-                                                   TextAlignment="Right" />
-                                    </DataTemplate>
-                                </Setter.Value>
-                            </Setter>
-                        </Style>
-                    </DataGridTextColumn.HeaderStyle>
-                    <DataGridTextColumn.ElementStyle>
-                        <Style TargetType="{x:Type TextBlock}"
-                               BasedOn="{StaticResource MaterialDesignDataGridTextColumnStyle}">
-                            <Setter Property="HorizontalAlignment"
-                                    Value="Right" />
-                        </Style>
-                    </DataGridTextColumn.ElementStyle>
-                </materialDesign:DataGridTextColumn>
                 <!-- use custom combo box column to get better combos. Use ItemsSourceBinding as your binding template to be applied to each combo -->
-                <DataGridTextColumn Header="קטגוריה"
-                                    Width="80"
-                                    ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
-                                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}">
-                    <DataGridTextColumn.Binding>
-                        <Binding Path="Amount">
-                            <Binding.ValidationRules>
-                                <!--     <domain:NotEmptyValidationRule xmlns:domain="clr-namespace:MaterialDesignDemo.Domain" /> -->
-                            </Binding.ValidationRules>
-                        </Binding>
-                    </DataGridTextColumn.Binding>
-                </DataGridTextColumn>
-                <materialDesign:DataGridComboBoxColumn Header="מחיר"
-                                                       IsEditable="True"
-                                                       Width="100"
-                                                       SelectedValueBinding="{Binding Food}"
-                                                       ItemsSourceBinding="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type DataGrid}}, Path=DataContext.Foods}">
-                    <!--Setting the editing element style allows access to all of the combo box's properties
-                      <materialDesign:MaterialDataGridComboBoxColumn.EditingElementStyle>
-                          <Style TargetType="ComboBox" BasedOn="{StaticResource {ComponentResourceKey TypeInTargetAssembly={x:Type ComboBox}, ResourceId=MaterialDataGridComboBoxColumnEditingStyle}}" >
-                              <Setter Property="IsEditable" Value="True" />
-                          </Style>
-                      </materialDesign:MaterialDataGridComboBoxColumn.EditingElementStyle>
-                      -->
-                </materialDesign:DataGridComboBoxColumn>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

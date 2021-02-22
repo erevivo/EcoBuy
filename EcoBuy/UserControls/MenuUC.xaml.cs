@@ -24,5 +24,10 @@ namespace EcoBuy.UserControls
         {
             InitializeComponent();
         }
+
+        private void MainClick(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
