@@ -32,8 +32,7 @@ namespace EcoBuy.UserControls
 
             DataContext = this;
 
-            PointLabel = chartPoint =>
-                string.Format("{0} ({1:P})", chartPoint.Y, chartPoint.Participation);
+            PointLabel = chartPoint => string.Format("{0} ({1:P})", chartPoint.Y, chartPoint.Participation);
             
             CreatePieChartData(CategoiesCount);
 
@@ -41,13 +40,10 @@ namespace EcoBuy.UserControls
             {
                 Dispatcher.Invoke(() =>
                 {
-                    CategoiesCount = new CategoiesCount() { Electricity = 10, Fashion = 5, Food = 5, Health = 20 };
-                    CreatePieChartData(CategoiesCount);
+                    CreatePieChartData(new CategoiesCount() { Electricity = 10, Fashion = 5, Food = 5, Health = 20 });
                 });
                 
             });
-
-            
         }
 
         public Func<ChartPoint, string> PointLabel { get; set; }

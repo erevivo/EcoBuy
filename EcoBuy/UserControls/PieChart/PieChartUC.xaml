@@ -9,68 +9,76 @@
              d:DesignHeight="410"
              d:DesignWidth="610"
              d:DataContext="{d:DesignInstance local:PieChartUC}">
-    <Grid>
-        <local:UserControlBG Height="410"
-                             Width="610"
-                             VerticalAlignment="Center"/>
-        <Label Content="התפלגות הקניות שלך"
-               FontSize="32"
-               Margin="113,32,136,0"
-               VerticalAlignment="Top"
-               FlowDirection="RightToLeft"
-               HorizontalContentAlignment="Center"
-               Height="61" />
 
-        <lvc:PieChart DataClick="Chart_OnDataClick" DataTooltip="{x:Null}"
-                      Hoverable="False" LegendLocation="Bottom" Margin="90 85 111 21">
-            
-            <lvc:PieChart.Series>
-                
-                <lvc:PieSeries Title="חשמל" 
+    <Border BorderThickness="2"
+                CornerRadius="20"
+                BorderBrush="#e0e6ed"
+                Background="white"
+                Margin="10,10,10,9.6">
+        <Border.Effect>
+            <DropShadowEffect BlurRadius="10" ShadowDepth="6" Color="#adadad"/>
+        </Border.Effect>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="4*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+
+            <Label Content="התפלגות הקניות שלך" Height="61"
+                   FontSize="32" FlowDirection="RightToLeft" 
+                   VerticalAlignment="Top" HorizontalContentAlignment="Center" 
+                   Grid.Column="1"/>
+
+            <!-- Pie Chart -->
+            <lvc:PieChart DataClick="Chart_OnDataClick" DataTooltip="{x:Null}"
+                          Hoverable="False" LegendLocation="Bottom"
+                          Grid.Column="1" Margin="0 50 0 10">
+
+                <lvc:PieChart.Series>
+
+                    <lvc:PieSeries Title="חשמל" 
                                Values="{Binding CategoryPieChartModel.ElectricityDataSeries, UpdateSourceTrigger=PropertyChanged}" 
                                DataLabels="True"
                                LabelPoint="{Binding PointLabel}"/>
 
-                <lvc:PieSeries Title="אופנה" 
+                    <lvc:PieSeries Title="אופנה" 
                                Values="{Binding CategoryPieChartModel.FashionDataSeries, UpdateSourceTrigger=PropertyChanged}" 
                                DataLabels="True"
                                LabelPoint="{Binding PointLabel}"/>
 
-                <lvc:PieSeries Title="מזון" 
+                    <lvc:PieSeries Title="מזון" 
                                Values="{Binding CategoryPieChartModel.FoodDataSeries}" 
                                DataLabels="True"
                                LabelPoint="{Binding PointLabel}"/>
 
-                <lvc:PieSeries Title="בריאות" 
+                    <lvc:PieSeries Title="בריאות" 
                                Values="{Binding CategoryPieChartModel.HealthDataSeries}" 
                                DataLabels="True"
                                LabelPoint="{Binding PointLabel}"/>
-                
-            </lvc:PieChart.Series>
-            
-        </lvc:PieChart>
 
-        <Grid>
+                </lvc:PieChart.Series>
+
+            </lvc:PieChart>
+
+            <!-- Dates Range List -->
             <ListBox Style="{StaticResource MaterialDesignChoiceChipListBox}"
-                     FlowDirection="RightToLeft"
                      x:Name="RadioButtonGroupChoiceChip"
-                     Margin="474,89,65,198">
-                <ListBox.ItemsPanel>
-                    <ItemsPanelTemplate>
-                        <WrapPanel Orientation="Vertical" />
-                    </ItemsPanelTemplate>
-                </ListBox.ItemsPanel>
+                     FlowDirection="RightToLeft" 
+                     Grid.Column="2" Margin="0 120 15 0">
+
                 <ListBoxItem Content="היום" />
                 <ListBoxItem Content="השבוע" />
                 <ListBoxItem Content="החודש" />
+
             </ListBox>
+
+            <TextBlock FontSize="18" Height="27" Foreground="#320b86"
+                   VerticalAlignment="Bottom" FlowDirection="RightToLeft"
+                   TextDecorations="Underline" Text="לפי מוצר>>" Margin="0 0 0 7"/>
+
         </Grid>
-        <TextBlock FontSize="18"
-                   Foreground="#320b86"
-                   VerticalAlignment="Top"
-                   FlowDirection="RightToLeft"
-                   Height="27"
-                   TextDecorations="Underline"
-                   Margin="19,333,491,0">לפי מוצר>></TextBlock>
-    </Grid>
+    </Border>
+
 </UserControl>
