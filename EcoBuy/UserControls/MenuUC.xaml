@@ -16,16 +16,13 @@
             <ColumnDefinition Width="1*" />
             <ColumnDefinition Width="1*" />
             <ColumnDefinition Width="1*" />
-            <ColumnDefinition Width="1*" />
-
-
         </Grid.ColumnDefinitions>
         <Button Style="{StaticResource MaterialDesignRaisedDarkButton}"
                 Grid.Column="0"
                 Height="70"
                 Width="250"
                 materialDesign:ButtonAssist.CornerRadius="0"
-                ToolTip="MaterialDesignRaisedDarkButton with Round Corners">
+                ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Click="MainClick">
             <TextBlock FontFamily="/EcoBuy;component/Fonts/#Heebo"
                        FontSize="28"
                        Text="ראשי" />
@@ -49,16 +46,6 @@
             <TextBlock FontFamily="/EcoBuy;component/Fonts/#Heebo"
                        FontSize="28"
                        Text="הוסף מוצר חדש" />
-        </Button>
-        <Button Style="{StaticResource MaterialDesignRaisedDarkButton}"
-                Grid.Column="3"
-                Height="70"
-                Width="250"
-                materialDesign:ButtonAssist.CornerRadius="0"
-                ToolTip="אשר את הקניה שלך">
-            <TextBlock FontFamily="/EcoBuy;component/Fonts/#Heebo"
-                       FontSize="28"
-                       Text="צור רשימת קניות" />
         </Button>
     </Grid>
 </UserControl>
