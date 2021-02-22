@@ -57,9 +57,7 @@ namespace EcoBuy.ViewModels
 
         private void Search()
         {
-            
-<<<<<<< Updated upstream
-=======
+
         }
 
         private void FilterItems()
@@ -70,7 +68,6 @@ namespace EcoBuy.ViewModels
 
             PurchasedProducts = new ObservableCollection<PurchasedProduct>(items);
             CollectionViewSource.GetDefaultView(PurchasedProducts).Refresh();
->>>>>>> Stashed changes
         }
 
         private void Test()
