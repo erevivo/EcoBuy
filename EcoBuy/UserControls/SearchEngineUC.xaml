@@ -5,50 +5,33 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:EcoBuy.UserControls"
+             xmlns:vm="clr-namespace:EcoBuy.ViewModels"
              mc:Ignorable="d"
              d:DesignHeight="410"
-             d:DesignWidth="1220">
-    
-    
+             d:DesignWidth="1220"
+             d:DataContext="{x:Static vm:SearchEngineUCDM.Instance}">
+
     <StackPanel>
         
         <!-- Search Bar & Button -->
         <Grid Margin="0 10 0 0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="1*" />
-                <ColumnDefinition Width="7*" />
-            </Grid.ColumnDefinitions>
 
             <!-- Searhc Bar -->
-            <Border Height="90" Width="900" 
+            <Border Height="90" Width="900"
                     BorderThickness="2" BorderBrush="#e0e6ed"
-                    Background="white" CornerRadius="20"
-                    Grid.Column="1">
+                    Background="white" CornerRadius="20">
+
                 <Border.Effect>
-                    <DropShadowEffect BlurRadius="10"
-                                      ShadowDepth="6"
-                                      Color="#adadad" />
+                    <DropShadowEffect BlurRadius="10" ShadowDepth="6" Color="#adadad" />
                 </Border.Effect>
 
                 <TextBox Style="{StaticResource MaterialDesignOutlinedTextBox}"
-                        materialDesign:HintAssist.Hint="חפש מוצר"
-                        FontSize="26" Grid.Column="1"
+                        materialDesign:HintAssist.Hint="חפש מוצר" FontSize="26"
                         FlowDirection="RightToLeft" BorderThickness="0"
                         VerticalScrollBarVisibility="Auto"
-                        IsEnabled="{Binding Path=IsChecked, ElementName=MaterialDesignOutlinedTextBoxEnabledComboBox}"
                         AcceptsReturn="False" TextWrapping="NoWrap" 
-                        Text="{Binding SearchText}"/>
+                        Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}"/>
             </Border>
-            
-            <!-- Search Button-->
-            <Button Style="{StaticResource MaterialDesignFloatingActionAccentButton}"
-                    Height="80" Width="80"
-                    ToolTip="חפש" 
-                    Command="{Binding SearchCommand}">
-
-                <materialDesign:PackIcon Height="50" Width="50" Kind="Magnify" />
-
-            </Button>
 
         </Grid>
 
@@ -58,43 +41,37 @@
                 CornerRadius="20" Background="white" >
 
             <!-- Data Table -->
-            <DataGrid ItemsSource="{Binding Products}"
+            <DataGrid ItemsSource="{Binding PurchasedProducts, UpdateSourceTrigger=PropertyChanged}"
                       Height="180" Width="1050"
                       FlowDirection="RightToLeft" BorderThickness="2"
                       CanUserAddRows="False" AutoGenerateColumns="False"
-                      HeadersVisibility="All" >
+                      HeadersVisibility="All">
 
                 <DataGrid.Columns>
                     
                     <!-- Image -->
-                    <DataGridTextColumn Binding="{Binding ImageUrl}"
+                    <DataGridTextColumn Binding="{Binding Product.ImageUrl}"
                                         Header="תמונה" Width="100"
                                         ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
                                         EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" />
 
                     <!-- Product ID -->
-                    <materialDesign:DataGridTextColumn Header="מק&quot;ט" Width="130"
+                    <materialDesign:DataGridTextColumn Header="מק&quot;ט" Width="130" Binding="{Binding Product.ProductId}"
                                     ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
-                                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}">
-                        
-                        <materialDesign:DataGridTextColumn.Binding>
-                            <Binding Path="ProductId" /> 
-                        </materialDesign:DataGridTextColumn.Binding>
-                        
-                    </materialDesign:DataGridTextColumn>
+                                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}" />
 
                     <!-- Product Name -->
-                    <DataGridTextColumn Header="שם המוצר" Binding="{Binding ProductName}" Width="226"
+                    <DataGridTextColumn Header="שם המוצר" Binding="{Binding Product.ProductName}" Width="226"
                                     ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
                                     EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" />
                     
                     <!-- Category -->
-                    <DataGridTextColumn Header="קטגוריה" Width="226" Binding="{Binding Category}"
+                    <DataGridTextColumn Header="קטגוריה" Width="226" Binding="{Binding Product.Category}"
                                     ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
                                     EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" />
                     
-                    <!-- Buy Date -->
-                    <DataGridTextColumn Header="נקנה בתאריך" Binding="{Binding BuyDate}" Width="200"
+                    <!-- Purchase Date -->
+                    <DataGridTextColumn Header="נקנה בתאריך" Binding="{Binding PurchaseDate, StringFormat=\{0:dd.MM.yy HH:mm:ss\}}" Width="200"
                                     ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
                                     EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" />
 

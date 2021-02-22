@@ -22,6 +22,8 @@ namespace EcoBuy.UserControls
     /// </summary>
     public partial class PieChartUI : UserControl
     {
+        public int Food { get; set; }
+
         public PieChartUI()
         {
             InitializeComponent();
