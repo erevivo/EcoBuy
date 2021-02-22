@@ -20,31 +20,36 @@
                FlowDirection="RightToLeft"
                HorizontalContentAlignment="Center"
                Height="61" />
-        <lvc:PieChart LegendLocation="Bottom"
-                      FlowDirection="RightToLeft"
-                      DataClick="Chart_OnDataClick"
-                      Hoverable="False"
-                      DataTooltip="{x:Null}"
-                      Margin="90,85,111,21">
+
+        <lvc:PieChart DataClick="Chart_OnDataClick" DataTooltip="{x:Null}"
+                      Hoverable="False" LegendLocation="Bottom" Margin="90 85 111 21">
+            
             <lvc:PieChart.Series>
-                <lvc:PieSeries Title="בריאות וטיפוח"
-                               Values="5"
+                
+                <lvc:PieSeries Title="חשמל" 
+                               Values="{Binding CategoryPieChartModel.ElectricityDataSeries, UpdateSourceTrigger=PropertyChanged}" 
                                DataLabels="True"
-                               LabelPoint="{Binding PointLabel}" />
-                <lvc:PieSeries Title="ביגוד ואופנה"
-                               Values="4"
+                               LabelPoint="{Binding PointLabel}"/>
+
+                <lvc:PieSeries Title="אופנה" 
+                               Values="{Binding CategoryPieChartModel.FashionDataSeries, UpdateSourceTrigger=PropertyChanged}" 
                                DataLabels="True"
-                               LabelPoint="{Binding PointLabel}" />
-                <lvc:PieSeries Title="מזון ומשקאות"
-                               Values="6"
+                               LabelPoint="{Binding PointLabel}"/>
+
+                <lvc:PieSeries Title="מזון" 
+                               Values="{Binding CategoryPieChartModel.FoodDataSeries}" 
                                DataLabels="True"
-                               LabelPoint="{Binding PointLabel}" />
-                <lvc:PieSeries Title="מוצרי חשמל"
-                               Values="2"
+                               LabelPoint="{Binding PointLabel}"/>
+
+                <lvc:PieSeries Title="בריאות" 
+                               Values="{Binding CategoryPieChartModel.HealthDataSeries}" 
                                DataLabels="True"
-                               LabelPoint="{Binding PointLabel}" />
+                               LabelPoint="{Binding PointLabel}"/>
+                
             </lvc:PieChart.Series>
+            
         </lvc:PieChart>
+
         <Grid>
             <ListBox Style="{StaticResource MaterialDesignChoiceChipListBox}"
                      FlowDirection="RightToLeft"

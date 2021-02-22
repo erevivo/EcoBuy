@@ -84,6 +84,7 @@
     </ApplicationDefinition>
     <Compile Include="Converters\RemoveNewlinesConverter.cs" />
     <Compile Include="Expressions\ExpressionHelpers.cs" />
+    <Compile Include="Models\CategoiesCount.cs" />
     <Compile Include="Models\EcoDB.Designer.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\PurchasedProduct.cs" />
@@ -120,9 +121,10 @@
     <Compile Include="UserControls\MenuUC.xaml.cs">
       <DependentUpon>MenuUC.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\PieChartUC.xaml.cs">
+    <Compile Include="UserControls\PieChart\PieChartUC.xaml.cs">
       <DependentUpon>PieChartUC.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\PieChart\PieChartDataModel.cs" />
     <Compile Include="UserControls\PurchaseConfirmUC.xaml.cs">
       <DependentUpon>PurchaseConfirmUC.xaml</DependentUpon>
     </Compile>
@@ -199,7 +201,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UserControls\PieChartUC.xaml">
+    <Page Include="UserControls\PieChart\PieChartUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
