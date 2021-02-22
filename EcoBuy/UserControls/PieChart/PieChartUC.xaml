@@ -14,7 +14,7 @@
                 CornerRadius="20"
                 BorderBrush="#e0e6ed"
                 Background="white"
-                Margin="10,10,10,9.6">
+                Margin="10">
         <Border.Effect>
             <DropShadowEffect BlurRadius="10" ShadowDepth="6" Color="#adadad"/>
         </Border.Effect>
@@ -39,12 +39,12 @@
                 <lvc:PieChart.Series>
 
                     <lvc:PieSeries Title="חשמל" 
-                               Values="{Binding CategoryPieChartModel.ElectricityDataSeries, UpdateSourceTrigger=PropertyChanged}" 
+                               Values="{Binding CategoryPieChartModel.ElectricityDataSeries}" 
                                DataLabels="True"
                                LabelPoint="{Binding PointLabel}"/>
 
                     <lvc:PieSeries Title="אופנה" 
-                               Values="{Binding CategoryPieChartModel.FashionDataSeries, UpdateSourceTrigger=PropertyChanged}" 
+                               Values="{Binding CategoryPieChartModel.FashionDataSeries}" 
                                DataLabels="True"
                                LabelPoint="{Binding PointLabel}"/>
 

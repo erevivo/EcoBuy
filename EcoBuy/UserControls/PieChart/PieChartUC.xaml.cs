@@ -14,10 +14,10 @@ namespace EcoBuy.UserControls
     public partial class PieChartUC : UserControl
     {
         public static readonly DependencyProperty CategoryPieChartModelProperty = DependencyProperty.Register(
-                                                                               "CategoryPieChartModel",
-                                                                               typeof(PieChartDataModel),
-                                                                               typeof(PieChartUC),
-                                                                               new PropertyMetadata(default(PieChartDataModel)));
+                                                                    "CategoryPieChartModel",
+                                                                    typeof(PieChartDataModel),
+                                                                    typeof(PieChartUC),
+                                                                    new PropertyMetadata(default(PieChartDataModel)));
         public PieChartDataModel CategoryPieChartModel
         {
             get => (PieChartDataModel)GetValue(PieChartUC.CategoryPieChartModelProperty);
@@ -33,10 +33,8 @@ namespace EcoBuy.UserControls
             DataContext = this;
 
             PointLabel = chartPoint => string.Format("{0} ({1:P})", chartPoint.Y, chartPoint.Participation);
-            
-            CreatePieChartData(CategoiesCount);
 
-            Task.Delay(2000).ContinueWith(t =>
+            Task.Delay(0).ContinueWith(t =>
             {
                 Dispatcher.Invoke(() =>
                 {
