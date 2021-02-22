@@ -86,7 +86,7 @@
                                          VerticalAlignment="Stretch"
                                          Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" />
 
-            <UserControls:PieChartUI Height="auto" Width="auto" Margin="0"
+            <UserControls:PieChartUC Height="auto" Width="auto" Margin="0"
                                      VerticalAlignment="Stretch"
                                      Grid.Row="0" Grid.Column="0" />
 
