@@ -36,8 +36,6 @@ namespace EcoBuy.ViewModels
 
         public ObservableCollection<PurchasedProduct> PurchasedProducts { get; set; }
 
-        public ICommand SearchCommand { get; set; }
-
         #endregion
 
 
@@ -45,7 +43,6 @@ namespace EcoBuy.ViewModels
 
         public SearchEngineUCVM()
         {
-            SearchCommand = new RelayCommand(() => Search());
 
             Test();
         }
@@ -54,11 +51,6 @@ namespace EcoBuy.ViewModels
 
 
         #region Private Methods
-
-        private void Search()
-        {
-
-        }
 
         private void FilterItems()
         {
