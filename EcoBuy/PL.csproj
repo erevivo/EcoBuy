@@ -82,6 +82,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Converters\IntToChartValueConverter.cs" />
     <Compile Include="Converters\RemoveNewlinesConverter.cs" />
     <Compile Include="Converters\ValueConverterBase.cs" />
     <Compile Include="Expressions\ExpressionHelpers.cs" />

@@ -1,20 +1,21 @@
-﻿using System;
+﻿using EcoBuy.BE;
+using System;
 
 namespace EcoBuy.Models
 {
-    public class PurchasedProduct
+    public class PurchasedProduct : Product
     {
-        public Product Product { get; set; }
-
         public DateTime PurchaseDate { get; set; }
 
         public double Price { get; set; }
 
-        public PurchasedProduct(Product product, DateTime purchaseDate, double price)
+        public PurchasedProduct(DateTime purchaseDate, double price, 
+                                int id, int productId, string productName, 
+                                string ImageUrl, ProductsCategory category) : 
+            base(id, productId, productName, ImageUrl, category)
         {
-            this.Product = product;
-            this.PurchaseDate = purchaseDate;
-            this.Price = price;
+            PurchaseDate = purchaseDate;
+            Price = price;
         }
     }
 }

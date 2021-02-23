@@ -1,14 +1,17 @@
 ﻿<UserControl x:Class="EcoBuy.UserControls.PieChartUC"
+             x:Name="PieChart"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:EcoBuy.UserControls"
              xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+             xmlns:cnv="clr-namespace:EcoBuy.Converters"
              mc:Ignorable="d"
              d:DesignHeight="410"
              d:DesignWidth="610"
-             d:DataContext="{d:DesignInstance local:PieChartUC}">
+             d:DataContext="{d:DesignInstance local:PieChartUC}"
+             DataContext="{Binding ElementName=PieChart}">
 
     <Border BorderThickness="2"
                 CornerRadius="20"
@@ -39,22 +42,22 @@
                 <lvc:PieChart.Series>
 
                     <lvc:PieSeries Title="חשמל" 
-                               Values="{Binding CategoryPieChartModel.ElectricityDataSeries}" 
+                               Values="{Binding CategoiesCount.Electricity, Converter={cnv:IntToChartValueConverter}}" 
                                DataLabels="True"
                                LabelPoint="{Binding PointLabel}"/>
 
                     <lvc:PieSeries Title="אופנה" 
-                               Values="{Binding CategoryPieChartModel.FashionDataSeries}" 
+                               Values="{Binding CategoiesCount.Fashion, Converter={cnv:IntToChartValueConverter}}" 
                                DataLabels="True"
                                LabelPoint="{Binding PointLabel}"/>
 
                     <lvc:PieSeries Title="מזון" 
-                               Values="{Binding CategoryPieChartModel.FoodDataSeries}" 
+                               Values="{Binding CategoiesCount.Food, Converter={cnv:IntToChartValueConverter}}" 
                                DataLabels="True"
                                LabelPoint="{Binding PointLabel}"/>
 
                     <lvc:PieSeries Title="בריאות" 
-                               Values="{Binding CategoryPieChartModel.HealthDataSeries}" 
+                               Values="{Binding CategoiesCount.Health, Converter={cnv:IntToChartValueConverter}}" 
                                DataLabels="True"
                                LabelPoint="{Binding PointLabel}"/>
 

@@ -63,7 +63,7 @@ namespace EcoBuy.ViewModels
         private void FilterItems()
         {
             var items = this._originalItems.Where(p => (
-                     string.IsNullOrEmpty(this.SearchText) || p.Product.ProductName.ToLower().Contains(this.SearchText.ToLower()))
+                     string.IsNullOrEmpty(this.SearchText) || p.ProductName.ToLower().Contains(this.SearchText.ToLower()))
                      ).ToList();
 
             PurchasedProducts = new ObservableCollection<PurchasedProduct>(items);
@@ -79,10 +79,10 @@ namespace EcoBuy.ViewModels
         {
             PurchasedProducts = new ObservableCollection<PurchasedProduct>()
             {
-                new PurchasedProduct(new Product(1, 1, "Milk", null, ProductsCategory.Food), new DateTime(2020, 10, 2), 10),
-                new PurchasedProduct(new Product(2, 2, "Bread", null, ProductsCategory.Food), new DateTime(2020, 11, 2), 5),
-                new PurchasedProduct(new Product(3, 3, "T-Shirt", null, ProductsCategory.Fashion), new DateTime(2020, 12, 2), 20),
-                new PurchasedProduct(new Product(4, 4, "Acamol", null, ProductsCategory.Health), new DateTime(2020, 12, 2), 7)
+                new PurchasedProduct(new DateTime(2020, 10, 2), 10, 1, 1, "Milk", null, ProductsCategory.Food),
+                new PurchasedProduct(new DateTime(2020, 11, 2), 5, 2, 2, "Bread", null, ProductsCategory.Food),
+                new PurchasedProduct(new DateTime(2020, 12, 2), 20, 3, 3, "T-Shirt", null, ProductsCategory.Fashion),
+                new PurchasedProduct(new DateTime(2020, 12, 2), 7, 4, 4, "Acamol", null, ProductsCategory.Health)
             };
 
             _originalItems = PurchasedProducts;

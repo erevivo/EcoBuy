@@ -50,23 +50,23 @@
                 <DataGrid.Columns>
                     
                     <!-- Image -->
-                    <DataGridTextColumn Binding="{Binding Product.ImageUrl}"
+                    <DataGridTextColumn Binding="{Binding ImageUrl}"
                                         Header="תמונה" Width="100"
                                         ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
                                         EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" />
 
                     <!-- Product ID -->
-                    <materialDesign:DataGridTextColumn Header="מק&quot;ט" Width="130" Binding="{Binding Product.ProductId}"
+                    <materialDesign:DataGridTextColumn Header="מק&quot;ט" Width="130" Binding="{Binding ProductId}"
                                     ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
                                     EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}" />
 
                     <!-- Product Name -->
-                    <DataGridTextColumn Header="שם המוצר" Binding="{Binding Product.ProductName}" Width="226"
+                    <DataGridTextColumn Header="שם המוצר" Binding="{Binding ProductName}" Width="226"
                                     ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
                                     EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" />
                     
                     <!-- Category -->
-                    <DataGridTextColumn Header="קטגוריה" Width="226" Binding="{Binding Product.Category}"
+                    <DataGridTextColumn Header="קטגוריה" Width="226" Binding="{Binding Category}"
                                     ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
                                     EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" />
                     

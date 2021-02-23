@@ -1,4 +1,5 @@
 ﻿using EcoBuy.Models;
+using EcoBuy.ViewModels;
 using LiveCharts;
 using LiveCharts.Wpf;
 using System;
@@ -18,19 +19,32 @@ namespace EcoBuy.UserControls
                                                                     typeof(PieChartDataModel),
                                                                     typeof(PieChartUC),
                                                                     new PropertyMetadata(default(PieChartDataModel)));
+
+        public static readonly DependencyProperty CategoiesCountProperty = DependencyProperty.Register(
+                                                                    "CategoiesCount",
+                                                                    typeof(CategoiesCount),
+                                                                    typeof(PieChartUC),
+                                                                    new PropertyMetadata(default(CategoiesCount)));
+
         public PieChartDataModel CategoryPieChartModel
         {
             get => (PieChartDataModel)GetValue(PieChartUC.CategoryPieChartModelProperty);
             set => SetValue(PieChartUC.CategoryPieChartModelProperty, value);
         }
 
-        public CategoiesCount CategoiesCount = new CategoiesCount();
+        public CategoiesCount CategoiesCount
+        {
+            get => (CategoiesCount)GetValue(PieChartUC.CategoiesCountProperty);
+            set => SetValue(PieChartUC.CategoiesCountProperty, value);
+        }
+
+        //public CategoiesCount CategoiesCount = new CategoiesCount();
 
         public PieChartUC()
         {
             InitializeComponent();
 
-            DataContext = this;
+            CategoiesCount = new CategoiesCount();
 
             PointLabel = chartPoint => string.Format("{0} ({1:P})", chartPoint.Y, chartPoint.Participation);
 
@@ -38,6 +52,7 @@ namespace EcoBuy.UserControls
             {
                 Dispatcher.Invoke(() =>
                 {
+                    //this.CategoiesCount = new CategoiesCount() { Electricity = 10, Fashion = 5, Food = 5, Health = 20 };
                     CreatePieChartData(new CategoiesCount() { Electricity = 10, Fashion = 5, Food = 5, Health = 20 });
                 });
                 

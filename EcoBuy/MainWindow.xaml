@@ -8,6 +8,7 @@
         xmlns:c1="http://schemas.componentone.com/winfx/2006/xaml"
         xmlns:UserControls="clr-namespace:EcoBuy.UserControls"
         x:Class="EcoBuy.MainWindow"
+        x:Name="MyMainWindow"
         mc:Ignorable="d"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Medium"
@@ -21,7 +22,9 @@
         WindowState="Maximized"
         ResizeMode="NoResize"
         WindowStyle="None"
-        Background="#f5f5f7">
+        Background="#f5f5f7"
+        DataContext="{StaticResource MainWindowVM}">
+    
     <Window.Resources>
         <Style TargetType="{x:Type Control}"
                x:Key="baseStyle">
@@ -86,9 +89,10 @@
                                          VerticalAlignment="Stretch"
                                          Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" />
 
-            <UserControls:PieChartUC Height="auto" Width="auto" Margin="0"
-                                     VerticalAlignment="Stretch"
-                                     Grid.Row="0" Grid.Column="0" />
+            <UserControls:PieChartUC Height="auto" Width="auto"
+                                     VerticalAlignment="Stretch" 
+                                     Grid.Row="0" Grid.Column="0"
+                                     CategoiesCount="{Binding DataContext.PieChartVM.CategoriesCount, ElementName=MyMainWindow}"/>
 
             <UserControls:LastPurchaseUI Height="auto" Width="auto" Margin="10,0,0,0"
                                          VerticalAlignment="Stretch"
