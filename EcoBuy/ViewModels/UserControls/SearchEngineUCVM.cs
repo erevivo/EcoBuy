@@ -17,7 +17,6 @@ namespace EcoBuy.ViewModels
 
         private string _searchText;
         private ObservableCollection<PurchasedProduct> _originalItems;
-        private ObservableCollection<PurchasedProduct> _purchasedProducts;
 
         #endregion
 
@@ -43,7 +42,6 @@ namespace EcoBuy.ViewModels
 
         public SearchEngineUCVM()
         {
-
             Test();
         }
 

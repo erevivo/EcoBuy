@@ -1,5 +1,4 @@
 ﻿<UserControl x:Class="EcoBuy.UserControls.PieChartUC"
-             x:Name="PieChart"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -11,7 +10,7 @@
              d:DesignHeight="410"
              d:DesignWidth="610"
              d:DataContext="{d:DesignInstance local:PieChartUC}"
-             DataContext="{Binding ElementName=PieChart}">
+             DataContext="{Binding RelativeSource={RelativeSource Self}}">
 
     <Border BorderThickness="2"
                 CornerRadius="20"
