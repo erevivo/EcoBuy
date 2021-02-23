@@ -100,8 +100,8 @@ namespace PL.ConnectToGoogleDrive
             {
                 foreach (var file in files)
                 {
-                    string saveTo = String.Format(@"C:\Users\Evyatar\qr{0}.png", file.Name);
-                    //Console.WriteLine("{0} ({1})", file.Name, file.Id);
+                    string saveTo = String.Format(@"C:\Users\Evyatar\Documents\GitHub\EcoBuy\EcoBuy\Images\QrScans\qr{0}.png", file.Name);
+                    Console.WriteLine("{0} ({1})", file.Name, file.Id);
                     DownloadFile(service, file, saveTo);
                 }
             }
