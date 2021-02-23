@@ -18,7 +18,7 @@ namespace EcoBuy.ViewModels
 
         private void Test()
         {
-            CategoriesCount = new CategoiesCount() { Electricity = 10, Fashion = 5, Food = 5, Health = 20 };
+            CategoriesCount = new CategoiesCount() { Electricity = 30, Fashion = 5, Food = 5, Health = 20 };
         }
     }
 }

@@ -22,13 +22,14 @@ namespace EcoBuy
     /// </summary>
     public partial class MainWindow : Window
     {
-        private GoogleDriveApi downloadQr;
+        //private GoogleDriveApi downloadQr;
 
         public MainWindow()
         {
             InitializeComponent();
-            downloadQr = new GoogleDriveApi();
-            downloadQr.Connect();
+
+            //downloadQr = new GoogleDriveApi();
+            //downloadQr.Connect();
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
