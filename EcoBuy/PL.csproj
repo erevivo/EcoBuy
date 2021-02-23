@@ -139,7 +139,7 @@
     <Compile Include="UserControls\LastPurchaseUC.xaml.cs">
       <DependentUpon>LastPurchaseUC.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\MainUI.xaml.cs">
+    <Compile Include="UserControls\Deprecated\MainUI.xaml.cs">
       <DependentUpon>MainUI.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\MenuUC.xaml.cs">
@@ -158,7 +158,7 @@
     <Compile Include="UserControls\SearchEngineUC.xaml.cs">
       <DependentUpon>SearchEngineUC.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\SearchResultUC.xaml.cs">
+    <Compile Include="UserControls\Deprecated\SearchResultUC.xaml.cs">
       <DependentUpon>SearchResultUC.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\ShopRecoUC.xaml.cs">
@@ -218,7 +218,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UserControls\MainUI.xaml">
+    <Page Include="UserControls\Deprecated\MainUI.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -242,7 +242,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UserControls\SearchResultUC.xaml">
+    <Page Include="UserControls\Deprecated\SearchResultUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
