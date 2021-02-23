@@ -1,4 +1,5 @@
-﻿using EcoBuy.ViewModels;
+﻿using BE;
+using PL.ConnectToGoogleDrive;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,11 +22,14 @@ namespace EcoBuy
     /// </summary>
     public partial class MainWindow : Window
     {
+        private GoogleDriveApi downloadQr;
+
         public MainWindow()
         {
             InitializeComponent();
+            downloadQr = new GoogleDriveApi();
+            downloadQr.Connect();
         }
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
