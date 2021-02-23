@@ -38,8 +38,6 @@ namespace EcoBuy.UserControls
             set => SetValue(PieChartUC.CategoiesCountProperty, value);
         }
 
-        //public CategoiesCount CategoiesCount = new CategoiesCount();
-
         public PieChartUC()
         {
             InitializeComponent();
@@ -47,16 +45,6 @@ namespace EcoBuy.UserControls
             CategoiesCount = new CategoiesCount();
 
             PointLabel = chartPoint => string.Format("{0} ({1:P})", chartPoint.Y, chartPoint.Participation);
-
-            Task.Delay(0).ContinueWith(t =>
-            {
-                Dispatcher.Invoke(() =>
-                {
-                    //this.CategoiesCount = new CategoiesCount() { Electricity = 10, Fashion = 5, Food = 5, Health = 20 };
-                    CreatePieChartData(new CategoiesCount() { Electricity = 10, Fashion = 5, Food = 5, Health = 20 });
-                });
-                
-            });
         }
 
         public Func<ChartPoint, string> PointLabel { get; set; }
