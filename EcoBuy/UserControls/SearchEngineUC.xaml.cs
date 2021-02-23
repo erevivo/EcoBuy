@@ -1,4 +1,5 @@
 ﻿using EcoBuy.ViewModels;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace EcoBuy.UserControls
@@ -11,7 +12,8 @@ namespace EcoBuy.UserControls
         public SearchEngineUC()
         {
             InitializeComponent();
-            this.DataContext = new SearchEngineUCVM();
+
+            //this.DataContext = new SearchEngineUCVM();
         }
     }
 }
