@@ -29,6 +29,7 @@ namespace EcoBuy.ViewModels
             _Stores.Add(new Stores(1, 133, "Osher-Ad", ProductsCategory.Food).Name + "#" + new Stores(1, 133, "Osher-Ad", ProductsCategory.Food).StoreId);
             _Stores.Add(new Stores(1, 69, "Maayan-2000", ProductsCategory.Food).Name + "#" + new Stores(1, 69, "Maayan-2000", ProductsCategory.Food).StoreId);
             _Stores.Add(new Stores(1, 106, "Rami-Levi", ProductsCategory.Food).Name + "#" + new Stores(1, 106, "Rami-Levi", ProductsCategory.Food).StoreId);
+            _Stores.Add(new Stores(1, 201, "Mahsani-lahav", ProductsCategory.Food).Name + "#" + new Stores(1, 201, "Mahsani-lahav", ProductsCategory.Food).StoreId);
 
 
         }
