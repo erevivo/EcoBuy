@@ -97,28 +97,18 @@
                                      Grid.Row="0" Grid.Column="0"
                                      CategoiesCount="{Binding DataContext.PieChartVM.CategoriesCount, ElementName=MyMainWindow}"/>
 
-                <UserControls:LastPurchaseUI Height="auto" Width="auto" Margin="10,0,0,0"
+            <UserControls:LastPurchaseUI Height="auto" Width="auto" Margin="10,0,0,0"
                                          VerticalAlignment="Stretch"
                                          Grid.Row="1" Grid.Column="2" />
 
-                <UserControls:ShopRecoUI Height="auto" Width="auto" Margin="0" 
+            <UserControls:ShopRecoUI Height="auto" Width="auto" Margin="0" 
                                      HorizontalAlignment="Center" VerticalAlignment="Stretch"
                                      Grid.Row="1" Grid.Column="1" />
 
-                <UserControls:AveragePurchaseUC Height="auto" Width="auto" Margin="0"
+            <UserControls:AveragePurchaseUC Height="auto" Width="auto" Margin="0"
                                             VerticalAlignment="Stretch"
                                             Grid.Row="1" Grid.Column="0" />
 
-            <UserControls:AddItemUC Visibility="Hidden" Grid.ColumnSpan="3" Margin="-2,-30,0,8" Grid.RowSpan="2" RenderTransformOrigin="0.5,0.5" >
-                <UserControls:AddItemUC.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform AngleY="-0.062"/>
-                        <RotateTransform/>
-                        <TranslateTransform Y="-0.999"/>
-                    </TransformGroup>
-                </UserControls:AddItemUC.RenderTransform>
-            </UserControls:AddItemUC>
         </Grid>
 
         <!-- Footer -->
