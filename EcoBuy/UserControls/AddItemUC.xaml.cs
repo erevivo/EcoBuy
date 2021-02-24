@@ -1,5 +1,4 @@
-﻿using EcoBuy.ViewModels;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,7 +25,6 @@ namespace EcoBuy.UserControls
         public AddItemUC()
         {
             InitializeComponent();
-            this.DataContext = new AddItemUCVM();
         }
         private void IcecreamDropZone_DragOver(object sender, DragEventArgs e)
         {
