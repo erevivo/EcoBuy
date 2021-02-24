@@ -25,6 +25,8 @@ namespace EcoBuy.UserControls
         public AddItemUC()
         {
             InitializeComponent();
+            var d = new AddItemUCVM();
+            this.DataContext = new AddItemUCVM();
         }
         private void IcecreamDropZone_DragOver(object sender, DragEventArgs e)
         {
