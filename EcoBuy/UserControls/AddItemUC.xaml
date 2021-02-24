@@ -5,28 +5,19 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:EcoBuy.UserControls"
-             xmlns:System="clr-namespace:System;assembly=mscorlib"
              mc:Ignorable="d"
              d:DesignHeight="864"
              d:DesignWidth="1920"
              Background="Transparent">
-    <UserControl.Resources>
-        <ObjectDataProvider x:Key="dataFromEnum" MethodName="GetValues"
-                            ObjectType="{x:Type System:Enum}">
-            <ObjectDataProvider.MethodParameters>
-               
-            </ObjectDataProvider.MethodParameters>
-        </ObjectDataProvider>
-    </UserControl.Resources>
     <Grid>
         <Label Content="הוסף מוצר חדש"
                FontSize="90"
-               Width="628"
+               Width="750"
                Height="150"
                FlowDirection="RightToLeft"
                VerticalAlignment="Top"
                HorizontalAlignment="Center"
-               Margin="638,59,654,0" />
+               Margin="516,59,654,0" />
         <local:UserControlBG Margin="207,247,204,112"
                              Loaded="UserControlBG_Loaded" />
         <Grid>
@@ -34,39 +25,47 @@
               HorizontalAlignment="Right"
               FlowDirection="RightToLeft"
               Width="928">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="*" />
-                </Grid.RowDefinitions>
-                <StackPanel Width="900">
-                    <TextBox
-                        Text="{Binding ProductId, UpdateSourceTrigger=PropertyChanged}"
-                         Style="{StaticResource MaterialDesignFilledTextBox}"
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <StackPanel Width="900">
+                <TextBox Style="{StaticResource MaterialDesignFilledTextBox}"
                          FontSize="26"
                          VerticalAlignment="Top"
                          AcceptsReturn="False"
                          TextWrapping="NoWrap"
-                         materialDesign:HintAssist.Hint="מק&quot;ט"/>
-                    <TextBox
-                         Text="{Binding ProductName, UpdateSourceTrigger=PropertyChanged}"
-                         Style="{StaticResource MaterialDesignFilledTextBox}"
+                         materialDesign:HintAssist.Hint="מק&quot;ט"
+                         IsEnabled="{Binding ElementName=MaterialDesignFilledTextBoxEnabledComboBox}" />
+                <TextBox Style="{StaticResource MaterialDesignFilledTextBox}"
                          FontSize="26"
                          VerticalAlignment="Top"
                          AcceptsReturn="False"
                          TextWrapping="NoWrap"
-                         materialDesign:HintAssist.Hint="שם המוצר"/>
-                    <ComboBox Background="#F3F3F3" materialDesign:HintAssist.Hint="  חנות"
-                        FontSize="26" Height="78" ItemsSource="{Binding _Stores}"/>
-                    <ComboBox Background="#F3F3F3"  FontSize="26" Height="78" materialDesign:HintAssist.Hint="  קטגוריה">
-                    </ComboBox>
-                </StackPanel>
-            </Grid>
-            <TextBlock AllowDrop="True"
+                         materialDesign:HintAssist.Hint="שם המוצר"
+                         IsEnabled="{Binding ElementName=MaterialDesignFilledTextBoxEnabledComboBox}" />
+                <TextBox Style="{StaticResource MaterialDesignFilledTextBox}"
+                         FontSize="26"
+                         VerticalAlignment="Top"
+                         AcceptsReturn="False"
+                         TextWrapping="NoWrap"
+                         materialDesign:HintAssist.Hint="חנות"
+                         IsEnabled="{Binding ElementName=MaterialDesignFilledTextBoxEnabledComboBox}" />
+                <TextBox Style="{StaticResource MaterialDesignFilledTextBox}"
+                         FontSize="26"
+                         VerticalAlignment="Top"
+                         AcceptsReturn="False"
+                         TextWrapping="NoWrap"
+                         materialDesign:HintAssist.Hint="מחיר"
+                         IsEnabled="{Binding ElementName=MaterialDesignFilledTextBoxEnabledComboBox}" />
+            </StackPanel>
+        </Grid>
+        <TextBlock AllowDrop="True"
                    Background="LightGray"
                    x:Name="StoreDropZone"
                    TextWrapping="Wrap"
@@ -112,7 +111,7 @@
                     Content="שלח"
                     FontSize="22"
                     Margin="735,647,1049,163"
-                    Height="Auto"/>
+                    Height="Auto" />
             <Button Style="{StaticResource MaterialDesignOutlinedButton}"
                     ToolTip="MaterialDesignOutlinedButton"
                     Content="נקה"
