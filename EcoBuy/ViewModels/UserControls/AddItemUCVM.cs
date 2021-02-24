@@ -24,7 +24,7 @@ namespace EcoBuy.ViewModels
         {
 
             _Stores = new ObservableCollection<string>();
-            _Stores.Add(new Stores(1, 200, "Shfersal", ProductsCategory.Food).Name + "#" + new Stores(1, 200, "sshfersal", ProductsCategory.Food).StoreId);
+            _Stores.Add(new Stores(1, 200, "Shfersal", ProductsCategory.Food).Name + "#" + new Stores(1, 200, "shfersal", ProductsCategory.Food).StoreId);
             _Stores.Add(new Stores(1, 166, "YenotBitan", ProductsCategory.Food).Name + "#" + new Stores(1, 166, "YenotBitan", ProductsCategory.Food).StoreId);
             _Stores.Add(new Stores(1, 133, "Osher-Ad", ProductsCategory.Food).Name + "#" + new Stores(1, 133, "Osher-Ad", ProductsCategory.Food).StoreId);
             _Stores.Add(new Stores(1, 69, "Maayan-2000", ProductsCategory.Food).Name + "#" + new Stores(1, 69, "Maayan-2000", ProductsCategory.Food).StoreId);
