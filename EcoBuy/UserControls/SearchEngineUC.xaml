@@ -79,7 +79,6 @@
                     <DataGridTextColumn Header="מחיר" Binding="{Binding Price}" Width="100"
                                     ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
                                     EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" />
-                    
                 </DataGrid.Columns>
                 
             </DataGrid>
