@@ -4,6 +4,8 @@
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:vm="clr-namespace:EcoBuy.ViewModels"
              StartupUri="MainWindow.xaml">
+    <!--StartupUri="MainWindow.xaml">-->
+    <!--StartupUri="UserControls/AddItemUC.xaml">-->
     <Application.Resources>
         <ResourceDictionary>
             <vm:MainWindowVM x:Key="MainWindowVM" />
