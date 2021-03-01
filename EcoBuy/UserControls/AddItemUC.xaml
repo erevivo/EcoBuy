@@ -50,7 +50,7 @@
                          TextWrapping="NoWrap"
                          materialDesign:HintAssist.Hint="מק&quot;ט"
                          IsEnabled="{Binding ElementName=MaterialDesignFilledTextBoxEnabledComboBox}" />
-                    <TextBox Style="{StaticResource MaterialDesignFilledTextBox}"
+                <TextBox Style="{StaticResource MaterialDesignFilledTextBox}"
                          FontSize="26"
                          VerticalAlignment="Top"
                          AcceptsReturn="False"
