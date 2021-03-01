@@ -57,7 +57,20 @@
                          TextWrapping="NoWrap"
                          materialDesign:HintAssist.Hint="שם המוצר"
                          IsEnabled="{Binding ElementName=MaterialDesignFilledTextBoxEnabledComboBox}" />
-                </StackPanel>
+                    <ComboBox Text="{Binding _Stores}"
+                         FontSize="26"
+                         VerticalAlignment="Top"
+                          Height="75"
+                         materialDesign:HintAssist.Hint="  חנות" Background="#f3f3f3" />
+                              
+                <TextBox Style="{StaticResource MaterialDesignFilledTextBox}"
+                         FontSize="26"
+                         VerticalAlignment="Top"
+                         AcceptsReturn="False"
+                         TextWrapping="NoWrap"
+                         materialDesign:HintAssist.Hint="מחיר"
+                         IsEnabled="{Binding ElementName=MaterialDesignFilledTextBoxEnabledComboBox}" />
+            </StackPanel>
         </Grid>
             <TextBlock AllowDrop="True"
                    Background="LightGray"
