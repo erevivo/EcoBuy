@@ -56,7 +56,7 @@ namespace EcoBuy.UserControls
             DependencyProperty.Register("EnumTypeArray", typeof(Array), typeof(BE.ProductsCategory), new PropertyMetadata(new string[0]));
 
         public static readonly DependencyProperty SelectedItemProperty =
-            DependencyProperty.Register("SelectedItem", typeof(object), typeof(BE.ProductsCategory), new PropertyMetadata(null));
+            DependencyProperty.Register("SelectedItem", typeof(object), typeof(BE.ProductsCategory), new PropertyMetadata(0));
 
     }
 }
