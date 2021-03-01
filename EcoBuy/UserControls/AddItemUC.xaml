@@ -57,9 +57,6 @@
                          TextWrapping="NoWrap"
                          materialDesign:HintAssist.Hint="שם המוצר"
                          IsEnabled="{Binding ElementName=MaterialDesignFilledTextBoxEnabledComboBox}" />
-                    <ComboBox Background="#F3F3F3" materialDesign:HintAssist.Hint="  חנות"
-                        FontSize="26" Height="78" ItemsSource="{Binding _Stores}"/>
-                    <ComboBox x:Name="CatChkbx"  Background="#F3F3F3" FontSize="26" Height="78" ItemsSource="{Binding EnumTypeArray}" SelectedItem="{Binding SelectedItem}"></ComboBox>
                 </StackPanel>
         </Grid>
             <TextBlock AllowDrop="True"
