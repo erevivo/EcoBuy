@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using EcoBuy.BE;
 using EcoBuy.ViewModels;
 
 namespace EcoBuy.UserControls
@@ -39,9 +40,23 @@ namespace EcoBuy.UserControls
             string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
             ((AddItemUC)this.DataContext).temp2 = files[0];
         }
-        private void UserControlBG_Loaded(object sender, RoutedEventArgs e)
+        public Array EnumTypeArray
         {
-
+            get { return (Array)GetValue(EnumTypeArrayProperty); }
+            set { SetValue(EnumTypeArrayProperty, value); }
         }
+
+        public object SelectedItem
+        {
+            get { return (object)GetValue(SelectedItemProperty); }
+            set { SetValue(SelectedItemProperty, value); }
+        }
+
+        public static readonly DependencyProperty EnumTypeArrayProperty =
+            DependencyProperty.Register("EnumTypeArray", typeof(Array), typeof(BE.ProductsCategory), new PropertyMetadata(new string[0]));
+
+        public static readonly DependencyProperty SelectedItemProperty =
+            DependencyProperty.Register("SelectedItem", typeof(object), typeof(BE.ProductsCategory), new PropertyMetadata(null));
+
     }
 }

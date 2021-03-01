@@ -18,11 +18,12 @@ namespace EcoBuy.ViewModels
         public string ImageUrl { get; set; }
         public string Store { get; set; }
         public ProductsCategory Category { get; set; }
+        public Dictionary<string, ProductsCategory> CategoryDict{ get; set;}
         public ObservableCollection<string> _Stores { get; set; }
 
         public AddItemUCVM()
         {
-
+            Category = new ProductsCategory();
             _Stores = new ObservableCollection<string>();
             _Stores.Add(new Stores(1, 200, "Shfersal", ProductsCategory.Food).Name + "#" + new Stores(1, 200, "sshfersal", ProductsCategory.Food).StoreId);
             _Stores.Add(new Stores(1, 166, "YenotBitan", ProductsCategory.Food).Name + "#" + new Stores(1, 166, "YenotBitan", ProductsCategory.Food).StoreId);
