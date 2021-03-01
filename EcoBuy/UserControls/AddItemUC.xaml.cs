@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using EcoBuy.BE;
 using EcoBuy.ViewModels;
 
 namespace EcoBuy.UserControls
@@ -26,7 +27,8 @@ namespace EcoBuy.UserControls
         public AddItemUC()
         {
             InitializeComponent();
-            this.DataContext = new AddItemUCVM();
+            this.DataContext = new AddItemUCVM(this);
+            
         }
         private void IcecreamDropZone_DragOver(object sender, DragEventArgs e)
         {

@@ -1,5 +1,6 @@
 ﻿using EcoBuy.BE;
 using EcoBuy.Models;
+using EcoBuy.UserControls;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -19,10 +20,12 @@ namespace EcoBuy.ViewModels
         public string Store { get; set; }
         public ProductsCategory Category { get; set; }
         public ObservableCollection<string> _Stores { get; set; }
+        AddItemUC View;
 
-        public AddItemUCVM()
+        public AddItemUCVM(AddItemUC view)
         {
-
+             View = view;
+             view.CategoryComboBox.ItemsSource = Enum.GetValues(typeof(ProductsCategory)).Cast<ProductsCategory>();
             _Stores = new ObservableCollection<string>();
             _Stores.Add(new Stores(1, 200, "Shfersal", ProductsCategory.Food).Name + "#" + new Stores(1, 200, "sshfersal", ProductsCategory.Food).StoreId);
             _Stores.Add(new Stores(1, 166, "YenotBitan", ProductsCategory.Food).Name + "#" + new Stores(1, 166, "YenotBitan", ProductsCategory.Food).StoreId);

@@ -5,10 +5,22 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:EcoBuy.UserControls"
+             xmlns:System="clr-namespace:System;assembly=mscorlib"
+            xmlns:StyleAlias="clr-namespace:EcoBuy.BE;assembly=BE"
              mc:Ignorable="d"
              d:DesignHeight="864"
              d:DesignWidth="1920"
              Background="Transparent">
+
+    <UserControl.Resources>
+        <ObjectDataProvider x:Key="dataFromEnum" MethodName="GetValues"
+                            ObjectType="{x:Type System:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="StyleAlias:ProductsCategory"/>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+
+    </UserControl.Resources>
     <Grid>
         <Label Content="הוסף מוצר חדש"
                FontSize="90"
@@ -25,17 +37,17 @@
               HorizontalAlignment="Right"
               FlowDirection="RightToLeft"
               Width="928">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="*" />
-            </Grid.RowDefinitions>
-            <StackPanel Width="900">
-                <TextBox Style="{StaticResource MaterialDesignFilledTextBox}"
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <StackPanel Width="900">
+                    <TextBox Style="{StaticResource MaterialDesignFilledTextBox}"
                          FontSize="26"
                          VerticalAlignment="Top"
                          AcceptsReturn="False"
@@ -49,13 +61,13 @@
                          TextWrapping="NoWrap"
                          materialDesign:HintAssist.Hint="שם המוצר"
                          IsEnabled="{Binding ElementName=MaterialDesignFilledTextBoxEnabledComboBox}" />
-                    <ComboBox Background="#F3F3F3" materialDesign:HintAssist.Hint="  חנות"
+                    <ComboBox Background="#F3F3F3" materialDesign:HintAssist.Hint="   חנות"
                         FontSize="26" Height="78" ItemsSource="{Binding _Stores}"/>
-                    <ComboBox Background="#F3F3F3"  FontSize="26" Height="78" materialDesign:HintAssist.Hint="  קטגוריה">
+                    <ComboBox ItemsSource="{Binding Source={StaticResource dataFromEnum}}"  SelectedItem="{Binding Path=CurrentEffectStyle}" x:Name="CategoryComboBox" Background="#F3F3F3"  FontSize="26" Height="78" materialDesign:HintAssist.Hint="   קטגוריה">
                     </ComboBox>
                 </StackPanel>
-        </Grid>
-        <TextBlock AllowDrop="True"
+            </Grid>
+            <TextBlock AllowDrop="True"
                    Background="LightGray"
                    x:Name="StoreDropZone"
                    TextWrapping="Wrap"
@@ -107,7 +119,7 @@
                     Content="נקה"
                     FontSize="22"
                     Margin="1498,647,286,163"
-                    Height="Auto" />
+                    Height="Auto"/>
         </Grid>
     </Grid>
 </UserControl>
