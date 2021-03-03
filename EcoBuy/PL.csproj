@@ -103,6 +103,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Commands\AddImageCommand.cs" />
     <Compile Include="Converters\IntToChartValueConverter.cs" />
     <Compile Include="ConnectToGoogleDrive\GoogleDriveApi.cs" />
     <Compile Include="Converters\RemoveNewlinesConverter.cs" />
@@ -172,6 +173,7 @@
     <Compile Include="ViewModels\Base\ViewModelBase.cs" />
     <Compile Include="ViewModels\MainWindowVM.cs" />
     <Compile Include="ViewModels\UserControls\AddItemUCVM.cs" />
+    <Compile Include="Models\MyImageModel.cs" />
     <Compile Include="ViewModels\UserControls\PieChartUCVM.cs" />
     <Compile Include="ViewModels\UserControls\DesignModels\SearchEngineUCDM.cs" />
     <Compile Include="ViewModels\UserControls\SearchEngineUCVM.cs" />

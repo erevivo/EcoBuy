@@ -4,17 +4,20 @@ using EcoBuy.UserControls;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Data;
 using System.Windows.Input;
-
+using System.Windows.Media.Imaging;
+using EcoBuy.Commands;
 namespace EcoBuy.ViewModels
 {
     public class AddItemUCVM : ViewModelBase
     {
         public int ProductId { get; set; }
+        public AddImageCommand addImage { get; set; }
         public string ProductName { get; set; }
         public string ImageUrl { get; set; }
         public string Store { get; set; }
@@ -23,7 +26,7 @@ namespace EcoBuy.ViewModels
         AddItemUC View;
 
         public AddItemUCVM(AddItemUC view)
-        {
+        { 
              View = view;
              view.CategoryComboBox.ItemsSource = Enum.GetValues(typeof(ProductsCategory)).Cast<ProductsCategory>();
             _Stores = new ObservableCollection<string>();
@@ -33,9 +36,17 @@ namespace EcoBuy.ViewModels
             _Stores.Add(new Stores(1, 69, "Maayan-2000", ProductsCategory.Food).Name + "#" + new Stores(1, 69, "Maayan-2000", ProductsCategory.Food).StoreId);
             _Stores.Add(new Stores(1, 106, "Rami-Levi", ProductsCategory.Food).Name + "#" + new Stores(1, 106, "Rami-Levi", ProductsCategory.Food).StoreId);
             _Stores.Add(new Stores(1, 201, "Mahsani-lahav", ProductsCategory.Food).Name + "#" + new Stores(1, 201, "Mahsani-lahav", ProductsCategory.Food).StoreId);
-
+            addImage = new AddImageCommand(this);
 
         }
+        public void LoadImages()
+        {
+            var d = new DirectoryInfo("assets/images");
+            var images = d.GetFiles();
+            MyImages = images.Select(x => new MyImageModel(x.Name, new BitmapImage(new Uri(x.FullName))));
+        }
+
+        public IEnumerable<MyImageModel> MyImages { get; set; }
     };
 
 
