@@ -50,10 +50,6 @@
                 <DataGrid.Columns>
                     
                     <!-- Image -->
-                    <DataGridTextColumn Binding="{Binding ImageUrl}"
-                                        Header="תמונה" Width="100"
-                                        ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
-                                        EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" />
 
                     <!-- Product ID -->
                     <materialDesign:DataGridTextColumn Header="מק&quot;ט" Width="130" Binding="{Binding ProductId}"
@@ -76,7 +72,8 @@
                                     EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" />
 
                     <!-- Price -->
-                    <DataGridTextColumn Header="מחיר" Binding="{Binding Price}" Width="100"
+                    <DataGridTextColumn Header="מחיר" Binding="{Binding Source={x:Static resx:Price},
+                         StringFormat={}{0}:}" Width="100"
                                     ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
                                     EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" />
                     

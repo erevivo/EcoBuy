@@ -22,14 +22,14 @@ namespace EcoBuy.ViewModels
 
         public SearchEngineUCDM()
         {
-            Populate();
+           // Populate();
         }
 
         private void Populate()
         {
             PurchasedProducts = new ObservableCollection<PurchasedProduct>()
             {
-                new PurchasedProduct(new DateTime(2020, 10, 2), 10, 1, 1, "Milk", null, ProductsCategory.Food),
+                new PurchasedProduct(new DateTime(2020, 10, 2), 10, 1, 1, "פתיתים", "C:\\Users\\Evyatar\\Desktop\\2.jpg", ProductsCategory.Food),
                 new PurchasedProduct(new DateTime(2020, 11, 2), 5, 2, 2, "Bread", null, ProductsCategory.Food),
                 new PurchasedProduct(new DateTime(2020, 12, 2), 20, 3, 3, "T-Shirt", null, ProductsCategory.Fashion),
                 new PurchasedProduct(new DateTime(2020, 12, 2), 7, 4, 4, "Acamol", null, ProductsCategory.Health)
