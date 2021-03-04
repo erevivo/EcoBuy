@@ -6,18 +6,21 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:EcoBuy.UserControls"
              xmlns:vm="clr-namespace:EcoBuy.ViewModels"
+             xmlns:cnv="clr-namespace:EcoBuy.Converters"
              mc:Ignorable="d"
-             d:DesignHeight="410"
+             d:DesignHeight="450"
              d:DesignWidth="1220"
              d:DataContext="{x:Static vm:SearchEngineUCDM.Instance}">
-
+    <UserControl.Resources>
+        <cnv:EnumConverter x:Key="EnumConverter"/>
+    </UserControl.Resources>
     <StackPanel>
 
         <!-- Search Bar & Button -->
         <Grid Margin="0 10 0 0">
 
             <!-- Searhc Bar -->
-            <Border Height="90" Width="900"
+            <Border Height="80" Width="1150"
                     BorderThickness="2" BorderBrush="#e0e6ed"
                     Background="white" CornerRadius="20">
 
@@ -26,26 +29,28 @@
                 </Border.Effect>
 
                 <TextBox Style="{StaticResource MaterialDesignOutlinedTextBox}"
-                        materialDesign:HintAssist.Hint="חפש מוצר" FontSize="26"
+                        materialDesign:HintAssist.Hint="חפש מוצר" FontSize="20"
+                         Width="1100"
+                         Height="70"
                         FlowDirection="RightToLeft" BorderThickness="0"
                         VerticalScrollBarVisibility="Auto"
                         AcceptsReturn="False" TextWrapping="NoWrap" 
-                        Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}"/>
+                        Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" Margin="-14,7,10,-11"/>
             </Border>
 
         </Grid>
 
         <!-- Search Results -->
-        <Border Height="270" Width="1100" Margin="0 20 0 0"
+        <Border Height="310" Margin="60,20,60,0"
                 BorderThickness="2" BorderBrush="#e0e6ed"
                 CornerRadius="20" Background="white" >
 
             <!-- Data Table -->
-            <DataGrid ItemsSource="{Binding PurchasedProducts, UpdateSourceTrigger=PropertyChanged}"
-                      Height="180" Width="1050"
-                      FlowDirection="RightToLeft" BorderThickness="2"
+            <DataGrid GridLinesVisibility="None" FontSize="20" ItemsSource="{Binding PurchasedProducts, UpdateSourceTrigger=PropertyChanged}" Width="1100"
+                      VerticalScrollBarVisibility="Hidden"
+                      FlowDirection="RightToLeft" BorderThickness="0"
                       CanUserAddRows="False" AutoGenerateColumns="False"
-                      HeadersVisibility="All">
+                      HeadersVisibility="All" Margin="-1,16,-3,10">
 
                 <DataGrid.Columns>
 
@@ -64,34 +69,31 @@
                                     EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}" />
 
                     <!-- Product Name -->
-                    <DataGridTextColumn Header="שם המוצר" Binding="{Binding ProductName}" Width="226"
+                    <DataGridTextColumn Header="שם המוצר" Binding="{Binding ProductName}" Width="300"
                                     ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
                                     EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" />
 
-                    <!-- Category -->
-                    <DataGridTextColumn Header="קטגוריה" Width="226" Binding="{Binding Category}"
+                    <!-- Category  -->
+                    <DataGridTextColumn Header="קטגוריה" Width="226" Binding="{Binding Category,  Converter={StaticResource EnumConverter}}"
                                     ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
                                     EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" />
 
                     <!-- Purchase Date -->
-                    <DataGridTextColumn Header="נקנה בתאריך" Binding="{Binding PurchaseDate, StringFormat=\{0:dd.MM.yy HH:mm:ss\}}" Width="200"
+                    <DataGridTextColumn Header="נקנה בתאריך" Binding="{Binding PurchaseDate, StringFormat=\{0:dd.MM.yy\}}" Width="200"
                                     ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
                                     EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" />
 
                     <!-- Price -->
-                    <DataGridTextColumn Header="מחיר" Binding="{Binding Price}" Width="100"
+                    <DataGridTextColumn Header="מחיר" Binding="{Binding Price, StringFormat= '\{0\} ₪'}" Width="100"
                                     ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
                                     EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" />
-
                 </DataGrid.Columns>
 
             </DataGrid>
-
             <Border.Effect>
                 <DropShadowEffect BlurRadius="10" ShadowDepth="6" Color="#adadad" />
             </Border.Effect>
-
         </Border>
-
     </StackPanel>
+    
 </UserControl>
