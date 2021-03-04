@@ -6,13 +6,15 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:EcoBuy.UserControls"
              xmlns:System="clr-namespace:System;assembly=mscorlib"
-            xmlns:StyleAlias="clr-namespace:EcoBuy.BE;assembly=BE"
+             xmlns:cnv="clr-namespace:EcoBuy.Converters"
+             xmlns:StyleAlias="clr-namespace:EcoBuy.BE;assembly=BE"
              mc:Ignorable="d"
              d:DesignHeight="864"
              d:DesignWidth="1920"
              Background="Transparent">
 
     <UserControl.Resources>
+        <cnv:EnumConverter x:Key="EnumConverter"/>
         <ObjectDataProvider x:Key="dataFromEnum" MethodName="GetValues"
                             ObjectType="{x:Type System:Enum}">
             <ObjectDataProvider.MethodParameters>
@@ -62,7 +64,17 @@
                          IsEnabled="{Binding ElementName=MaterialDesignFilledTextBoxEnabledComboBox}" />
                     <ComboBox Background="#F3F3F3" materialDesign:HintAssist.Hint="   חנות"
                         FontSize="26" Height="78" ItemsSource="{Binding _Stores}"/>
-                    <ComboBox ItemsSource="{Binding Source={StaticResource dataFromEnum}}"  SelectedItem="{Binding Path=CurrentEffectStyle}" x:Name="CategoryComboBox" Background="#F3F3F3"  FontSize="26" Height="78" materialDesign:HintAssist.Hint="   קטגוריה">
+                    
+                    <ComboBox ItemsSource="{Binding Source={StaticResource dataFromEnum}}"
+                              SelectedItem="{Binding SelectedValue, Converter={StaticResource EnumConverter}}"
+                              x:Name="CategoryComboBox" Background="#F3F3F3"  
+                              FontSize="26" Height="78" materialDesign:HintAssist.Hint="   קטגוריה">
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Converter = {StaticResource EnumConverter}}"></TextBlock>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                        <!--SelectedItem="{Binding Path=CurrentEffectStyle, Converter={StaticResource EnumConverter}}"--> 
                     </ComboBox>
                 </StackPanel>
             </Grid>
