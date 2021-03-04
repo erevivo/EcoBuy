@@ -1,5 +1,6 @@
 ﻿using EcoBuy.BE;
 using System;
+using System.Collections.Generic;
 
 namespace EcoBuy.Models
 {
@@ -16,6 +17,11 @@ namespace EcoBuy.Models
         {
             PurchaseDate = purchaseDate;
             Price = price;
+        }
+
+        internal static IEnumerable<object> GroupBy(Func<object, object> p)
+        {
+            throw new NotImplementedException();
         }
     }
 }

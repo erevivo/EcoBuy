@@ -30,17 +30,6 @@ namespace EcoBuy.UserControls
             this.DataContext = new AddItemUCVM(this);
             
         }
-        private void IcecreamDropZone_DragOver(object sender, DragEventArgs e)
-        {
-            string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
-            ((AddItemUC)this.DataContext).temp1 = files[0];
-        }
-
-        private void StoreDropZone_DragOver(object sender, DragEventArgs e)
-        {
-            string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
-            ((AddItemUC)this.DataContext).temp2 = files[0];
-        }
         private void UserControlBG_Loaded(object sender, RoutedEventArgs e)
         {
 

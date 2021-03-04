@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+            xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:local="clr-namespace:EcoBuy.UserControls"
              xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
              xmlns:cnv="clr-namespace:EcoBuy.Converters"
@@ -65,16 +66,23 @@
             </lvc:PieChart>
 
             <!-- Dates Range List -->
-            <ListBox Style="{StaticResource MaterialDesignChoiceChipListBox}"
-                     x:Name="RadioButtonGroupChoiceChip"
-                     FlowDirection="RightToLeft" 
-                     Grid.Column="2" Margin="0 120 15 0">
+            <Grid Margin="15.2,110,15.4,155.4" Grid.Column="2">
+                <StackPanel>
+                    <StackPanel.Resources>
+                        <Style TargetType="{x:Type Button}" BasedOn="{StaticResource MaterialDesignRaisedDarkButton}">
+                            <Setter Property="Margin" Value="0,10,0,0"/>
+                        </Style>
+                    </StackPanel.Resources>
+                    <Button
+    Style="{StaticResource MaterialDesignRaisedDarkButton}"
+    materialDesign:ButtonAssist.CornerRadius="25"
+    ToolTip="MaterialDesignRaisedDarkButton with Round Corners">
+                    </Button>
+                    <Button Content="השבוע" />
+                    <Button Content="החודש" />
+                </StackPanel>
 
-                <ListBoxItem Content="היום" />
-                <ListBoxItem Content="השבוע" />
-                <ListBoxItem Content="החודש" />
-
-            </ListBox>
+            </Grid>
 
             <TextBlock FontSize="18" Height="27" Foreground="#320b86"
                    VerticalAlignment="Bottom" FlowDirection="RightToLeft"
