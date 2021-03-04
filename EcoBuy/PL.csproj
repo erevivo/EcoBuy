@@ -110,7 +110,7 @@
     <Compile Include="Converters\RemoveNewlinesConverter.cs" />
     <Compile Include="Converters\ValueConverterBase.cs" />
     <Compile Include="Expressions\ExpressionHelpers.cs" />
-    <Compile Include="Models\CategoiesCount.cs" />
+    <Compile Include="Models\CategoriesCount.cs" />
     <Compile Include="Models\EcoDB.Designer.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\PurchasedProduct.cs" />
