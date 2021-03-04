@@ -22,9 +22,9 @@ namespace EcoBuy.UserControls
 
         public static readonly DependencyProperty CategoiesCountProperty = DependencyProperty.Register(
                                                                     "CategoiesCount",
-                                                                    typeof(CategoiesCount),
+                                                                    typeof(CategoriesCount),
                                                                     typeof(PieChartUC),
-                                                                    new PropertyMetadata(default(CategoiesCount)));
+                                                                    new PropertyMetadata(default(CategoriesCount)));
 
         public PieChartDataModel CategoryPieChartModel
         {
@@ -32,9 +32,9 @@ namespace EcoBuy.UserControls
             set => SetValue(PieChartUC.CategoryPieChartModelProperty, value);
         }
 
-        public CategoiesCount CategoiesCount
+        public CategoriesCount CategoiesCount
         {
-            get => (CategoiesCount)GetValue(PieChartUC.CategoiesCountProperty);
+            get => (CategoriesCount)GetValue(PieChartUC.CategoiesCountProperty);
             set => SetValue(PieChartUC.CategoiesCountProperty, value);
         }
 
@@ -42,14 +42,14 @@ namespace EcoBuy.UserControls
         {
             InitializeComponent();
 
-            CategoiesCount = new CategoiesCount();
+            CategoiesCount = new CategoriesCount();
 
             PointLabel = chartPoint => string.Format("{0} ({1:P})", chartPoint.Y, chartPoint.Participation);
         }
 
         public Func<ChartPoint, string> PointLabel { get; set; }
 
-        private void CreatePieChartData(CategoiesCount categoriesCount)
+        private void CreatePieChartData(CategoriesCount categoriesCount)
         {
             this.CategoryPieChartModel = new PieChartDataModel(categoriesCount);
         }

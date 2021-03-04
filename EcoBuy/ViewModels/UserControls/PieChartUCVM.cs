@@ -9,7 +9,7 @@ namespace EcoBuy.ViewModels
 {
     public class PieChartUCVM : ViewModelBase
     {
-        public CategoiesCount CategoriesCount { get; set; }
+        public CategoriesCount CategoriesCount { get; set; }
 
         public PieChartUCVM()
         {
@@ -18,7 +18,7 @@ namespace EcoBuy.ViewModels
 
         private void Test()
         {
-            CategoriesCount = new CategoiesCount() { Electricity = 30, Fashion = 5, Food = 5, Health = 20 };
+            CategoriesCount = new CategoriesCount() { Electricity = 30, Fashion = 5, Food = 5, Health = 20 };
         }
     }
 }

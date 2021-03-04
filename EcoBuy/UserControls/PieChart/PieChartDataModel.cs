@@ -5,7 +5,7 @@ namespace EcoBuy.UserControls
 {
     public class PieChartDataModel
     {
-        public PieChartDataModel(CategoiesCount dataModel)
+        public PieChartDataModel(CategoriesCount dataModel)
         {
             this.ElectricityDataSeries = new ChartValues<double>() { dataModel.Electricity };
             this.FashionDataSeries = new ChartValues<double>() { dataModel.Fashion };

@@ -1,7 +1,7 @@
 ﻿
 namespace EcoBuy.Models
 {
-    public class CategoiesCount
+    public class CategoriesCount
     {
         public int Electricity { get; set; }
         public int Fashion { get; set; }
