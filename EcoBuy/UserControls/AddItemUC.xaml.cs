@@ -22,8 +22,6 @@ namespace EcoBuy.UserControls
     /// </summary>
     public partial class AddItemUC : UserControl
     {
-        string temp1="";
-        string temp2 = "";
         public AddItemUC()
         {
             InitializeComponent();

@@ -9,20 +9,24 @@ using System.Windows.Input;
 namespace EcoBuy.Commands.PieChart
 {
 
-    public class Today : ICommand
+    public class TodayCommand : ICommand
     {
         #region Fileds
         public event EventHandler CanExecuteChanged;
         public PieChartUCVM CurrVM { get; set; }
         #endregion
+        public TodayCommand(PieChartUCVM VM)
+        {
+            CurrVM = VM;
+        }
         public bool CanExecute(object parameter)
         {
-            throw new NotImplementedException();
+            return true;
         }
 
         public void Execute(object parameter)
         {
-            throw new NotImplementedException();
+          
         }
     }
 }
