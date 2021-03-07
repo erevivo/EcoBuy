@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace EcoBuy.UserControls
 {
     /// <summary>
-    /// Interaction logic for AllPurchases.xaml
+    /// Interaction logic for HistoryPurchases.xaml
     /// </summary>
-    public partial class AllPurchases : UserControl
+    public partial class HistoryPurchases : UserControl
     {
-        public AllPurchases()
+        public HistoryPurchases()
         {
             InitializeComponent();
         }
