@@ -6,7 +6,7 @@
              mc:Ignorable="d"
              d:DesignHeight="54"
              d:DesignWidth="1920"
-             Background="White">
+             Background="Transparent">
     <UserControl.Resources>
         <XmlDataProvider x:Key="DataRss"
                          XPath="//item"
@@ -43,6 +43,7 @@
                          BorderThickness="0"
                          Text="{Binding XPath=title}"
                          TextWrapping="NoWrap"
+                         Background="Transparent"
                          IsReadOnly="True"></TextBox>
             </Grid>
         </DataTemplate>
@@ -57,7 +58,7 @@
                  FontSize="23"
                  ScrollViewer.HorizontalScrollBarVisibility="Disabled"
                  ScrollViewer.VerticalScrollBarVisibility="Disabled"
-                 Margin="3,-5,38,0"
+                 Margin="3,0,0,0"
                  Name="feedList"
                  ItemsSource="{Binding Source={StaticResource DataRss}}"
                  ItemTemplate="{StaticResource MessagesDataTemplate}"

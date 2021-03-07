@@ -24,7 +24,7 @@
         WindowStyle="None"
         Background="#f5f5f7"
         DataContext="{StaticResource MainWindowVM}">
-    
+
     <Window.Resources>
         <Style TargetType="{x:Type Control}"
                x:Key="baseStyle">
@@ -47,7 +47,7 @@
                BasedOn="{StaticResource baseStyle}"></Style>
         <!-- ComboBox, RadioButton, CheckBox, etc... -->
     </Window.Resources>
-    
+
     <Grid ShowGridLines="False">
         <Grid.RowDefinitions>
             <RowDefinition Height="1.5*" />
@@ -68,7 +68,7 @@
         <UserControls:HeaderUC Height="161" Width="1914" Visibility="Visible"
                                HorizontalAlignment="Left" VerticalAlignment="Top"
                                Grid.ColumnSpan="3" />
-        
+
         <!-- Close Button -->
         <Button Style="{StaticResource MaterialDesignFlatDarkBgButton}"
                 Width="64" Margin="18,10,0,0" Content="X" ToolTip="יציאה"
@@ -112,9 +112,8 @@
         </Grid>
 
         <!-- Footer -->
-        <UserControls:Footer Height="54" Width="1920" Margin="10,0,0,0" 
+        <UserControls:Footer Height="54" Width="1918" Margin="2,0,0,0" 
                              HorizontalAlignment="Center" VerticalAlignment="Center"
-                             Grid.Row="3" Visibility="Visible"
-                             Grid.ColumnSpan="3" Grid.RowSpan="2" />
+                             Grid.Row="2" Visibility="Visible" />
     </Grid>
 </Window>
