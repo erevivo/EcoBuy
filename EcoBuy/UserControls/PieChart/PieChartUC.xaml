@@ -37,7 +37,7 @@
             <!-- Pie Chart -->
             <lvc:PieChart DataClick="Chart_OnDataClick" DataTooltip="{x:Null}"
                           Hoverable="False" LegendLocation="Bottom"
-                          Grid.Column="1" Margin="0 50 0 10">
+                          Grid.Column="1" Margin="0 50 0 10" FlowDirection="RightToLeft">
 
                 <lvc:PieChart.Series>
 
