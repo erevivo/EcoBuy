@@ -6,6 +6,7 @@ using System;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 
 namespace EcoBuy.UserControls
 {
@@ -20,29 +21,65 @@ namespace EcoBuy.UserControls
                                                                     typeof(PieChartUC),
                                                                     new PropertyMetadata(default(PieChartDataModel)));
 
-        public static readonly DependencyProperty CategoiesCountProperty = DependencyProperty.Register(
-                                                                    "CategoiesCount",
+        public static readonly DependencyProperty CategoriesCountProperty = DependencyProperty.Register(
+                                                                    "CategoriesCount",
                                                                     typeof(CategoriesCount),
                                                                     typeof(PieChartUC),
                                                                     new PropertyMetadata(default(CategoriesCount)));
 
+        public static readonly DependencyProperty TodayCommandProperty = DependencyProperty.Register(
+                                                                    "TodayCommand",
+                                                                    typeof(ICommand),
+                                                                    typeof(PieChartUC),
+                                                                    new PropertyMetadata(default(ICommand)));
+
+        public static readonly DependencyProperty WeekCommandProperty = DependencyProperty.Register(
+                                                                    "WeekCommand",
+                                                                    typeof(ICommand),
+                                                                    typeof(PieChartUC),
+                                                                    new PropertyMetadata(default(ICommand)));
+
+        public static readonly DependencyProperty MonthCommandProperty = DependencyProperty.Register(
+                                                                    "MonthCommand",
+                                                                    typeof(ICommand),
+                                                                    typeof(PieChartUC),
+                                                                    new PropertyMetadata(default(ICommand)));
+
         public PieChartDataModel CategoryPieChartModel
         {
-            get => (PieChartDataModel)GetValue(PieChartUC.CategoryPieChartModelProperty);
-            set => SetValue(PieChartUC.CategoryPieChartModelProperty, value);
+            get => (PieChartDataModel)GetValue(CategoryPieChartModelProperty);
+            set => SetValue(CategoryPieChartModelProperty, value);
         }
 
-        public CategoriesCount CategoiesCount
+        public CategoriesCount CategoriesCount
         {
-            get => (CategoriesCount)GetValue(PieChartUC.CategoiesCountProperty);
-            set => SetValue(PieChartUC.CategoiesCountProperty, value);
+            get => (CategoriesCount)GetValue(CategoriesCountProperty);
+            set => SetValue(CategoriesCountProperty, value);
+        }
+
+        public ICommand TodayCommand
+        {
+            get => (ICommand)GetValue(TodayCommandProperty);
+            set => SetValue(TodayCommandProperty, value);
+        }
+
+        public ICommand WeekCommand
+        {
+            get => (ICommand)GetValue(WeekCommandProperty);
+            set => SetValue(WeekCommandProperty, value);
+        }
+
+        public ICommand MonthCommand
+        {
+            get => (ICommand)GetValue(MonthCommandProperty);
+            set => SetValue(MonthCommandProperty, value);
         }
 
         public PieChartUC()
         {
             InitializeComponent();
 
-            CategoiesCount = new CategoriesCount();
+            CategoriesCount = new CategoriesCount();
 
             PointLabel = chartPoint => string.Format("{0} ({1:P})", chartPoint.Y, chartPoint.Participation);
         }

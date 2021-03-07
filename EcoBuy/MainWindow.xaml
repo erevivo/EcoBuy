@@ -95,7 +95,8 @@
             <UserControls:PieChartUC Height="auto" Width="auto"
                                      VerticalAlignment="Stretch" 
                                      Grid.Row="0" Grid.Column="0"
-                                     CategoiesCount="{Binding DataContext.PieChartVM.CategoriesCount, ElementName=MyMainWindow}"/>
+                                     TodayCommand="{Binding DataContext.PieChartVM.TodayCmd, ElementName=MyMainWindow}"
+                                     CategoriesCount="{Binding DataContext.PieChartVM.CategoriesCount, ElementName=MyMainWindow}"/>
 
             <UserControls:LastPurchaseUI Height="auto" Width="auto" Margin="10,0,0,0"
                                          VerticalAlignment="Stretch"

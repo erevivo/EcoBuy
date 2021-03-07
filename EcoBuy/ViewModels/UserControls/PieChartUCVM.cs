@@ -16,6 +16,7 @@ namespace EcoBuy.ViewModels
         public CategoriesCount CategoriesCount { get; set; }
         public ObservableCollection<PurchasedProduct> PurchasedProducts { get; set; }
         public ICommand TodayCmd { get; set; }
+
         public PieChartUCVM()
         {
             Test();
