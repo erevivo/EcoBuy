@@ -42,22 +42,22 @@
                 <lvc:PieChart.Series>
 
                     <lvc:PieSeries Title="חשמל" 
-                               Values="{Binding CategoriesCount.Electricity, Converter={cnv:IntToChartValueConverter}}" 
+                               Values="{Binding CategoriesCount.Electricity, Converter={cnv:IntToChartValueConverter}, Mode=TwoWay}" 
                                DataLabels="True"
                                LabelPoint="{Binding PointLabel}"/>
 
                     <lvc:PieSeries Title="אופנה" 
-                               Values="{Binding CategoriesCount.Fashion, Converter={cnv:IntToChartValueConverter}}" 
+                               Values="{Binding CategoriesCount.Fashion, Converter={cnv:IntToChartValueConverter}, Mode=TwoWay}" 
                                DataLabels="True"
                                LabelPoint="{Binding PointLabel}"/>
 
                     <lvc:PieSeries Title="מזון" 
-                               Values="{Binding CategoriesCount.Food, Converter={cnv:IntToChartValueConverter}}" 
+                               Values="{Binding CategoriesCount.Food, Converter={cnv:IntToChartValueConverter}, Mode=TwoWay}" 
                                DataLabels="True"
                                LabelPoint="{Binding PointLabel}"/>
 
                     <lvc:PieSeries Title="בריאות" 
-                               Values="{Binding CategoriesCount.Health, Converter={cnv:IntToChartValueConverter}}" 
+                               Values="{Binding CategoriesCount.Health, Converter={cnv:IntToChartValueConverter}, Mode=TwoWay}" 
                                DataLabels="True"
                                LabelPoint="{Binding PointLabel}"/>
 
@@ -73,7 +73,7 @@
                             <Setter Property="Margin" Value="0,10"/>
                         </Style>
                     </StackPanel.Resources>
-                    <Button Command="{Binding TodayCommand}"
+                    <Button Command="{Binding TodayCommand, Mode=TwoWay}"
                       Style="{StaticResource MaterialDesignFlatButton}"
                       FontSize="22" 
                       ToolTip="MaterialDesignFlatButton"
