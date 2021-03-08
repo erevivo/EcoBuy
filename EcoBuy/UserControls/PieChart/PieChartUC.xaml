@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-            xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:local="clr-namespace:EcoBuy.UserControls"
              xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
              xmlns:cnv="clr-namespace:EcoBuy.Converters"
@@ -41,10 +41,8 @@
 
                 <lvc:PieChart.Series>
 
-                    <lvc:PieSeries Title="חשמל" 
-                               Values="{Binding CategoriesCount.Electricity, Converter={cnv:IntToChartValueConverter}, Mode=TwoWay}" 
-                               DataLabels="True"
-                               LabelPoint="{Binding PointLabel}"/>
+                    <lvc:PieSeries Title="חשמל" Values="{Binding CategoriesCount.Electricity, Converter={cnv:IntToChartValueConverter}, Mode=TwoWay}" 
+                                   DataLabels="True" LabelPoint="{Binding PointLabel}"/>
 
                     <lvc:PieSeries Title="אופנה" 
                                Values="{Binding CategoriesCount.Fashion, Converter={cnv:IntToChartValueConverter}, Mode=TwoWay}" 

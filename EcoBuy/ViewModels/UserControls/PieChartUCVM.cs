@@ -39,12 +39,16 @@ namespace EcoBuy.ViewModels
                 new PurchasedProduct(new DateTime(2020, 12, 2), 20, 3, 3, "חולצת פולו ראלף לורן M", "C:\\Users\\Evyatar\\Desktop\\ral.jpg", ProductsCategory.Fashion),
                 new PurchasedProduct(new DateTime(2020, 12, 2), 3793, 3, 3, "טלוויזיה Samsung QE65Q60T 4K ‏65 ‏אינטש", "https://img.zap.co.il/pics/3/2/5/1/56591523c.gif", ProductsCategory.Health),
                 new PurchasedProduct(new DateTime(2020, 12, 2), 7, 4, 4, "מחשב אינטל NUC", "https://www.ivory.co.il/files/catalog/org/1566199487C87HL.jpg", ProductsCategory.Electricity)
-
             };
 
         }
         public void GroupByCategory()
         {
+            CategoriesCount.Food = 0;
+            CategoriesCount.Electricity = 0;
+            CategoriesCount.Health = 0;
+            CategoriesCount.Fashion = 0;
+
             foreach (var product in PurchasedProducts.GroupBy(p => p.Category)
                                     .Select(group => new
                                     {
@@ -76,9 +80,10 @@ namespace EcoBuy.ViewModels
         }
         public void FilterByDay()
         {
-            var items = this.PurchasedProducts.Where(prod => prod.PurchaseDate == DateTime.Now.Date).ToList();
+            var items = this.PurchasedProducts.Where(prod => prod.PurchaseDate == DateTime.Now.Date);
             PurchasedProducts = new ObservableCollection<PurchasedProduct>(items);
-
+            GroupByCategory();
+            CategoriesCount = new CategoriesCount(CategoriesCount);
         }
     }
 }
