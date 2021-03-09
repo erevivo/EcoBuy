@@ -69,12 +69,12 @@
                                     EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}" />
 
                     <!-- Product Name -->
-                    <DataGridTextColumn Header="שם המוצר" Binding="{Binding ProductName}" Width="300"
+                    <DataGridTextColumn Header="שם המוצר" Binding="{Binding ProductName}" Width="370"
                                     ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
                                     EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" />
 
                     <!-- Category  -->
-                    <DataGridTextColumn Header="קטגוריה" Width="226" Binding="{Binding Category,  Converter={StaticResource EnumConverter}}"
+                    <DataGridTextColumn Header="קטגוריה" Width="210" Binding="{Binding Category,  Converter={StaticResource EnumConverter}}"
                                     ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
                                     EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" />
 

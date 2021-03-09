@@ -19,9 +19,9 @@ namespace EcoBuy.UserControls
     /// <summary>
     /// Interaction logic for LastPurchaseUI.xaml
     /// </summary>
-    public partial class LastPurchaseUI : UserControl
+    public partial class LastPurchaseUC : UserControl
     {
-        public LastPurchaseUI()
+        public LastPurchaseUC()
         {
             InitializeComponent();
             //this.DataContext = new LastPurchaseUCVM();

@@ -37,7 +37,7 @@
                               VerticalAlignment="Stretch"
                               Width="auto"
                               Grid.ColumnSpan="2" />
-        <local:LastPurchaseUI Height="auto"
+        <local:LastPurchaseUC Height="auto"
                               Margin="10,0,0,0"
                               Grid.Row="1"
                               Grid.Column="2"

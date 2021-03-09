@@ -32,36 +32,30 @@
             <DataGrid.Columns>
 
                 <!-- Image -->
-                <DataGridTemplateColumn Header="תמונה" Width="100"
+                <DataGridTemplateColumn Header="תמונה" Width="80"
                         IsReadOnly="True">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Image Source="{Binding ImageUrl}" />
+                            <Image Source="{Binding ImageUrl}" Width="40" />
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <!-- Product ID -->
-                <materialDesign:DataGridTextColumn Header="מק&quot;ט" Width="80" Binding="{Binding ProductId}"
+                <materialDesign:DataGridTextColumn Header="מק&quot;ט" Width="65" Binding="{Binding ProductId}"
                                     ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
                                     EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}" />
 
                 <!-- Product Name -->
-                <DataGridTextColumn Header="שם המוצר" Binding="{Binding ProductName}" Width="100"
+                <DataGridTextColumn Header="שם המוצר" Binding="{Binding ProductName}" Width="190"
                                     ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
                                     EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" />
-
-                <!-- Category  -->
-                <DataGridTextColumn Header="קטגוריה" Width="100" 
-                                    ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
-                                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" />
-
                 <!-- Amount -->
-                <DataGridTextColumn Header="כמות" Binding="{Binding PurchaseDate, StringFormat=\{0:dd.MM.yy\}}" Width="70"
+                <DataGridTextColumn Header="כמות" Binding="{Binding Amount}" Width="70"
                                     ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
                                     EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" />
 
                 <!-- Price -->
-                <DataGridTextColumn Header="מחיר" Binding="{Binding Price, StringFormat= '\{0\} ₪'}" Width="100"
+                <DataGridTextColumn Header="מחיר" Binding="{Binding Price, StringFormat= '\{0\} ₪'}" Width="90"
                                     ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
                                     EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" />
             </DataGrid.Columns>
