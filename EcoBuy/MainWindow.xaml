@@ -111,7 +111,8 @@
 
             <UserControls:ExpensesGraphUC Height="auto" Width="auto" Margin="0"
                                             VerticalAlignment="Stretch"
-                                            Grid.Row="1" Grid.Column="0" />
+                                            Grid.Row="1" Grid.Column="0"
+                                            CategoriesExpenses="{Binding DataContext.CategoriesExpensesVM.CategoriesExpenses, ElementName=MyMainWindow}"/>
 
         </Grid>
 

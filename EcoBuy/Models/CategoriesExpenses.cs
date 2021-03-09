@@ -1,22 +1,27 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace EcoBuy.Models
 {
-    public class CategoriesCount : INotifyPropertyChanged
+    public class CategoriesExpenses : INotifyPropertyChanged
     {
         // Event Handler
         public event PropertyChangedEventHandler PropertyChanged;
 
         #region Private Fields
-        private int _electricity;
-        private int _fashion;
-        private int _food;
-        private int _health;
+        private double _electricity;
+        private double _fashion;
+        private double _food;
+        private double _health;
         #endregion
 
         #region Properties
-        public int Electricity
+        public double Electricity
         {
             get => _electricity;
             set
@@ -25,7 +30,7 @@ namespace EcoBuy.Models
                 OnPropertyChanged("Electricity");
             }
         }
-        public int Fashion
+        public double Fashion
         {
             get => _fashion;
             set
@@ -34,7 +39,7 @@ namespace EcoBuy.Models
                 OnPropertyChanged("Fashion");
             }
         }
-        public int Food
+        public double Food
         {
             get => _food;
             set
@@ -43,7 +48,7 @@ namespace EcoBuy.Models
                 OnPropertyChanged("Food");
             }
         }
-        public int Health
+        public double Health
         {
             get => _health;
             set
@@ -55,11 +60,11 @@ namespace EcoBuy.Models
         #endregion
 
         #region Constructors
-        public CategoriesCount()
+        public CategoriesExpenses()
         {
         }
 
-        public CategoriesCount(CategoriesCount other)
+        public CategoriesExpenses(CategoriesExpenses other)
         {
             Electricity = other.Electricity;
             Fashion = other.Fashion;

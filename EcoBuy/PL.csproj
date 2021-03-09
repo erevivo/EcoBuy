@@ -113,6 +113,7 @@
     <Compile Include="Converters\ValueConverterBase.cs" />
     <Compile Include="Expressions\ExpressionHelpers.cs" />
     <Compile Include="Models\CategoriesCount.cs" />
+    <Compile Include="Models\CategoriesExpenses.cs" />
     <Compile Include="Models\EcoDB.Designer.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\PurchasedProduct.cs" />
@@ -128,6 +129,7 @@
     <Compile Include="UserControls\AllPurchases.xaml.cs">
       <DependentUpon>AllPurchases.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\ExpensesGraphDataModel.cs" />
     <Compile Include="UserControls\ExpensesGraphUC.xaml.cs">
       <DependentUpon>ExpensesGraphUC.xaml</DependentUpon>
     </Compile>
@@ -174,11 +176,12 @@
     <Compile Include="ViewModels\Base\RelayCommand.cs" />
     <Compile Include="ViewModels\Base\RelayParameterizedCommand.cs" />
     <Compile Include="ViewModels\Base\ViewModelBase.cs" />
+    <Compile Include="ViewModels\UserControls\ExpensesGraphUCVM.cs" />
     <Compile Include="ViewModels\UserControls\LastPurchaseUCVM.cs" />
     <Compile Include="ViewModels\MainWindowVM.cs" />
     <Compile Include="ViewModels\UserControls\AddItemUCVM.cs" />
     <Compile Include="Models\MyImageModel.cs" />
-    <Compile Include="ViewModels\UserControls\HistoryPurchaseUCVM.cs" />
+    <Compile Include="ViewModels\UserControls\AllPurchaseUCVM.cs" />
     <Compile Include="ViewModels\UserControls\PieChartUCVM.cs" />
     <Compile Include="ViewModels\UserControls\DesignModels\SearchEngineUCDM.cs" />
     <Compile Include="ViewModels\UserControls\SearchEngineUCVM.cs" />

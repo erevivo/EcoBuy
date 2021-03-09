@@ -1,10 +1,12 @@
 ﻿using EcoBuy.Models;
+using EcoBuy.ViewModels.UserControls;
 
 namespace EcoBuy.ViewModels
 {
     public class MainWindowVM : ViewModelBase
     {
         public ViewModelBase PieChartVM { get; set; }
+        public ViewModelBase ExpensesGraphVM { get; set; }
         public ViewModelBase LastPurchaseVM { get; set; }
         public ViewModelBase SearchEngineVM { get; set; }
 
@@ -13,6 +15,7 @@ namespace EcoBuy.ViewModels
             PieChartVM = new PieChartUCVM();
             SearchEngineVM = new SearchEngineUCVM();
             LastPurchaseVM = new LastPurchaseUCVM();
+            ExpensesGraphVM = new ExpensesGraphUCVM();
         }
     }
 }

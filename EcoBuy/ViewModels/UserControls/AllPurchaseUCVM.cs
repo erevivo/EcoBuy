@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace EcoBuy.ViewModels.UserControls
 {
-    public class HistoryPurchaseUCVM : ViewModelBase
+    public class AllPurchaseUCVM : ViewModelBase
     {
         public ObservableCollection<PurchasedProduct> PurchasedProducts { get; set; }
 
-        public HistoryPurchaseUCVM()
+        public AllPurchaseUCVM()
         {
             Test();
         }
