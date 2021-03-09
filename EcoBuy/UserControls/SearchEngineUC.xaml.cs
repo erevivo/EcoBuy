@@ -12,7 +12,6 @@ namespace EcoBuy.UserControls
         public SearchEngineUC()
         {
             InitializeComponent();
-
             //this.DataContext = new SearchEngineUCVM();
         }
     }
