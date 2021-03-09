@@ -8,13 +8,13 @@ using System.Windows.Input;
 
 namespace EcoBuy.Commands.PieChart
 {
-    public class TodayCommand : ICommand
+    public class WeekCommand : ICommand
     {
         #region Fileds
         public event EventHandler CanExecuteChanged;
         public PieChartUCVM CurrVM { get; set; }
         #endregion
-        public TodayCommand(PieChartUCVM VM)
+        public WeekCommand(PieChartUCVM VM)
         {
             CurrVM = VM;
         }
@@ -25,7 +25,7 @@ namespace EcoBuy.Commands.PieChart
 
         public void Execute(object parameter)
         {
-          
+            throw new NotImplementedException();
         }
     }
 }

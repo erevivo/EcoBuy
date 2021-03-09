@@ -78,7 +78,7 @@
                       Content="היום"
                         />
 
-                    <Button Command="{Binding WeekCommand}"
+                    <Button Command="{Binding WeekCommand, Mode=TwoWay}"
                       Style="{StaticResource MaterialDesignFlatButton}"
                       FontSize="22" 
                       ToolTip="MaterialDesignFlatButton"
