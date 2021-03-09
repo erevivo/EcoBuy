@@ -14,6 +14,7 @@ namespace EcoBuy.ViewModels
 {
     public class PieChartUCVM : ViewModelBase
     {
+        #region Properties
         public CategoriesCount CategoriesCount { get; set; }
         public ObservableCollection<PurchasedProduct> PurchasedProducts { get; set; }
         public ICommand TodayCmd { get; set; }
@@ -21,6 +22,7 @@ namespace EcoBuy.ViewModels
         public ICommand MonthCmd { get; set; }
 
 
+        // Constructor
         public PieChartUCVM()
         {
             Test();
@@ -83,13 +85,12 @@ namespace EcoBuy.ViewModels
                 }
             }
         }
-        public void FilterByDay()
+        private void FilterByDay()
         {
             Test();
             var items = this.PurchasedProducts.Where(prod => prod.PurchaseDate == DateTime.Now.Date);
             PurchasedProducts = new ObservableCollection<PurchasedProduct>(items);
             GroupByCategory();
-            CategoriesCount = new CategoriesCount(CategoriesCount);
         }
 
         public void FilterByWeek()

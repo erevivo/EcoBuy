@@ -13,11 +13,9 @@
              d:DataContext="{d:DesignInstance local:PieChartUC}"
              DataContext="{Binding RelativeSource={RelativeSource Self}}">
 
-    <Border BorderThickness="2"
-                CornerRadius="20"
-                BorderBrush="#e0e6ed"
-                Background="white"
-                Margin="10">
+    <Border Background="white" Margin="10" CornerRadius="20"
+            BorderThickness="2" BorderBrush="#e0e6ed">
+        
         <Border.Effect>
             <DropShadowEffect BlurRadius="10" ShadowDepth="6" Color="#adadad"/>
         </Border.Effect>
@@ -41,23 +39,17 @@
 
                 <lvc:PieChart.Series>
 
-                    <lvc:PieSeries Title="חשמל" Values="{Binding CategoriesCount.Electricity, Converter={cnv:IntToChartValueConverter}, Mode=TwoWay}" 
-                                   DataLabels="True" LabelPoint="{Binding PointLabel}"/>
+                    <lvc:PieSeries Title="חשמל" DataLabels="True" LabelPoint="{Binding PointLabel}" 
+                                   Values="{Binding CategoriesCount.Electricity, Converter={cnv:IntToChartValueConverter}, Mode=TwoWay}" />
 
-                    <lvc:PieSeries Title="אופנה" 
-                               Values="{Binding CategoriesCount.Fashion, Converter={cnv:IntToChartValueConverter}, Mode=TwoWay}" 
-                               DataLabels="True"
-                               LabelPoint="{Binding PointLabel}"/>
+                    <lvc:PieSeries Title="אופנה" DataLabels="True" LabelPoint="{Binding PointLabel}" 
+                                   Values="{Binding CategoriesCount.Fashion, Converter={cnv:IntToChartValueConverter}, Mode=TwoWay}" />
 
-                    <lvc:PieSeries Title="מזון" 
-                               Values="{Binding CategoriesCount.Food, Converter={cnv:IntToChartValueConverter}, Mode=TwoWay}" 
-                               DataLabels="True"
-                               LabelPoint="{Binding PointLabel}"/>
+                    <lvc:PieSeries Title="מזון" DataLabels="True" LabelPoint="{Binding PointLabel}" 
+                                   Values="{Binding CategoriesCount.Food, Converter={cnv:IntToChartValueConverter}, Mode=TwoWay}" />
 
-                    <lvc:PieSeries Title="בריאות" 
-                               Values="{Binding CategoriesCount.Health, Converter={cnv:IntToChartValueConverter}, Mode=TwoWay}" 
-                               DataLabels="True"
-                               LabelPoint="{Binding PointLabel}"/>
+                    <lvc:PieSeries Title="בריאות" DataLabels="True" LabelPoint="{Binding PointLabel}" 
+                                   Values="{Binding CategoriesCount.Health, Converter={cnv:IntToChartValueConverter}, Mode=TwoWay}" />
 
                 </lvc:PieChart.Series>
 
