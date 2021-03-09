@@ -24,7 +24,7 @@
                           Grid.Column="0"
                           VerticalAlignment="Stretch"
                           Width="auto" />
-        <local:AveragePurchaseUC Height="auto"
+        <local:ExpensesGraphUC Height="auto"
                                  Margin="0"
                                  Grid.Row="1"
                                  Grid.Column="0"

@@ -128,8 +128,8 @@
     <Compile Include="UserControls\AllPurchases.xaml.cs">
       <DependentUpon>AllPurchases.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\HistoryPurchaseUC.xaml.cs">
-      <DependentUpon>HistoryPurchaseUC.xaml</DependentUpon>
+    <Compile Include="UserControls\ExpensesGraphUC.xaml.cs">
+      <DependentUpon>ExpensesGraphUC.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\DigitalClock.xaml.cs">
       <DependentUpon>DigitalClock.xaml</DependentUpon>
@@ -206,7 +206,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UserControls\HistoryPurchaseUC.xaml">
+    <Page Include="UserControls\ExpensesGraphUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

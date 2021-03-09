@@ -18,11 +18,11 @@ using System.Windows.Shapes;
 namespace EcoBuy.UserControls
 {
     /// <summary>
-    /// Interaction logic for AveragePurchaseUC.xaml
+    /// Interaction logic for ExpensesGraphUC.xaml
     /// </summary>
-    public partial class AveragePurchaseUC : UserControl
+    public partial class ExpensesGraphUC : UserControl
     {
-        public AveragePurchaseUC()
+        public ExpensesGraphUC()
         {
             InitializeComponent();
             

@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="EcoBuy.UserControls.AveragePurchaseUC"
+﻿<UserControl x:Class="EcoBuy.UserControls.ExpensesGraphUC"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -8,7 +8,7 @@
              mc:Ignorable="d"
              d:DesignHeight="410"
              d:DesignWidth="610"
-             d:DataContext="{d:DesignInstance local:AveragePurchaseUC}">
+             d:DataContext="{d:DesignInstance local:ExpensesGraphUC}">
     <Grid>
         <local:UserControlBG Height="410"
                              Width="610"

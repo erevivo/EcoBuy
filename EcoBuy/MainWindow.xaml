@@ -109,7 +109,7 @@
                                      HorizontalAlignment="Center" VerticalAlignment="Stretch"
                                      Grid.Row="1" Grid.Column="1" />
 
-            <UserControls:AveragePurchaseUC Height="auto" Width="auto" Margin="0"
+            <UserControls:ExpensesGraphUC Height="auto" Width="auto" Margin="0"
                                             VerticalAlignment="Stretch"
                                             Grid.Row="1" Grid.Column="0" />
 
