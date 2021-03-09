@@ -46,11 +46,11 @@
                 CornerRadius="20" Background="white" >
 
             <!-- Data Table -->
-            <DataGrid GridLinesVisibility="None" FontSize="20" ItemsSource="{Binding PurchasedProducts, UpdateSourceTrigger=PropertyChanged}" Width="1100"
+            <DataGrid GridLinesVisibility="None" FontSize="20" ItemsSource="{Binding PurchasedProducts}"
                       VerticalScrollBarVisibility="Hidden"
-                      FlowDirection="RightToLeft" BorderThickness="0"
+                      FlowDirection="RightToLeft" BorderThickness="2"
                       CanUserAddRows="False" AutoGenerateColumns="False"
-                      HeadersVisibility="All" Margin="-1,16,-3,10">
+                      HeadersVisibility="All" Margin="24.4,16.4,23.4,9.8">
 
                 <DataGrid.Columns>
 
@@ -69,17 +69,17 @@
                                     EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}" />
 
                     <!-- Product Name -->
-                    <DataGridTextColumn Header="שם המוצר" Binding="{Binding ProductName}" Width="300"
+                    <DataGridTextColumn Header="שם המוצר" Binding="{Binding ProductName}" Width="370"
                                     ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
                                     EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" />
 
                     <!-- Category  -->
-                    <DataGridTextColumn Header="קטגוריה" Width="226" Binding="{Binding Category,  Converter={StaticResource EnumConverter}}"
+                    <DataGridTextColumn Header="קטגוריה" Width="210" Binding="{Binding Category,  Converter={StaticResource EnumConverter}}"
                                     ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
                                     EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" />
 
                     <!-- Purchase Date -->
-                    <DataGridTextColumn Header="נקנה בתאריך" Binding="{Binding PurchaseDate, StringFormat=\{0:dd.MM.yy\}}" Width="200"
+                    <DataGridTextColumn Header="נקנה בתאריך" Binding="{Binding PurchaseDate, StringFormat=\{0:dd.MM.yy\}}" Width="165"
                                     ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
                                     EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" />
 
@@ -95,5 +95,5 @@
             </Border.Effect>
         </Border>
     </StackPanel>
-    
+
 </UserControl>

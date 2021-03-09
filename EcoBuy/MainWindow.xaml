@@ -100,7 +100,7 @@
                                      MonthCommand="{Binding DataContext.PieChartVM.MonthCmd, ElementName=MyMainWindow}"
                                      CategoriesCount="{Binding DataContext.PieChartVM.CategoriesCount, ElementName=MyMainWindow}"/>
 
-            <UserControls:LastPurchaseUI Height="auto" Width="auto" Margin="10,0,0,0"
+            <UserControls:LastPurchaseUC Height="auto" Width="auto" Margin="10,0,0,0"
                                          VerticalAlignment="Stretch"
                                          Grid.Row="1" Grid.Column="2"
                                          DataContext="{Binding LastPurchaseVM}" />
