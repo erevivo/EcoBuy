@@ -20,7 +20,7 @@ namespace EcoBuy.ViewModels
         public ICommand TodayCmd { get; set; }
         public ICommand WeekCmd { get; set; }
         public ICommand MonthCmd { get; set; }
-
+        #endregion
 
         // Constructor
         public PieChartUCVM()
