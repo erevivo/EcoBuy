@@ -8,7 +8,8 @@
              xmlns:local="clr-namespace:EcoBuy.UserControls"
              mc:Ignorable="d"
              d:DesignHeight="450"
-             d:DesignWidth="610">
+             d:DesignWidth="610"
+            >
     <Grid>
         <local:UserControlBG Height="410"
                              Width="610"
@@ -20,7 +21,7 @@
                FlowDirection="RightToLeft"
                HorizontalContentAlignment="Center"
                Height="61" />
-        <DataGrid ItemsSource="{Binding Items1}"
+        <DataGrid ItemsSource="{Binding PurchasedProducts, UpdateSourceTrigger=PropertyChanged}"
                   FlowDirection="RightToLeft"
                   BorderThickness="2"
                   CanUserAddRows="False"
@@ -34,12 +35,15 @@
                 Data="{Binding}" xmlns:domain="clr-namespace:MaterialDesignDemo.Domain" />-->
             </DataGrid.Resources>
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding Image}"
-                                    Header="תמונה"
-                                    Width="70"
-                                    ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
-                                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" />
-                <!-- if you want to use the pop up style (MaterialDesignDataGridTextColumnPopupEditingStyle), you must use MaterialDataGridTextColumn -->
+                <!-- Image -->
+                <DataGridTemplateColumn Header="תמונה" Width="100"
+                        IsReadOnly="True">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Image Source="{Binding ImageUrl}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
                 <materialDesign:DataGridTextColumn Header="מק&quot;ט"
                                                    Width="80"
                                                    ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"

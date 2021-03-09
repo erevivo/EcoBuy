@@ -46,7 +46,7 @@
                 CornerRadius="20" Background="white" >
 
             <!-- Data Table -->
-            <DataGrid GridLinesVisibility="None" FontSize="20" ItemsSource="{Binding PurchasedProducts, UpdateSourceTrigger=PropertyChanged}" Width="1100"
+            <DataGrid GridLinesVisibility="None" FontSize="20" ItemsSource="{Binding PurchasedProducts}" Width="1100"
                       VerticalScrollBarVisibility="Hidden"
                       FlowDirection="RightToLeft" BorderThickness="0"
                       CanUserAddRows="False" AutoGenerateColumns="False"
