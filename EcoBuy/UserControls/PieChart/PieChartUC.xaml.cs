@@ -15,6 +15,7 @@ namespace EcoBuy.UserControls
     /// </summary>
     public partial class PieChartUC : UserControl
     {
+        #region Dependency Properties
         public static readonly DependencyProperty CategoryPieChartModelProperty = DependencyProperty.Register(
                                                                     "CategoryPieChartModel",
                                                                     typeof(PieChartDataModel),
@@ -44,7 +45,9 @@ namespace EcoBuy.UserControls
                                                                     typeof(ICommand),
                                                                     typeof(PieChartUC),
                                                                     new PropertyMetadata(default(ICommand)));
+        #endregion
 
+        #region Properties
         public PieChartDataModel CategoryPieChartModel
         {
             get => (PieChartDataModel)GetValue(CategoryPieChartModelProperty);
@@ -56,6 +59,8 @@ namespace EcoBuy.UserControls
             get => (CategoriesCount)GetValue(CategoriesCountProperty);
             set => SetValue(CategoriesCountProperty, value);
         }
+
+        public Func<ChartPoint, string> PointLabel { get; set; }
 
         public ICommand TodayCommand
         {
@@ -74,7 +79,9 @@ namespace EcoBuy.UserControls
             get => (ICommand)GetValue(MonthCommandProperty);
             set => SetValue(MonthCommandProperty, value);
         }
+        #endregion
 
+        // Constructor
         public PieChartUC()
         {
             InitializeComponent();
@@ -84,8 +91,7 @@ namespace EcoBuy.UserControls
             PointLabel = chartPoint => string.Format("{0} ({1:P})", chartPoint.Y, chartPoint.Participation);
         }
 
-        public Func<ChartPoint, string> PointLabel { get; set; }
-
+        #region Private Methods
         private void CreatePieChartData(CategoriesCount categoriesCount)
         {
             this.CategoryPieChartModel = new PieChartDataModel(categoriesCount);
@@ -102,5 +108,6 @@ namespace EcoBuy.UserControls
             var selectedSeries = (PieSeries)chartpoint.SeriesView;
             selectedSeries.PushOut = 8;
         }
+        #endregion
     }
 }
