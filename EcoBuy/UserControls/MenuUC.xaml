@@ -27,8 +27,9 @@
                        FontSize="28"
                        Text="ראשי" />
         </Button>
+        <!--Command="Confirmation"-->
         <Button Style="{StaticResource MaterialDesignRaisedDarkButton}"
-                Command="Confirmation"
+
                 Grid.Column="1"
                 Height="70"
                 Width="250"

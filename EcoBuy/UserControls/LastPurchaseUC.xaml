@@ -23,6 +23,8 @@
                Height="61" />
         <DataGrid ItemsSource="{Binding PurchasedProducts, UpdateSourceTrigger=PropertyChanged}"
                   x:Name="LPurchaseDataGrid"
+                  VerticalScrollBarVisibility="Visible"
+                  HorizontalScrollBarVisibility="Disabled"
                   FlowDirection="RightToLeft"
                   BorderThickness="2"
                   CanUserAddRows="False"
