@@ -40,7 +40,6 @@ namespace EcoBuy
 
         private void AddProductClick(object sender, RoutedEventArgs e)
         {
-            _children = MainUIGrid.Children;
             MainUIGrid.Children.Clear();
             MainUIGrid.Height = 864;
             MainUIGrid.Width = 1920;
@@ -54,10 +53,12 @@ namespace EcoBuy
         private void MainClick(object sender, RoutedEventArgs e)
         {
             MainUIGrid.Children.Clear();
-            foreach (UIElement c in _children)
-            {
-                MainUIGrid.Children.Add(c);
-            }
+            MainUIGrid.Children.Add(PieChartUC);
+            MainUIGrid.Children.Add(SearchEngineUC);
+            MainUIGrid.Children.Add(LastPurchaseUC);
+            MainUIGrid.Children.Add(ShopRecoUI);
+            MainUIGrid.Children.Add(ExpensesGraphUC);
+
 
         }
     }
