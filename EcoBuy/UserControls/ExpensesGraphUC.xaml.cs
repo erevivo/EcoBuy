@@ -1,5 +1,4 @@
-﻿using EcoBuy.Models;
-using LiveCharts;
+﻿using LiveCharts;
 using LiveCharts.Wpf;
 using System;
 using System.Collections.Generic;
@@ -24,42 +23,41 @@ namespace EcoBuy.UserControls
     /// </summary>
     public partial class ExpensesGraphUC : UserControl
     {
-        #region Dependency Properties
-        public static readonly DependencyProperty CategoriesExpensesModelProperty = DependencyProperty.Register(
-                                                                    "CategoryPieChartModel",
-                                                                    typeof(ExpensesGraphDataModel),
-                                                                    typeof(ExpensesGraphUC),
-                                                                    new PropertyMetadata(default(ExpensesGraphDataModel)));
-
-        public static readonly DependencyProperty CategoriesExpensesProperty = DependencyProperty.Register(
-                                                                    "CategoriesExpenses",
-                                                                    typeof(CategoriesExpenses),
-                                                                    typeof(ExpensesGraphUC),
-                                                                    new PropertyMetadata(default(CategoriesExpenses)));
-
-        #endregion
-
-        #region Properties
-        public ExpensesGraphDataModel ExpensesGraphDataModel
-        {
-            get => (ExpensesGraphDataModel)GetValue(CategoriesExpensesModelProperty);
-            set => SetValue(CategoriesExpensesModelProperty, value);
-        }
-
-        public CategoriesExpenses CategoriesExpenses
-        {
-            get => (CategoriesExpenses)GetValue(CategoriesExpensesProperty);
-            set => SetValue(CategoriesExpensesProperty, value);
-        }
-
-        public Func<ChartPoint, string> PointLabel { get; set; }
-        #endregion
         public ExpensesGraphUC()
         {
             InitializeComponent();
-            CategoriesExpenses = new CategoriesExpenses();
-            PointLabel = chartPoint => string.Format("{0} ({1:P})", chartPoint.Y, chartPoint.Participation);
 
+           SeriesCollection = new SeriesCollection
+            {
+                 new LineSeries
+                  {
+                      Title = "חשמל",
+                      Values = new ChartValues<double> { 4, 6, 5, 2 ,4 },
+                      LineSmoothness = 0, //0: straight lines, 1: really smooth lines
+                      PointGeometry = DefaultGeometries.Circle
+                  }/*,
+                  new LineSeries
+                  {
+                      Title = "אופנה",
+                      Values = new ChartValues<double> { 6, 7, 3, 4 ,6 },
+                      LineSmoothness = 0, //0: straight lines, 1: really smooth lines
+                      PointGeometry = DefaultGeometries.Circle,
+                  },
+                  new LineSeries
+                  {
+                      Title = "מזון",
+                      Values = new ChartValues<double> { 4,2,7,2,7 },
+                      LineSmoothness = 0, //0: straight lines, 1: really smooth lines
+                      PointGeometry = DefaultGeometries.Circle
+                  },
+                  new LineSeries
+                  {
+                  Title = "בריאות",
+                  Values = new ChartValues<double> { 5, 3, 2, 4 },
+                  LineSmoothness = 0, //0: straight lines, 1: really smooth lines
+                  PointGeometry = DefaultGeometries.Circle
+                   },*/
+           };
             string a = (DateTime.Today.AddMonths(-4)).ToString("MMM", CultureInfo.InvariantCulture);
             string b = (DateTime.Today.AddMonths(-3)).ToString("MMM", CultureInfo.InvariantCulture);
             string c = (DateTime.Today.AddMonths(-2)).ToString("MMM", CultureInfo.InvariantCulture);
@@ -68,11 +66,16 @@ namespace EcoBuy.UserControls
 
             Labels = new[] { a, b, c, d, e };
             YFormatter = value => value.ToString("C");
+
+            //modifying the series collection will animate and update the chart
+
+
+            //modifying any series values will also animate and update the chart
+            SeriesCollection[0].Values.Add(5d);
+
+            DataContext = this;
         }
-        private void CreatePieChartData(CategoriesExpenses categoriesExpenses)
-        {
-            this.ExpensesGraphDataModel = new ExpensesGraphDataModel(categoriesExpenses);
-        }
+
         public SeriesCollection SeriesCollection { get; set; }
         public string[] Labels { get; set; }
         public Func<double, string> YFormatter { get; set; }

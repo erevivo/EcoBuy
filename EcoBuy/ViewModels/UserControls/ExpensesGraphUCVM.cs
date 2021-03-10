@@ -1,9 +1,11 @@
 ﻿using EcoBuy.BE;
 using EcoBuy.Commands.PieChart;
 using EcoBuy.Models;
+using LiveCharts;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,9 +21,23 @@ namespace EcoBuy.ViewModels
         public CategoriesExpenses CategoriesExpenses { get; set; }
         public ObservableCollection<PurchasedProduct> PurchasedProducts { get; set; }
         #endregion
+        //public SeriesCollection SeriesCollection { get; set; }
+        public string[] Labels { get; set; }
+        public Func<ChartPoint, string> PointLabel { get; set; }
+        public Func<double, string> YFormatter { get; set; }
 
         public ExpensesGraphUCVM()
         {
+            PointLabel = chartPoint => string.Format("{0} ({1:P})", chartPoint.Y, chartPoint.Participation);
+
+            string a = (DateTime.Today.AddMonths(-4)).ToString("MMM", CultureInfo.InvariantCulture);
+            string b = (DateTime.Today.AddMonths(-3)).ToString("MMM", CultureInfo.InvariantCulture);
+            string c = (DateTime.Today.AddMonths(-2)).ToString("MMM", CultureInfo.InvariantCulture);
+            string d = (DateTime.Today.AddMonths(-1)).ToString("MMM", CultureInfo.InvariantCulture);
+            string e = (DateTime.Today).ToString("MMM", CultureInfo.InvariantCulture);
+
+            Labels = new[] { a, b, c, d, e };
+            YFormatter = value => value.ToString("C");
             Test();
             GroupByCategory();
         }
