@@ -10,6 +10,22 @@
              d:DesignHeight="410"
              d:DesignWidth="610"
              DataContext="{Binding RelativeSource={RelativeSource Self}}">
+    <UserControl.Style>
+        <Style>
+            <Style.Triggers>
+                <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="Opacity" Duration="00:00:01" From="0" To="1" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <Trigger Property="FrameworkElement.Visibility" Value="Collapsed">
+                    <Setter Property="FrameworkElement.Opacity" Value="0"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Style>
     <Grid>
         <local:UserControlBG Height="410"
                              Width="610"

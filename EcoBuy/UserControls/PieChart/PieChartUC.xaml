@@ -12,7 +12,22 @@
              d:DesignWidth="610"
              d:DataContext="{d:DesignInstance local:PieChartUC}"
              DataContext="{Binding RelativeSource={RelativeSource Self}}">
-
+    <UserControl.Style>
+        <Style>
+            <Style.Triggers>
+                <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="Opacity" Duration="00:00:01" From="0" To="1" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <Trigger Property="FrameworkElement.Visibility" Value="Collapsed">
+                    <Setter Property="FrameworkElement.Opacity" Value="0"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Style>
     <Border Background="white" Margin="25,25,25,9" CornerRadius="20"
             BorderThickness="2" BorderBrush="#e0e6ed">
         

@@ -1,4 +1,5 @@
 ﻿using BE;
+using EcoBuy.ExtensionMethods;
 using EcoBuy.UserControls;
 using PL.ConnectToGoogleDrive;
 using System;
@@ -23,6 +24,8 @@ namespace EcoBuy
     /// </summary>
     public partial class MainWindow : Window
     {
+        UIElementCollection _children;
+
         //private GoogleDriveApi downloadQr;
         public MainWindow()
         {
@@ -37,9 +40,25 @@ namespace EcoBuy
 
         private void AddProductClick(object sender, RoutedEventArgs e)
         {
+            _children = MainUIGrid.Children;
             MainUIGrid.Children.Clear();
-            AddItemUC uc = new AddItemUC();
-            MainUIGrid.Children.Add(new AddItemUC());
+            MainUIGrid.Height = 864;
+            MainUIGrid.Width = 1920;
+            var uc = new AddItemUC();
+            uc.Height = 864;
+            uc.Width = 1920;
+            Grid.SetRowSpan(uc, 2);
+            Grid.SetColumnSpan(uc, 3);
+            MainUIGrid.Children.Add(uc);
+        }
+        private void MainClick(object sender, RoutedEventArgs e)
+        {
+            MainUIGrid.Children.Clear();
+            foreach (UIElement c in _children)
+            {
+                MainUIGrid.Children.Add(c);
+            }
+
         }
     }
 }

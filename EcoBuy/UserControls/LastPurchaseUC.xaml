@@ -8,9 +8,25 @@
              xmlns:local="clr-namespace:EcoBuy.UserControls"
              mc:Ignorable="d"
              d:DesignHeight="450"
-             d:DesignWidth="610"
-            >
+             d:DesignWidth="610">
+    <UserControl.Style>
+        <Style>
+            <Style.Triggers>
+                <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="Opacity" Duration="00:00:01" From="0" To="1" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <Trigger Property="FrameworkElement.Visibility" Value="Collapsed">
+                    <Setter Property="FrameworkElement.Opacity" Value="0"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Style>
     <Grid>
+        
         <local:UserControlBG Height="410"
                              Width="610"
                              VerticalAlignment="Center" />

@@ -68,7 +68,7 @@
                 Height="70"
                 Width="250"
                 materialDesign:ButtonAssist.CornerRadius="0"
-                ToolTip="עבור לדף הראשי" Margin="1000,46,670,46">
+                ToolTip="עבור לדף הראשי" Click="MainClick" Margin="980,46,690,46">
             <TextBlock FontFamily="/EcoBuy;component/Fonts/#Heebo"
                        FontSize="28"
                        Text="ראשי" />
@@ -78,7 +78,7 @@
                 Height="70"
                 Width="250"
                 materialDesign:ButtonAssist.CornerRadius="0"
-                ToolTip="אשר קניה אחרונה" Margin="715,46,955,46">
+                ToolTip="אשר קניה אחרונה" Margin="695,46,975,46">
             <TextBlock FontFamily="/EcoBuy;component/Fonts/#Heebo"
                        FontSize="28"
                        Text="אישור קניה" />
@@ -88,7 +88,7 @@
                 Height="70"
                 Width="250"
                 materialDesign:ButtonAssist.CornerRadius="0"
-                ToolTip="הוסף מוצר חדש" Margin="430,46,1240,46">
+                ToolTip="הוסף מוצר חדש" Margin="410,46,1260,46">
             <TextBlock FontFamily="/EcoBuy;component/Fonts/#Heebo"
                        FontSize="28"
                        Text="הוסף מוצר חדש" />
@@ -147,8 +147,8 @@
             <UserControls:ExpensesGraphUC  x:Name ="ExpensesGraphUC"
                                             Height="auto" Width="auto" Margin="0,0,9,0"
                                             VerticalAlignment="Stretch"
-                                            Grid.Row="1" Grid.Column="0"
-                                            CategoriesExpenses="{Binding DataContext.CategoriesExpensesVM.CategoriesExpenses, ElementName=MyMainWindow}"/>
+                                            Grid.Row="1" Grid.Column="0"/>
+            <!--CategoriesExpenses="{Binding DataContext.CategoriesExpensesVM.CategoriesExpenses, ElementName=MyMainWindow}"/>-->
 
         </Grid>
 
