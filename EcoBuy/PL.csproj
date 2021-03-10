@@ -106,6 +106,7 @@
     <Compile Include="Commands\AddImageCommand.cs" />
     <Compile Include="Commands\PieChart\TodayCommand.cs" />
     <Compile Include="Commands\PieChart\WeekCommand.cs" />
+    <Compile Include="Commands\PrintCommand.cs" />
     <Compile Include="Converters\IEnumerableToIChartValues.cs" />
     <Compile Include="Converters\EnumConverter.cs" />
     <Compile Include="Converters\IntToChartValueConverter.cs" />
@@ -121,6 +122,7 @@
     <Compile Include="Models\Purchases.cs" />
     <Compile Include="Models\Stores.cs" />
     <Compile Include="Models\StoresProductcs.cs" />
+    <Compile Include="PrintDataGrid\PrintDG.cs" />
     <Compile Include="UserControls\AddItemUC.xaml.cs">
       <DependentUpon>AddItemUC.xaml</DependentUpon>
     </Compile>

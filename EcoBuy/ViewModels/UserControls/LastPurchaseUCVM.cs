@@ -1,4 +1,5 @@
 ﻿using EcoBuy.BE;
+using EcoBuy.Commands;
 using EcoBuy.Models;
 using System;
 using System.Collections.Generic;
@@ -6,6 +7,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 
 namespace EcoBuy.ViewModels
 {
@@ -14,11 +16,16 @@ namespace EcoBuy.ViewModels
 
         #region Constructor
         public ObservableCollection<PurchasedProduct> PurchasedProducts { get; set; }
+        public PrintCommand PrintCmd { get; set; }
         public ObservableCollection<PurchasedProduct> LastPurchasedList { get; set; }
+        public DataGrid DataGridPurchasedList { get; set; }
         public LastPurchaseUCVM()
         {
             Test();
             LastPurchase();
+            PrintCmd = new PrintCommand(this);
+            DataGridPurchasedList = new DataGrid();
+            DataGridPurchasedList.ItemsSource = PurchasedProducts;
         }
 
         public void Test()
