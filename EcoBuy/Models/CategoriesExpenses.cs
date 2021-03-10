@@ -16,8 +16,8 @@ namespace EcoBuy.Models
         #region Private Fields
         private List<double> _electricity;
         private List<double> _fashion;
-        private List<double> _food;
         private List<double> _health;
+        private List<double> _food;
         #endregion
 
         #region Properties
