@@ -1,43 +1,23 @@
 ﻿using EcoBuy.BE;
-using EcoBuy.Commands.PieChart;
 using EcoBuy.Models;
-using LiveCharts;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Globalization;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Data;
-using System.Windows.Input;
+
 
 namespace EcoBuy.ViewModels
 {
     public class ExpensesGraphUCVM : ViewModelBase
     {
-
         #region Properties
         public CategoriesExpenses CategoriesExpenses { get; set; }
         public ObservableCollection<PurchasedProduct> PurchasedProducts { get; set; }
         #endregion
         //public SeriesCollection SeriesCollection { get; set; }
-        public string[] Labels { get; set; }
-        public Func<ChartPoint, string> PointLabel { get; set; }
-        public Func<double, string> YFormatter { get; set; }
 
         public ExpensesGraphUCVM()
         {
-            PointLabel = chartPoint => string.Format("{0} ({1:P})", chartPoint.Y, chartPoint.Participation);
-
-            string a = (DateTime.Today.AddMonths(-4)).ToString("MMM", CultureInfo.InvariantCulture);
-            string b = (DateTime.Today.AddMonths(-3)).ToString("MMM", CultureInfo.InvariantCulture);
-            string c = (DateTime.Today.AddMonths(-2)).ToString("MMM", CultureInfo.InvariantCulture);
-            string d = (DateTime.Today.AddMonths(-1)).ToString("MMM", CultureInfo.InvariantCulture);
-            string e = (DateTime.Today).ToString("MMM", CultureInfo.InvariantCulture);
-
-            Labels = new[] { a, b, c, d, e };
-            YFormatter = value => value.ToString("C");
             Test();
             GroupByCategory();
         }
@@ -60,39 +40,6 @@ namespace EcoBuy.ViewModels
         }
         public void GroupByCategory()
         {
-            CategoriesExpenses.Food = 0;
-            CategoriesExpenses.Electricity = 0;
-            CategoriesExpenses.Health = 0;
-            CategoriesExpenses.Fashion = 0;
-
-            foreach (var product in PurchasedProducts.GroupBy(p =>p.Category)
-                                    .Select(group => new
-                                    {
-                                        cate = group.Key,
-                                        Sum = group.Sum(sum=>sum.Price)
-                                    })
-                                    .OrderBy(x => x.cate))
-            {
-                switch (product.cate)
-                {
-                    case ProductsCategory.Food:
-                        CategoriesExpenses.Food = product.Sum;
-                        break;
-
-                    case ProductsCategory.Electricity:
-                        CategoriesExpenses.Electricity = product.Sum;
-                        break;
-                    case ProductsCategory.Health:
-                        CategoriesExpenses.Health = product.Sum;
-                        break;
-                    case ProductsCategory.Fashion:
-                        CategoriesExpenses.Fashion = product.Sum;
-                        break;
-                    default:
-                        Console.WriteLine("Nothing");
-                        break;
-                }
-            }
         }
 
     }

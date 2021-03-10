@@ -1,4 +1,5 @@
-﻿using LiveCharts;
+﻿using EcoBuy.Models;
+using LiveCharts;
 using LiveCharts.Wpf;
 using System;
 using System.Collections.Generic;
@@ -26,38 +27,8 @@ namespace EcoBuy.UserControls
         public ExpensesGraphUC()
         {
             InitializeComponent();
+            Test();
 
-           SeriesCollection = new SeriesCollection
-            {
-                 new LineSeries
-                  {
-                      Title = "חשמל",
-                      Values = new ChartValues<double> { 4, 6, 5, 2 ,4 },
-                      LineSmoothness = 0, //0: straight lines, 1: really smooth lines
-                      PointGeometry = DefaultGeometries.Circle
-                  }/*,
-                  new LineSeries
-                  {
-                      Title = "אופנה",
-                      Values = new ChartValues<double> { 6, 7, 3, 4 ,6 },
-                      LineSmoothness = 0, //0: straight lines, 1: really smooth lines
-                      PointGeometry = DefaultGeometries.Circle,
-                  },
-                  new LineSeries
-                  {
-                      Title = "מזון",
-                      Values = new ChartValues<double> { 4,2,7,2,7 },
-                      LineSmoothness = 0, //0: straight lines, 1: really smooth lines
-                      PointGeometry = DefaultGeometries.Circle
-                  },
-                  new LineSeries
-                  {
-                  Title = "בריאות",
-                  Values = new ChartValues<double> { 5, 3, 2, 4 },
-                  LineSmoothness = 0, //0: straight lines, 1: really smooth lines
-                  PointGeometry = DefaultGeometries.Circle
-                   },*/
-           };
             string a = (DateTime.Today.AddMonths(-4)).ToString("MMM", CultureInfo.InvariantCulture);
             string b = (DateTime.Today.AddMonths(-3)).ToString("MMM", CultureInfo.InvariantCulture);
             string c = (DateTime.Today.AddMonths(-2)).ToString("MMM", CultureInfo.InvariantCulture);
@@ -71,11 +42,22 @@ namespace EcoBuy.UserControls
 
 
             //modifying any series values will also animate and update the chart
-            SeriesCollection[0].Values.Add(5d);
+            //SeriesCollection[0].Values.Add(5d);
 
-            DataContext = this;
+           // DataContext = this;
         }
+        public CategoriesExpenses CategoriesExpenses { get; set; }
+        void Test()
+        {
+            CategoriesExpenses = new CategoriesExpenses()
+            {
+                Electricity = new List<double>() { 100, 50, 70, 10 },
+                Food = new List<double>() { 10, 10, 40, 30 },
+                Health = new List<double>() { 11, 43, 12, 25 },
+                Fashion = new List<double>() { 18, 26, 51, 33 }
+            };
 
+        }
         public SeriesCollection SeriesCollection { get; set; }
         public string[] Labels { get; set; }
         public Func<double, string> YFormatter { get; set; }

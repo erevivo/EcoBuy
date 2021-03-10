@@ -106,6 +106,7 @@
     <Compile Include="Commands\AddImageCommand.cs" />
     <Compile Include="Commands\PieChart\TodayCommand.cs" />
     <Compile Include="Commands\PieChart\WeekCommand.cs" />
+    <Compile Include="Converters\IEnumerableToIChartValues.cs" />
     <Compile Include="Converters\EnumConverter.cs" />
     <Compile Include="Converters\IntToChartValueConverter.cs" />
     <Compile Include="ConnectToGoogleDrive\GoogleDriveApi.cs" />

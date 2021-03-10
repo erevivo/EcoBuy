@@ -4,10 +4,12 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:EcoBuy.UserControls"
+             xmlns:cnv="clr-namespace:EcoBuy.Converters"
              xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
              mc:Ignorable="d"
              d:DesignHeight="410"
-             d:DesignWidth="610">
+             d:DesignWidth="610"
+             DataContext="{Binding RelativeSource={RelativeSource Self}}">
     <Grid>
         <local:UserControlBG Height="410"
                              Width="610"
@@ -18,8 +20,10 @@
                FlowDirection="RightToLeft"
                HorizontalContentAlignment="Center"
                Height="61" />
-        <lvc:CartesianChart Series="{Binding SeriesCollection}"
-                            LegendLocation="Bottom"  Margin="60,75,55,40">
+        <lvc:CartesianChart Margin="28,84,33.6,33.6">
+            <lvc:CartesianChart.Series>
+                <lvc:LineSeries Title="חשמל" Values="{Binding CategoriesExpenses.Elctricity, Converter={cnv:IEnumerableToIChartValues}}"></lvc:LineSeries>
+            </lvc:CartesianChart.Series>
             <lvc:CartesianChart.AxisY>
                 <lvc:Axis Title=""
                           LabelFormatter="{Binding YFormatter}" ></lvc:Axis>

@@ -14,14 +14,14 @@ namespace EcoBuy.Models
         public event PropertyChangedEventHandler PropertyChanged;
 
         #region Private Fields
-        private double _electricity;
-        private double _fashion;
-        private double _food;
-        private double _health;
+        private List<double> _electricity;
+        private List<double> _fashion;
+        private List<double> _food;
+        private List<double> _health;
         #endregion
 
         #region Properties
-        public double Electricity
+        public List<double> Electricity
         {
             get => _electricity;
             set
@@ -30,7 +30,7 @@ namespace EcoBuy.Models
                 OnPropertyChanged("Electricity");
             }
         }
-        public double Fashion
+        public List<double> Fashion
         {
             get => _fashion;
             set
@@ -39,7 +39,7 @@ namespace EcoBuy.Models
                 OnPropertyChanged("Fashion");
             }
         }
-        public double Food
+        public List<double> Food
         {
             get => _food;
             set
@@ -48,7 +48,7 @@ namespace EcoBuy.Models
                 OnPropertyChanged("Food");
             }
         }
-        public double Health
+        public List<double> Health
         {
             get => _health;
             set

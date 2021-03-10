@@ -7,10 +7,10 @@ namespace EcoBuy.UserControls
     {
         public ExpensesGraphDataModel(CategoriesExpenses dataModel)
         {
-            this.ElectricityDataSeries = new ChartValues<double>() { dataModel.Electricity };
-            this.FashionDataSeries = new ChartValues<double>() { dataModel.Fashion };
-            this.FoodDataSeries = new ChartValues<double>() { dataModel.Food };
-            this.HealthDataSeries = new ChartValues<double>() { dataModel.Health };
+            this.ElectricityDataSeries = new ChartValues<double>(dataModel.Electricity);
+            this.FashionDataSeries = new ChartValues<double>(dataModel.Fashion);
+            this.FoodDataSeries = new ChartValues<double>(dataModel.Food);
+            this.HealthDataSeries = new ChartValues<double>(dataModel.Health);
         }
 
         public ChartValues<double> ElectricityDataSeries { get; set; }
