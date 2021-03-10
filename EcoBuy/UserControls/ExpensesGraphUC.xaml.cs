@@ -3,6 +3,7 @@ using LiveCharts;
 using LiveCharts.Wpf;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Globalization;
 using System.Linq;
 using System.Text;
@@ -24,10 +25,17 @@ namespace EcoBuy.UserControls
     /// </summary>
     public partial class ExpensesGraphUC : UserControl
     {
+        public ObservableCollection<double> F { get; set; }
+        public CategoriesExpenses CategoriesExpenses { get; set; }
+        public SeriesCollection SeriesCollection { get; set; }
+        public string[] Labels { get; set; }
+        public Func<double, string> YFormatter { get; set; }
+
         public ExpensesGraphUC()
         {
             InitializeComponent();
             Test();
+            F = new ObservableCollection<double>() { 10, 40, 50, 60, 20 };
 
             string a = (DateTime.Today.AddMonths(-4)).ToString("MMM", CultureInfo.InvariantCulture);
             string b = (DateTime.Today.AddMonths(-3)).ToString("MMM", CultureInfo.InvariantCulture);
@@ -46,21 +54,19 @@ namespace EcoBuy.UserControls
 
            // DataContext = this;
         }
-        public CategoriesExpenses CategoriesExpenses { get; set; }
+        
         void Test()
         {
             CategoriesExpenses = new CategoriesExpenses()
             {
-                Electricity = new List<double>() { 100, 50, 70, 10 },
-                Food = new List<double>() { 10, 10, 40, 30 },
-                Health = new List<double>() { 11, 43, 12, 25 },
-                Fashion = new List<double>() { 18, 26, 51, 33 }
+                Electricity = new List<double>() { 100, 50, 70, 10, 20 },
+                Food = new List<double>() { 10, 10, 40, 30, 50 },
+                Health = new List<double>() { 11, 43, 12, 25, 60 },
+                Fashion = new List<double>() { 18, 26, 51, 33, 40 }
             };
 
         }
-        public SeriesCollection SeriesCollection { get; set; }
-        public string[] Labels { get; set; }
-        public Func<double, string> YFormatter { get; set; }
+        
 
     }
 }
