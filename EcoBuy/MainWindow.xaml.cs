@@ -38,6 +38,7 @@ namespace EcoBuy
         private void AddProductClick(object sender, RoutedEventArgs e)
         {
             MainUIGrid.Children.Clear();
+            AddItemUC uc = new AddItemUC();
             MainUIGrid.Children.Add(new AddItemUC());
         }
     }
