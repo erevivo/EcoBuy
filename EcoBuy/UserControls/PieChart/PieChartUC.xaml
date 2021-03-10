@@ -13,7 +13,7 @@
              d:DataContext="{d:DesignInstance local:PieChartUC}"
              DataContext="{Binding RelativeSource={RelativeSource Self}}">
 
-    <Border Background="white" Margin="10" CornerRadius="20"
+    <Border Background="white" Margin="25,25,25,9" CornerRadius="20"
             BorderThickness="2" BorderBrush="#e0e6ed">
         
         <Border.Effect>
@@ -88,7 +88,7 @@
 
             <TextBlock FontSize="18" Height="27" Foreground="#320b86"
                    VerticalAlignment="Bottom" FlowDirection="RightToLeft"
-                   TextDecorations="Underline" Text="לפי מוצר>>" Margin="0 0 0 7"/>
+                   TextDecorations="Underline" Text="לפי מוצר>>" Margin="2,-5,369,350.8" Grid.ColumnSpan="2"/>
 
         </Grid>
     </Border>

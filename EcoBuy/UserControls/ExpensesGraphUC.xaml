@@ -16,11 +16,11 @@
                              VerticalAlignment="Center" />
         <Label Content="היסטוריית הוצאות חודשית"
 
-               FontSize="32" Margin="91,23,133,0" VerticalAlignment="Top"
+               FontSize="32" Margin="106,32,117.6,0" VerticalAlignment="Top"
                FlowDirection="RightToLeft"
                HorizontalContentAlignment="Center"
                Height="61" />
-        <lvc:CartesianChart Margin="28,84,33.6,33.6">
+        <lvc:CartesianChart Margin="38,98,39.6,45.6">
             <lvc:CartesianChart.Series>
                 <lvc:LineSeries Title="חשמל" Values="{Binding CategoriesExpenses.Electricity, Converter={cnv:IEnumerableToIChartValues}}" />
                 <lvc:LineSeries Title="אופנה" Values="{Binding CategoriesExpenses.Fashion, Converter={cnv:IEnumerableToIChartValues}}" />

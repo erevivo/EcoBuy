@@ -58,7 +58,7 @@
                  FontSize="23"
                  ScrollViewer.HorizontalScrollBarVisibility="Disabled"
                  ScrollViewer.VerticalScrollBarVisibility="Disabled"
-                 Margin="3,0,0,0"
+                 Margin="3,-3,0,3.4"
                  Name="feedList"
                  ItemsSource="{Binding Source={StaticResource DataRss}}"
                  ItemTemplate="{StaticResource MessagesDataTemplate}"

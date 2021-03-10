@@ -23,7 +23,6 @@ namespace EcoBuy
     public partial class MainWindow : Window
     {
         //private GoogleDriveApi downloadQr;
-
         public MainWindow()
         {
             InitializeComponent();
