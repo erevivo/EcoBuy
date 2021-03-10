@@ -24,7 +24,7 @@ namespace EcoBuy.UserControls
         public LastPurchaseUC()
         {
             InitializeComponent();
-            //this.DataContext = new LastPurchaseUCVM();
+            this.DataContext = new LastPurchaseUCVM();
         }
     }
 }

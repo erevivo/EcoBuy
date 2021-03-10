@@ -16,10 +16,10 @@
             <ColumnDefinition Width="5*" />
             <ColumnDefinition Width="1*" />
         </Grid.ColumnDefinitions>
-        <local:MenuUC  Grid.Column="1"
+        <!--<local:MenuUC  Grid.Column="1"
                        HorizontalAlignment="Center"
                        VerticalAlignment="Center"
-                       Width="1100" />
+                       Width="1100" />-->
         <Image Source="/Images/logo.png"
                HorizontalAlignment="Center"
                Height="109"

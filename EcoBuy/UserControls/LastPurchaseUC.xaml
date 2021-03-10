@@ -14,6 +14,7 @@
         <local:UserControlBG Height="410"
                              Width="610"
                              VerticalAlignment="Center" />
+        <TextBlock Text="{Binding LpLable}" Margin="184,45,276.6,371.6" />
         <Label Content="הקניה האחרונה שלך"
                FontSize="26"
                Margin="333,34,24,0"

@@ -29,5 +29,9 @@ namespace EcoBuy.UserControls
         {
 
         }
+
+        private void AddProductClick(object sender, RoutedEventArgs e)
+        {
+        }
     }
 }
