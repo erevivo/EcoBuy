@@ -22,8 +22,10 @@
                Height="61" />
         <lvc:CartesianChart Margin="28,84,33.6,33.6">
             <lvc:CartesianChart.Series>
-                <lvc:LineSeries Title="חשמל" Values="{Binding F, Converter={cnv:IEnumerableToIChartValues}}" />
-                <lvc:LineSeries Title="בריאות" Values="{Binding CategoriesExpenses.Health}" />
+                <lvc:LineSeries Title="חשמל" Values="{Binding CategoriesExpenses.Electricity, Converter={cnv:IEnumerableToIChartValues}}" />
+                <lvc:LineSeries Title="אופנה" Values="{Binding CategoriesExpenses.Fashion, Converter={cnv:IEnumerableToIChartValues}}" />
+                <lvc:LineSeries Title="מזון" Values="{Binding CategoriesExpenses.Food, Converter={cnv:IEnumerableToIChartValues}}" />
+                <lvc:LineSeries Title="בריאות" Values="{Binding CategoriesExpenses.Health, Converter={cnv:IEnumerableToIChartValues}}" />
             </lvc:CartesianChart.Series>
             <lvc:CartesianChart.AxisY>
                 <lvc:Axis Title=""

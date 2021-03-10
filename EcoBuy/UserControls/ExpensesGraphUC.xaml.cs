@@ -1,4 +1,5 @@
 ﻿using EcoBuy.Models;
+using EcoBuy.ViewModels;
 using LiveCharts;
 using LiveCharts.Wpf;
 using System;
@@ -25,26 +26,26 @@ namespace EcoBuy.UserControls
     /// </summary>
     public partial class ExpensesGraphUC : UserControl
     {
-        public ObservableCollection<double> F { get; set; }
-        public CategoriesExpenses CategoriesExpenses { get; set; }
-        public SeriesCollection SeriesCollection { get; set; }
-        public string[] Labels { get; set; }
-        public Func<double, string> YFormatter { get; set; }
-
+        #region DependencyProperties
+        public static readonly DependencyProperty ElectricityProperty = DependencyProperty.Register(
+                                                            "Electricity",
+                                                            typeof(CategoriesExpenses),
+                                                            typeof(ExpensesGraphUC),
+                                                            new PropertyMetadata(default(CategoriesExpenses)));
+        #endregion
+        #region Properties
+        public CategoriesExpenses CategoriesExpenses
+        {
+            get => (CategoriesExpenses)GetValue(ElectricityProperty);
+            set => SetValue(ElectricityProperty, value);
+        }
+        #endregion
         public ExpensesGraphUC()
         {
             InitializeComponent();
+            this.DataContext = new ExpensesGraphUCVM();
             Test();
-            F = new ObservableCollection<double>() { 10, 40, 50, 60, 20 };
-
-            string a = (DateTime.Today.AddMonths(-4)).ToString("MMM", CultureInfo.InvariantCulture);
-            string b = (DateTime.Today.AddMonths(-3)).ToString("MMM", CultureInfo.InvariantCulture);
-            string c = (DateTime.Today.AddMonths(-2)).ToString("MMM", CultureInfo.InvariantCulture);
-            string d = (DateTime.Today.AddMonths(-1)).ToString("MMM", CultureInfo.InvariantCulture);
-            string e = (DateTime.Today).ToString("MMM", CultureInfo.InvariantCulture);
-
-            Labels = new[] { a, b, c, d, e };
-            YFormatter = value => value.ToString("C");
+           
 
             //modifying the series collection will animate and update the chart
 
@@ -57,13 +58,6 @@ namespace EcoBuy.UserControls
         
         void Test()
         {
-            CategoriesExpenses = new CategoriesExpenses()
-            {
-                Electricity = new List<double>() { 100, 50, 70, 10, 20 },
-                Food = new List<double>() { 10, 10, 40, 30, 50 },
-                Health = new List<double>() { 11, 43, 12, 25, 60 },
-                Fashion = new List<double>() { 18, 26, 51, 33, 40 }
-            };
 
         }
         
