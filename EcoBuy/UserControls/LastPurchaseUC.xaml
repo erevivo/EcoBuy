@@ -22,6 +22,7 @@
                HorizontalContentAlignment="Center"
                Height="61" />
         <DataGrid ItemsSource="{Binding PurchasedProducts, UpdateSourceTrigger=PropertyChanged}"
+                  x:Name="LPurchaseDataGrid"
                   FlowDirection="RightToLeft"
                   BorderThickness="2"
                   CanUserAddRows="False"
@@ -62,7 +63,8 @@
 
         </DataGrid>
         <Canvas>
-            <Button Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}"
+            <Button x:Name="PrintBtn" Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}"
+                    Command="{Binding PrintCmd}"
                     ToolTip="PDF יצא לקובץ"
                     Canvas.Left="30"
                     Canvas.Top="352"

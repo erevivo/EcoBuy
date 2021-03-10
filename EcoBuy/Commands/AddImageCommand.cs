@@ -16,7 +16,6 @@ namespace EcoBuy.Commands
         public AddImageCommand(AddItemUCVM VM)
         {
             CurrVM = VM;
-
         }
 
         public bool CanExecute(object parameter)
