@@ -28,11 +28,10 @@
                Grid.Column="2"
                Margin="24,10,23,73" />
         <local:DigitalClock HorizontalAlignment="Left"
-                            Height="405"
+                            Height="192"
                             VerticalAlignment="Top"
-                            Width="374"
-                            Grid.ColumnSpan="2"
-                            Margin="3,-119,0,-94" />
+                            Width="556"
+                            Margin="-147,0,0,0" Grid.ColumnSpan="2" />
         <Label Name="wish"
                FontSize="26"
                FlowDirection="RightToLeft"
