@@ -113,6 +113,7 @@
     <Compile Include="ConnectToGoogleDrive\GoogleDriveApi.cs" />
     <Compile Include="Converters\RemoveNewlinesConverter.cs" />
     <Compile Include="Converters\ValueConverterBase.cs" />
+    <Compile Include="DataSource.cs" />
     <Compile Include="Expressions\ExpressionHelpers.cs" />
     <Compile Include="ExtensionMethods\ExtMethods.cs" />
     <Compile Include="Models\CategoriesCount.cs" />
@@ -312,9 +313,7 @@
   <ItemGroup>
     <Resource Include="Images\logo.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="Images\main-bg.png" />
     <Resource Include="Images\rss-title.png" />

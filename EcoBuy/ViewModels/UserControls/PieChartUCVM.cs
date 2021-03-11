@@ -30,6 +30,8 @@ namespace EcoBuy.ViewModels
             TodayCmd = new RelayCommand(() => FilterByDay());
             WeekCmd = new RelayCommand(() => FilterByWeek());
             MonthCmd = new RelayCommand(() => FilterByMonth());
+
+            PurchasedProducts = new ObservableCollection<PurchasedProduct>(DataSource.PurchasedProducts);
         }
 
         private void Test()
@@ -47,7 +49,6 @@ namespace EcoBuy.ViewModels
                 new PurchasedProduct(new DateTime(2021, 3, 9), 3793, 3, 3, "טלוויזיה Samsung QE65Q60T 4K ‏65 ‏אינטש", "https://img.zap.co.il/pics/3/2/5/1/56591523c.gif", ProductsCategory.Electricity),
                 new PurchasedProduct(new DateTime(2021, 3, 2), 7, 4, 4, "מחשב אינטל NUC", "https://www.ivory.co.il/files/catalog/org/1566199487C87HL.jpg", ProductsCategory.Electricity)
             };
-
         }
         public void GroupByCategory()
         {
