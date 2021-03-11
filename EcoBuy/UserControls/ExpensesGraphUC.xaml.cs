@@ -55,12 +55,9 @@ namespace EcoBuy.UserControls
 
            // DataContext = this;
         }
-        
         void Test()
         {
 
         }
-        
-
     }
 }
