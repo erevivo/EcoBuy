@@ -79,9 +79,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BE\BE.csproj">
+    <ProjectReference Include="..\BE\EcoBuy.BE.csproj">
       <Project>{e211bed0-0c2f-4dae-a56c-bf2a3f29c79b}</Project>
-      <Name>BE</Name>
+      <Name>EcoBuy.BE</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

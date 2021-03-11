@@ -93,7 +93,7 @@
                     </ComboBox>
                 </StackPanel>
             </Grid>
-            <Image Height="210" Source="{Binding ImageUrl}" VerticalAlignment="Bottom" Margin="334,0,1302,363">
+            <Image Height="210" Source="{Binding ImageUrl}" VerticalAlignment="Bottom" Margin="334,0,1302,343">
                 <Image.Effect>
                     <DropShadowEffect Direction="25" Color="#FFB6C2CB" ShadowDepth="7" BlurRadius="8" />
                 </Image.Effect>

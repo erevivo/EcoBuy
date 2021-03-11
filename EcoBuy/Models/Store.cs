@@ -7,7 +7,7 @@ using EcoBuy.BE;
 
 namespace EcoBuy.Models
 {
-    public class Stores
+    public class Store
     {
         public int Id { get; set; }
 
@@ -15,14 +15,11 @@ namespace EcoBuy.Models
 
         public string Name { get; set; }
 
-        public ProductsCategory Category { get; set; }
-
-        public Stores(int id, int storeId, string name, ProductsCategory category)
+        public Store(int id, int storeId, string name)
         {
             Id = id;
             StoreId = storeId;
             Name = name;
-            Category = category;
         }
 
         public override string ToString()

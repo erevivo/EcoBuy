@@ -1,21 +1,35 @@
-﻿<UserControl x:Class="EcoBuy.UserControls.HistoryPurchases"
+﻿<UserControl x:Class="EcoBuy.UserControls.AllPurchases"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:EcoBuy.UserControls"
+             xmlns:vm="clr-namespace:EcoBuy.ViewModels"
+             xmlns:cnv="clr-namespace:EcoBuy.Converters"
              mc:Ignorable="d"
              d:DesignHeight="864"
              d:DesignWidth="1920"
              Background="Transparent">
     <UserControl.Resources>
-        <Style x:Key="myButtonStyle"
-           TargetType="TextBox">
-            <Setter Property="Width"
-              Value="930"></Setter>
-        </Style>
+        <cnv:EnumConverter x:Key="EnumConverter"/>
     </UserControl.Resources>
+    <UserControl.Style>
+        <Style>
+            <Style.Triggers>
+                <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="Opacity" Duration="00:00:01" From="0" To="1" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <Trigger Property="FrameworkElement.Visibility" Value="Collapsed">
+                    <Setter Property="FrameworkElement.Opacity" Value="0"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Style>
     <Grid>
         <Label Content="כל הקניות שלך"
                FontSize="90"
@@ -42,154 +56,53 @@
                 </Grid.RowDefinitions>
 
             </Grid>
-            <DataGrid ItemsSource="{Binding Items1}"
-                  FlowDirection="RightToLeft"
-                  BorderThickness="2"
-                      FontSize="18"
-                  CanUserAddRows="False"
-                  AutoGenerateColumns="False"
-                  HeadersVisibility="All" Margin="294,342,249,226">
-
-                <DataGrid.Resources>
-                    <!-- put here bidding-->
-                    <!--<domain:BindingProxy
-                x:Key="DataContextProxy"
-                Data="{Binding}" xmlns:domain="clr-namespace:MaterialDesignDemo.Domain" />-->
-                </DataGrid.Resources>
+            <!-- Data Table -->
+            <DataGrid GridLinesVisibility="None" IsReadOnly="True" FontSize="20" ItemsSource="{Binding PurchasedProducts}"
+                      VerticalScrollBarVisibility="Visible"
+                      HorizontalScrollBarVisibility="Disabled"
+                      FlowDirection="RightToLeft" BorderThickness="2"
+                      CanUserAddRows="False" AutoGenerateColumns="False"
+                      HeadersVisibility="All" Margin="280,330,263,180">
                 <DataGrid.Columns>
-                    <DataGridCheckBoxColumn
-      Binding="{Binding IsSelected, UpdateSourceTrigger=PropertyChanged}"
-      ElementStyle="{StaticResource MaterialDesignDataGridCheckBoxColumnStyle}"
-      EditingElementStyle="{StaticResource MaterialDesignDataGridCheckBoxColumnEditingStyle}">
-                        <DataGridCheckBoxColumn.Header>
-                            <Border
-          Background="Transparent">
-                                <CheckBox
-            IsChecked="{Binding Data.IsAllItems1Selected}" />
-                            </Border>
-                        </DataGridCheckBoxColumn.Header>
-                        <DataGridCheckBoxColumn.HeaderStyle>
-                            <Style
-          TargetType="{x:Type DataGridColumnHeader}"
-          BasedOn="{StaticResource MaterialDesignDataGridColumnHeader}">
-                                <Setter
-            Property="HorizontalContentAlignment"
-            Value="Center" />
-                            </Style>
-                        </DataGridCheckBoxColumn.HeaderStyle>
-                    </DataGridCheckBoxColumn>
-                    <DataGridTextColumn Binding="{Binding Image}"
-                                    Header="תמונה"
-                                    Width="100"
+
+                    <!-- Image -->
+                    <DataGridTemplateColumn Header="תמונה" Width="150"
+                        IsReadOnly="True">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Image Source="{Binding ImageUrl}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <!-- Product ID -->
+                    <materialDesign:DataGridTextColumn Header="מק&quot;ט" Width="130" Binding="{Binding ProductId}"
+                                    ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
+                                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}" />
+                    <!-- Product Name -->
+                    <DataGridTextColumn Header="שם המוצר" Binding="{Binding ProductName}" Width="370"
                                     ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
                                     EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" />
-                    <!-- if you want to use the pop up style (MaterialDesignDataGridTextColumnPopupEditingStyle), you must use MaterialDataGridTextColumn -->
-                    <materialDesign:DataGridTextColumn Header="מק&quot;ט"
-                                                   Width="130"
-                                                   ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
-                                                   EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}">
-                        <materialDesign:DataGridTextColumn.Binding>
-                            <Binding Path="ProductID">
-                                <!--<Binding.ValidationRules>
-                                <domain:NotEmptyValidationRule xmlns:domain="clr-namespace:MaterialDesignDemo.Domain" />
-                            </Binding.ValidationRules>-->
-                            </Binding>
-                        </materialDesign:DataGridTextColumn.Binding>
-                    </materialDesign:DataGridTextColumn>
-                    <!-- set a max length to get an indicator in the editor -->
-                    <DataGridTextColumn Header="שם המוצר"
-                                    Width="226"
+
+                    <!-- Category  -->
+                    <DataGridTextColumn Header="קטגוריה" Width="210" Binding="{Binding Category,  Converter={StaticResource EnumConverter}}"
                                     ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
-                                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}">
-                        <DataGridTextColumn.Binding>
-                            <Binding Path="Amount">
-                                <Binding.ValidationRules>
-                                    <!--     <domain:NotEmptyValidationRule xmlns:domain="clr-namespace:MaterialDesignDemo.Domain" /> -->
-                                </Binding.ValidationRules>
-                            </Binding>
-                        </DataGridTextColumn.Binding>
-                    </DataGridTextColumn>
-                    <DataGridTextColumn Header="קטגוריה"
-                                    Width="226"
+                                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" />
+
+                    <!-- Purchase Date -->
+                    <DataGridTextColumn Header="נקנה בתאריך" Binding="{Binding PurchaseDate, StringFormat=\{0:dd.MM.yy\}}" Width="250"
                                     ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
-                                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}">
-                        <DataGridTextColumn.Binding>
-                            <Binding Path="Amount">
-                                <Binding.ValidationRules>
-                                    <!--     <domain:NotEmptyValidationRule xmlns:domain="clr-namespace:MaterialDesignDemo.Domain" /> -->
-                                </Binding.ValidationRules>
-                            </Binding>
-                        </DataGridTextColumn.Binding>
-                    </DataGridTextColumn>
-                    <DataGridTextColumn Header="נקנה בתאריך"
-                                    Width="200"
+                                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" />
+
+                    <!-- Price -->
+                    <DataGridTextColumn Header="מחיר" Binding="{Binding Price, StringFormat= '\{0\} ₪'}" Width="130"
                                     ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
-                                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}">
-                        <DataGridTextColumn.Binding>
-                            <Binding Path="Amount">
-                                <Binding.ValidationRules>
-                                    <!--     <domain:NotEmptyValidationRule xmlns:domain="clr-namespace:MaterialDesignDemo.Domain" /> -->
-                                </Binding.ValidationRules>
-                            </Binding>
-                        </DataGridTextColumn.Binding>
-                    </DataGridTextColumn>
-                    <DataGridTextColumn Header="כמות"
-                                    Width="100"
+                                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" /> 
+                    <!-- Shop -->
+                    <DataGridTextColumn Header="חנות" Binding="{Binding Shop}" Width="100"
                                     ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
-                                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}">
-                        <DataGridTextColumn.Binding>
-                            <Binding Path="Amount">
-                                <Binding.ValidationRules>
-                                    <!--     <domain:NotEmptyValidationRule xmlns:domain="clr-namespace:MaterialDesignDemo.Domain" /> -->
-                                </Binding.ValidationRules>
-                            </Binding>
-                        </DataGridTextColumn.Binding>
-                    </DataGridTextColumn>
-                    <DataGridTextColumn Header="מחיר"
-                                    Width="120"
-                                    ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
-                                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}">
-                        <DataGridTextColumn.Binding>
-                            <Binding Path="Amount">
-                                <Binding.ValidationRules>
-                                    <!--     <domain:NotEmptyValidationRule xmlns:domain="clr-namespace:MaterialDesignDemo.Domain" /> -->
-                                </Binding.ValidationRules>
-                            </Binding>
-                        </DataGridTextColumn.Binding>
-                    </DataGridTextColumn>
-                    <DataGridTextColumn Header="חנות"
-                                    Width="200"
-                                    ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
-                                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}">
-                        <DataGridTextColumn.Binding>
-                            <Binding Path="Amount">
-                                <Binding.ValidationRules>
-                                    <!--     <domain:NotEmptyValidationRule xmlns:domain="clr-namespace:MaterialDesignDemo.Domain" /> -->
-                                </Binding.ValidationRules>
-                            </Binding>
-                        </DataGridTextColumn.Binding>
-                    </DataGridTextColumn>
-                    <DataGridTextColumn Header="מחיר"
-                                    Width=""
-                                    ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
-                                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}">
-                        <DataGridTextColumn.Binding>
-                            <Binding Path="Amount">
-                                <Binding.ValidationRules>
-                                    <!--     <domain:NotEmptyValidationRule xmlns:domain="clr-namespace:MaterialDesignDemo.Domain" /> -->
-                                </Binding.ValidationRules>
-                            </Binding>
-                        </DataGridTextColumn.Binding>
-                    </DataGridTextColumn>
-                    <!-- use custom combo box column to get better combos. Use ItemsSourceBinding as your binding template to be applied to each combo -->
+                                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" />
                 </DataGrid.Columns>
             </DataGrid>
-            <Button Style="{StaticResource MaterialDesignOutlinedButton}"
-                    ToolTip="MaterialDesignOutlinedButton"
-                    Content="שלח"
-                    FontSize="22"
-                    Margin="280,659,1504,151"
-                    Height="Auto" />
         </Grid>
     </Grid>
 </UserControl>

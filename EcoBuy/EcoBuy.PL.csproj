@@ -122,7 +122,7 @@
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\PurchasedProduct.cs" />
     <Compile Include="Models\Purchases.cs" />
-    <Compile Include="Models\Stores.cs" />
+    <Compile Include="Models\Store.cs" />
     <Compile Include="Models\StoresProductcs.cs" />
     <Compile Include="PrintDataGrid\PrintDG.cs" />
     <Compile Include="UserControls\AddItemUC.xaml.cs">
@@ -313,19 +313,21 @@
   <ItemGroup>
     <Resource Include="Images\logo.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\main-bg.png" />
     <Resource Include="Images\rss-title.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BE\BE.csproj">
+    <ProjectReference Include="..\BE\EcoBuy.BE.csproj">
       <Project>{e211bed0-0c2f-4dae-a56c-bf2a3f29c79b}</Project>
-      <Name>BE</Name>
+      <Name>EcoBuy.BE</Name>
     </ProjectReference>
-    <ProjectReference Include="..\BL\BL.csproj">
+    <ProjectReference Include="..\BL\EcoBuy.BL.csproj">
       <Project>{41ed6e17-351e-4d77-b435-3b6a7d7d6e29}</Project>
-      <Name>BL</Name>
+      <Name>EcoBuy.BL</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

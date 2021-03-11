@@ -108,13 +108,13 @@
     <Compile Include="Recommender.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BE\BE.csproj">
+    <ProjectReference Include="..\BE\EcoBuy.BE.csproj">
       <Project>{e211bed0-0c2f-4dae-a56c-bf2a3f29c79b}</Project>
-      <Name>BE</Name>
+      <Name>EcoBuy.BE</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DAL\DAL.csproj">
+    <ProjectReference Include="..\DAL\EcoBuy.DAL.csproj">
       <Project>{4b18be53-0194-4503-9640-c98f293e2a8d}</Project>
-      <Name>DAL</Name>
+      <Name>EcoBuy.DAL</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

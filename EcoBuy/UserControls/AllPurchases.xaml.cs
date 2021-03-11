@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EcoBuy.ViewModels.UserControls;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,13 +17,14 @@ using System.Windows.Shapes;
 namespace EcoBuy.UserControls
 {
     /// <summary>
-    /// Interaction logic for HistoryPurchases.xaml
+    /// Interaction logic for AllPurchases.xaml
     /// </summary>
-    public partial class HistoryPurchases : UserControl
+    public partial class AllPurchases : UserControl
     {
-        public HistoryPurchases()
+        public AllPurchases()
         {
             InitializeComponent();
+            this.DataContext = new AllPurchaseUCVM();
         }
     }
 }
