@@ -1,4 +1,5 @@
 ﻿using BE;
+using EcoBuy.ConnectToGoogleDrive;
 using EcoBuy.ExtensionMethods;
 using EcoBuy.UserControls;
 using PL.ConnectToGoogleDrive;
@@ -26,12 +27,10 @@ namespace EcoBuy
     {
         UIElementCollection _children;
 
-        //private GoogleDriveApi downloadQr;
         public MainWindow()
         {
             InitializeComponent();
-            //downloadQr = new GoogleDriveApi();
-            //downloadQr.Connect();
+            DecodeGenerateProduct d = new DecodeGenerateProduct();
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {

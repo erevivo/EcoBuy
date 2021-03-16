@@ -44,20 +44,6 @@ namespace EcoBuy.UserControls
         {
             InitializeComponent();
             this.DataContext = new ExpensesGraphUCVM();
-            Test();
-           
-
-            //modifying the series collection will animate and update the chart
-
-
-            //modifying any series values will also animate and update the chart
-            //SeriesCollection[0].Values.Add(5d);
-
-           // DataContext = this;
-        }
-        void Test()
-        {
-
         }
     }
 }

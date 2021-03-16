@@ -102,7 +102,7 @@
 
         <!-- Close Button -->
         <Button Style="{StaticResource MaterialDesignFlatDarkBgButton}"
-                Width="64" Margin="18,10,0,0" Content="X" ToolTip="יציאה"
+                Width="47" Margin="10,10,0,0" Content="X" ToolTip="יציאה"
                 HorizontalAlignment="Left" VerticalAlignment="Top"
                 Grid.Row="0" Click="Button_Click" />
 

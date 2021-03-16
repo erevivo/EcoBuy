@@ -5,21 +5,30 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:EcoBuy.UserControls"
              mc:Ignorable="d"
-             Height="200" Width="500" >
+             Height="192" Width="272" >
     <Grid>
-        <Label Foreground="White" Background="Transparent" FlowDirection="LeftToRight"  Height="73" HorizontalAlignment="Center" Margin="202,36,194,91" Name="label1" VerticalAlignment="Center" Width="104" FontSize="42" FontFamily="Teko">
+        <Label Foreground="#320b86"
+               Background="Transparent" FlowDirection="LeftToRight"  
+               Height="94" HorizontalAlignment="Center"
+               Name="label1" VerticalAlignment="Center" Width="183" FontSize="62" FontFamily="Teko" Margin="79,24,10,74">
             <Label.BitmapEffect>
-                <DropShadowBitmapEffect Color="Black" Direction="320" ShadowDepth="10" Opacity=".5" Softness="9" />
+                <DropShadowBitmapEffect Color="Black" Direction="320" ShadowDepth="5" Opacity=".5" Softness="9" />
             </Label.BitmapEffect>
         </Label>
-        <Label Foreground="White" Background="Transparent" FlowDirection="RightToLeft"  Height="36" HorizontalAlignment="Center" Margin="54,114,196,50" Name="hedate" VerticalAlignment="Center" Width="250" FontSize="22" FontFamily="Teko">
+        <Label Foreground="#320b86"
+               Background="Transparent" FlowDirection="RightToLeft"  
+               Height="60" HorizontalAlignment="Center" 
+               Name="date" VerticalAlignment="Center" Width="181" FontSize="42" FontFamily="Teko" Margin="50,96,41,36">
             <Label.BitmapEffect>
-                <DropShadowBitmapEffect Color="Black" Direction="320" ShadowDepth="10" Opacity=".5" Softness="9" />
+                <DropShadowBitmapEffect Color="Black" Direction="320" ShadowDepth="5" Opacity=".5" Softness="9" />
             </Label.BitmapEffect>
         </Label>
-        <Label Content="60" Foreground="DarkBlue" Background="Transparent" FlowDirection="RightToLeft"  Height="63" HorizontalAlignment="Center" Margin="373,36,21,101" Name="temp" VerticalAlignment="Center" Width="106" FontSize="22" FontFamily="Teko">
+        <Label Foreground="#320b86" 
+               Background="Transparent" FlowDirection="RightToLeft"  
+               Height="36" HorizontalAlignment="Center"
+               Name="temp" VerticalAlignment="Center" Width="59" FontSize="22" FontFamily="Teko" Margin="200,12,13,144">
             <Label.BitmapEffect>
-                <DropShadowBitmapEffect Color="Black" Direction="320" ShadowDepth="10" Opacity=".5" Softness="9" />
+                <DropShadowBitmapEffect Color="Black" Direction="320" ShadowDepth="5" Opacity=".5" Softness="9" />
             </Label.BitmapEffect>
         </Label>
     </Grid>

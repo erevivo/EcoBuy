@@ -1,14 +1,17 @@
-﻿using Google.Apis.Auth.OAuth2;
+﻿using FFImageLoading.Helpers.Exif;
+using Google.Apis.Auth.OAuth2;
 using Google.Apis.Drive.v3;
 using Google.Apis.Services;
 using Google.Apis.Util.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.IO.Pipes;
 using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows.Media.Imaging;
 
 namespace PL.ConnectToGoogleDrive
 {
@@ -95,14 +98,12 @@ namespace PL.ConnectToGoogleDrive
 
 
             Console.WriteLine("Files:");
-
             if (files != null && files.Count > 0)
             {
                 foreach (var file in files)
                 {
-                    string saveTo = String.Format(@"C:\Users\Evyatar\Documents\GitHub\EcoBuy\EcoBuy\Images\QrScans\qr{0}.png", file.Name);
-                    Console.WriteLine("{0} ({1})", file.Name, file.Id);
-                    DownloadFile(service, file, saveTo);
+                    string saveTo = String.Format(@"C:\Users\Evyatar\Documents\GitHub\EcoBuy\EcoBuy\Images\QrScans\{0}.png", file.Name);
+                    if(!File.Exists(saveTo)) DownloadFile(service, file, saveTo);
                 }
             }
             else
@@ -111,5 +112,6 @@ namespace PL.ConnectToGoogleDrive
             }
             Console.Read();
         }
+
+        }
     }
-}

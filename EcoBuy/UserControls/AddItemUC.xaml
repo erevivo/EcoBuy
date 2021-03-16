@@ -79,7 +79,7 @@
                          IsEnabled="{Binding ElementName=MaterialDesignFilledTextBoxEnabledComboBox}" />
                     <ComboBox Background="#F3F3F3" materialDesign:HintAssist.Hint="   חנות"
                         FontSize="26" Height="78" ItemsSource="{Binding _Stores}"/>
-                    
+
                     <ComboBox ItemsSource="{Binding Source={StaticResource dataFromEnum}}"
                               SelectedItem="{Binding SelectedValue, Converter={StaticResource EnumConverter}}"
                               x:Name="CategoryComboBox" Background="#F3F3F3"  
@@ -89,18 +89,18 @@
                                 <TextBlock Text="{Binding Converter = {StaticResource EnumConverter}}"></TextBlock>
                             </DataTemplate>
                         </ComboBox.ItemTemplate>
-                        <!--SelectedItem="{Binding Path=CurrentEffectStyle, Converter={StaticResource EnumConverter}}"--> 
+                        <!--SelectedItem="{Binding Path=CurrentEffectStyle, Converter={StaticResource EnumConverter}}"-->
                     </ComboBox>
                 </StackPanel>
             </Grid>
-            <Image Height="210" Source="{Binding ImageUrl}" VerticalAlignment="Bottom" Margin="334,0,1302,343">
+            <Image Height="277" Source="{Binding ImageUrl}" VerticalAlignment="Bottom" Margin="290,0,1255,253">
                 <Image.Effect>
                     <DropShadowEffect Direction="25" Color="#FFB6C2CB" ShadowDepth="7" BlurRadius="8" />
                 </Image.Effect>
             </Image>
             <Button Command="{Binding addImage}"
   Style="{StaticResource MaterialDesignFloatingActionDarkButton}"
-  ToolTip="MaterialDesignFloatingActionDarkButton" Margin="445,569,1419,239">
+  ToolTip="MaterialDesignFloatingActionDarkButton" Margin="445,647,1419,161">
                 <materialDesign:PackIcon
     Kind="ImagePlus"
     Height="30"

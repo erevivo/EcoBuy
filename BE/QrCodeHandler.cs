@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media.Imaging;
 using System.Drawing;
 using ZXing;
+using System.IO;
 
 namespace BE
 {
@@ -19,7 +21,18 @@ namespace BE
             if (qrCodeResult != null)
                 return qrCodeResult.Text;
             else
-                return "Error! can not read file"+ url;
+                return "לא ניתן היה לקרוא את הברקוד מהקובץ Error" + url;
+        }
+        public string GetDate(FileInfo f)
+        {
+            using (FileStream fs = new FileStream(f.FullName, FileMode.Open, FileAccess.Read, FileShare.Read))
+            {
+                BitmapSource img = BitmapFrame.Create(fs);
+                BitmapMetadata md = (BitmapMetadata)img.Metadata;
+                string date = md.DateTaken;
+                Console.WriteLine(date);
+                return date;
+            }
         }
     }
 }

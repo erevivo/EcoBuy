@@ -45,7 +45,7 @@ namespace EcoBuy.UserControls
                 label1.Content = d.Hour + " : " + "0" + d.Minute;
             else
                 label1.Content = d.Hour + " : " + d.Minute;
-            hedate.Content = d.Date.ToString("dd/MM/yyyy");
+                date.Content = d.Date.ToString("dd/MM/yyyy");
         }
         private async void Temp()
         {
@@ -57,11 +57,12 @@ namespace EcoBuy.UserControls
             var stringResult = await response.Content.ReadAsStringAsync();
 
             var obj = JsonConvert.DeserializeObject<dynamic>(stringResult);
-            var tmpDegreesF = Math.Round(((float)obj.main.temp * 9 / 5 - 459.67), 2);
-            var tmpDegreesC = ((tmpDegreesF - 32) * (0.55555555556));
-            temp.Content = tmpDegreesC.ToString();
+            var tmpDegreesF = Math.Round(((float)obj.main.temp * 9 / 5 - 459.67), 1);
+            var te = (tmpDegreesF - (double)32 )*5 / 9;
+            var tmpDegreesC = Math.Round(te, 1);
+            temp.FlowDirection = (FlowDirection)0;
+            temp.Content = tmpDegreesC.ToString()+ "°C";
         }
 
     }
-
 }

@@ -49,13 +49,6 @@
                   CanUserAddRows="False"
                   AutoGenerateColumns="False"
                   HeadersVisibility="All" Margin="294,342,249,226">
-
-                <DataGrid.Resources>
-                    <!-- put here bidding-->
-                    <!--<domain:BindingProxy
-                x:Key="DataContextProxy"
-                Data="{Binding}" xmlns:domain="clr-namespace:MaterialDesignDemo.Domain" />-->
-                </DataGrid.Resources>
                 <DataGrid.Columns>
                     <DataGridCheckBoxColumn
       Binding="{Binding IsSelected, UpdateSourceTrigger=PropertyChanged}"
@@ -78,24 +71,19 @@
                             </Style>
                         </DataGridCheckBoxColumn.HeaderStyle>
                     </DataGridCheckBoxColumn>
-                    <DataGridTextColumn Binding="{Binding Image}"
-                                    Header="תמונה"
-                                    Width="100"
+                    <!-- Image -->
+                    <DataGridTemplateColumn Header="תמונה" Width="100"
+                        IsReadOnly="True">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Image Source="{Binding ImageUrl}" Width="40" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <!-- Product ID -->
+                    <materialDesign:DataGridTextColumn Header="מק&quot;ט" Width="130" Binding="{Binding ProductId}"
                                     ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
-                                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" />
-                    <!-- if you want to use the pop up style (MaterialDesignDataGridTextColumnPopupEditingStyle), you must use MaterialDataGridTextColumn -->
-                    <materialDesign:DataGridTextColumn Header="מק&quot;ט"
-                                                   Width="130"
-                                                   ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
-                                                   EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}">
-                        <materialDesign:DataGridTextColumn.Binding>
-                            <Binding Path="ProductID">
-                                <!--<Binding.ValidationRules>
-                                <domain:NotEmptyValidationRule xmlns:domain="clr-namespace:MaterialDesignDemo.Domain" />
-                            </Binding.ValidationRules>-->
-                            </Binding>
-                        </materialDesign:DataGridTextColumn.Binding>
-                    </materialDesign:DataGridTextColumn>
+                                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}" />
                     <!-- set a max length to get an indicator in the editor -->
                     <DataGridTextColumn Header="שם המוצר"
                                     Width="226"

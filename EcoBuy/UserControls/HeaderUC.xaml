@@ -30,8 +30,7 @@
         <local:DigitalClock HorizontalAlignment="Left"
                             Height="192"
                             VerticalAlignment="Top"
-                            Width="556"
-                            Margin="-147,0,0,0" Grid.ColumnSpan="2" />
+                            Width="274" />
         <Label Name="wish"
                FontSize="26"
                FlowDirection="RightToLeft"
