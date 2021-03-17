@@ -6,19 +6,19 @@ namespace EcoBuy.Models
 {
     public class PurchasedProduct : Product
     {
+        // var lessons = db.Lessons.Where(me => me.SynagogueId == (db.Synagogues.Where(m => m.ManagerId == Manager.Current.Id).FirstOrDefault().Id))
         public DateTime PurchaseDate { get; set; }
-        public Store Store { get; set; }
+        public int StoreId { get; set; }
         public double Price { get; set; }
         public int Amount { get; set; }
-        
-        public PurchasedProduct(DateTime purchaseDate, Store store, double price, int amount,
+        public PurchasedProduct(DateTime purchaseDate, double price, 
                                 int id, int productId, string productName, 
-                                string ImageUrl, ProductsCategory category) : 
+                                string ImageUrl, ProductsCategory category, int storeId , int amount=1) : 
             base(id, productId, productName, ImageUrl, category)
         {
             PurchaseDate = purchaseDate;
-            Store = store;
             Price = price;
+            StoreId = storeId;
             Amount = amount;
         }
 

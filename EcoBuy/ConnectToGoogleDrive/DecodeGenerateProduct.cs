@@ -27,7 +27,7 @@ namespace EcoBuy.ConnectToGoogleDrive
                 {/*show message for user*/
                     var url = productText.Substring(5);
                 }
-                PurchasedProduct TextToproduct = new PurchasedProduct(();
+                //PurchasedProduct TextToproduct = new PurchasedProduct(();
             }
         }
     }

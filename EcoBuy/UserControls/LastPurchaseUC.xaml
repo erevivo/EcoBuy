@@ -6,9 +6,13 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:vm="clr-namespace:EcoBuy.ViewModels"
              xmlns:local="clr-namespace:EcoBuy.UserControls"
+             xmlns:cnv="clr-namespace:EcoBuy.Converters"
              mc:Ignorable="d"
              d:DesignHeight="450"
              d:DesignWidth="610">
+    <UserControl.Resources>
+        <cnv:StoreIdToStoreName x:Key="StoreConverter"></cnv:StoreIdToStoreName>
+    </UserControl.Resources>
     <UserControl.Style>
         <Style>
             <Style.Triggers>
@@ -66,16 +70,20 @@
                                     EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}" />
 
                 <!-- Product Name -->
-                <DataGridTextColumn Header="שם המוצר" Binding="{Binding ProductName}" Width="190"
+                <DataGridTextColumn Header="שם המוצר" Binding="{Binding ProductName}" Width="128"
+                                    ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
+                                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" />
+                <!-- Store -->
+                <DataGridTextColumn Header="חנות" Binding="{Binding StoreId, Converter={StaticResource StoreConverter}}" Width="80"
                                     ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
                                     EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" />
                 <!-- Amount -->
-                <DataGridTextColumn Header="כמות" Binding="{Binding Amount}" Width="70"
+                <DataGridTextColumn Header="כמות" Binding="{Binding Amount}" Width="63"
                                     ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
                                     EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" />
 
                 <!-- Price -->
-                <DataGridTextColumn Header="מחיר" Binding="{Binding Price, StringFormat= '\{0\} ₪'}" Width="90"
+                <DataGridTextColumn Header="מחיר ליח'" Binding="{Binding Price, StringFormat= '\{0\} ₪'}" Width="90"
                                     ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
                                     EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" />
             </DataGrid.Columns>
