@@ -40,45 +40,31 @@ namespace EcoBuy.ViewModels
         }
         public void GroupByCategory()
         {
-            int a = DateTime.Today.AddMonths(-4).Month;
-            int b = DateTime.Today.AddMonths(-3).Month;
-            int c = DateTime.Today.AddMonths(-2).Month;
-            int d = DateTime.Today.AddMonths(-1).Month;
-            int e = DateTime.Today.Month;
-
             Dictionary<ProductsCategory, Dictionary<int, double>> dict = getPriceByCategoriesFor5Months(PurchasedProducts);
-
-            CategoriesExpenses.Electricity = new List<double>() { 0,0,0,0,0 };
+            CategoriesExpenses.Electricity = new List<double>() { 0, 0, 0, 0, 0 };
             CategoriesExpenses.Food = new List<double>() { 0, 0, 0, 0, 0 };
             CategoriesExpenses.Health = new List<double>() { 0, 0, 0, 0, 0 };
             CategoriesExpenses.Fashion = new List<double>() { 0, 0, 0, 0, 0 };
 
             foreach (KeyValuePair<int, double> entry in dict[ProductsCategory.Electricity])
             {
-                CategoriesExpenses.Electricity.Insert(4 - entry.Key, entry.Value);
+                CategoriesExpenses.Electricity[4 - entry.Key] = entry.Value;
             }
             foreach (KeyValuePair<int, double> entry in dict[ProductsCategory.Food])
             {
-                CategoriesExpenses.Food.Insert(4 - entry.Key, entry.Value);
+                CategoriesExpenses.Food[4 - entry.Key] = entry.Value;
             }
             foreach (KeyValuePair<int, double> entry in dict[ProductsCategory.Health])
             {
-                CategoriesExpenses.Health.Insert(4 - entry.Key, entry.Value);
+                CategoriesExpenses.Health[4 - entry.Key] = entry.Value;
             }
             foreach (KeyValuePair<int, double> entry in dict[ProductsCategory.Fashion])
             {
-                CategoriesExpenses.Fashion.Insert(4 - entry.Key, entry.Value);
+                CategoriesExpenses.Fashion[4 - entry.Key] = entry.Value;
             }
-            //בסוף הלולאה המערך יהיה מוכן
-            /*CategoriesExpenses.Electricity = new List<double>() { 13, 11, 23, 41, 50 };
-            CategoriesExpenses.Health = new List<double>() { 13, 11, 23, 41, 50 };
-            CategoriesExpenses.Fashion = new List<double>() { 25, 70, 10, 20, 23 };
-            CategoriesExpenses.Food = new List<double>() { 28, 30, 10, 60, 10 };*/
-
         }
         public void LabelsGen()
         {
-            //Number Of Month 
             Labels = new string[5];
             for (int i = 0; i < 5; i++)
             {
@@ -90,11 +76,10 @@ namespace EcoBuy.ViewModels
         {
 
             DateTime currentDate = DateTime.Now;
-            //int range = (DateTime.Now - Pr.PurchaseDate();
             int range = (currentDate.Year - Pr.PurchaseDate.Year) * 12 + currentDate.Month - Pr.PurchaseDate.Month;
             return range;
         }
-       
+
         public Dictionary<ProductsCategory, Dictionary<int, double>> getPriceByCategoriesFor5Months(ObservableCollection<PurchasedProduct> P)
         {
             Dictionary<ProductsCategory, Dictionary<int, double>> dict = new Dictionary<ProductsCategory, Dictionary<int, double>>();
