@@ -21,7 +21,7 @@ namespace BE
             if (qrCodeResult != null)
                 return qrCodeResult.Text;
             else
-                return "לא ניתן היה לקרוא את הברקוד מהקובץ Error" + url;
+                return "Error" + url;
         }
         public string GetDate(FileInfo f)
         {

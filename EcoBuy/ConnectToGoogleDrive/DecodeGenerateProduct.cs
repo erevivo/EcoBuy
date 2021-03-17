@@ -15,18 +15,19 @@ namespace EcoBuy.ConnectToGoogleDrive
         private GoogleDriveApi downloadQr;
         public DecodeGenerateProduct()
         {
-            downloadQr = new GoogleDriveApi();
-            downloadQr.Connect(); // add check condintion if new files download
+        //    downloadQr = new GoogleDriveApi();
+          //  downloadQr.Connect(); // add check condintion if new files download
             QRCodeHandler DecodeQrImage = new QRCodeHandler();
             string productText;
             string folderPath = @"C:\Users\Evyatar\Documents\GitHub\EcoBuy\EcoBuy\Images\QrScans\";
             foreach (string file in Directory.EnumerateFiles(folderPath, "*.png"))
             {
                 productText = DecodeQrImage.DecodeData(folderPath + Path.GetFileName(file));
-                if (productText.Contains("Error")) {/*show message for user*/ }
-                //PurchasedProduct TextToproduct = new PurchasedProduct();
-
-
+                if (productText.Contains("Error")) 
+                {/*show message for user*/
+                    var url = productText.Substring(5);
+                }
+                PurchasedProduct TextToproduct = new PurchasedProduct(();
             }
         }
     }

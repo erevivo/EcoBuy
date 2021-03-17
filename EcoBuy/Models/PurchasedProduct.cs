@@ -9,14 +9,17 @@ namespace EcoBuy.Models
         public DateTime PurchaseDate { get; set; }
         public Store Store { get; set; }
         public double Price { get; set; }
-        public PurchasedProduct(DateTime purchaseDate, double price, 
+        public int Amount { get; set; }
+        
+        public PurchasedProduct(DateTime purchaseDate, Store store, double price, int amount,
                                 int id, int productId, string productName, 
-                                string ImageUrl, ProductsCategory category, Store store) : 
+                                string ImageUrl, ProductsCategory category) : 
             base(id, productId, productName, ImageUrl, category)
         {
             PurchaseDate = purchaseDate;
-            Price = price;
             Store = store;
+            Price = price;
+            Amount = amount;
         }
 
         internal static IEnumerable<object> GroupBy(Func<object, object> p)
