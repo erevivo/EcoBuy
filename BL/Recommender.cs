@@ -13,7 +13,7 @@ namespace BL
     public class Recommender
     {
         private static string FileName = "PurchasedProducts.txt";
-        private static string BaseDataSetRelativePath = @"Data";
+        private static string BaseDataSetRelativePath = @"C:\Users\Evyatar\Documents\GitHub\EcoBuy\BL\Data";
         private static string TrainingDataRelativePath = $"{BaseDataSetRelativePath}\\" + FileName;
         private static string TrainingDataLocation = GetAbsolutePath(TrainingDataRelativePath);
 

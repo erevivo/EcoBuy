@@ -169,6 +169,7 @@
     <Compile Include="Converters\RemoveNewlinesConverter.cs" />
     <Compile Include="Converters\StoreIdToStoreName.cs" />
     <Compile Include="Converters\ValueConverterBase.cs" />
+    <Compile Include="DataSource2.cs" />
     <Compile Include="DataSource.cs" />
     <Compile Include="Expressions\ExpressionHelpers.cs" />
     <Compile Include="ExtensionMethods\ExtMethods.cs" />

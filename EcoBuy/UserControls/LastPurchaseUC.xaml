@@ -47,6 +47,7 @@
                   HorizontalScrollBarVisibility="Disabled"
                   FlowDirection="RightToLeft"
                   BorderThickness="2"
+                  IsReadOnly="True"
                   CanUserAddRows="False"
                   AutoGenerateColumns="False"
                   HeadersVisibility="All"

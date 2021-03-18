@@ -22,9 +22,13 @@ namespace EcoBuy.ViewModels
             PurchasedProductsTemp = new ObservableCollection<PurchasedProduct>();
             Productim = new DecodeGenerateProduct();
             PurchasedProductsTemp = Productim.GenerateProduct();
-            //RecommendPurchase(PurchasedProductsTemp);
+            RecommendPurchase(PurchasedProductsTemp);
             //todo פה להוסיף את הרשימה אחרי לחיצה על שלח לתוך מסד הנתונים
         }
+
+
+
+
         public void RecommendPurchase(ObservableCollection<PurchasedProduct> pList)
         {
             FileStream fs = new FileStream(@"C:\Users\Evyatar\Documents\GitHub\EcoBuy\BL\Data\PurchasedProducts.txt", FileMode.Append, FileAccess.Write);

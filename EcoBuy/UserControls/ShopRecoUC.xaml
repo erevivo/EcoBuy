@@ -35,7 +35,7 @@
                FlowDirection="RightToLeft"
                HorizontalContentAlignment="Center"
                Height="61" />
-        <DataGrid ItemsSource="{Binding PurchasedProducts, UpdateSourceTrigger=PropertyChanged}"
+        <DataGrid ItemsSource="{Binding RecoProduct, UpdateSourceTrigger=PropertyChanged}"
                   x:Name="LPurchaseDataGrid"
                   VerticalScrollBarVisibility="Visible"
                   HorizontalScrollBarVisibility="Disabled"
