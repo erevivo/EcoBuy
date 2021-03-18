@@ -225,6 +225,7 @@
     <Compile Include="ViewModels\UserControls\AllPurchaseUCVM.cs" />
     <Compile Include="ViewModels\UserControls\PieChartUCVM.cs" />
     <Compile Include="ViewModels\UserControls\DesignModels\SearchEngineUCDM.cs" />
+    <Compile Include="ViewModels\UserControls\PurchaseConfirmUCVM.cs" />
     <Compile Include="ViewModels\UserControls\SearchEngineUCVM.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

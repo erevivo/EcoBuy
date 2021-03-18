@@ -68,15 +68,8 @@
                 <DataGridTextColumn Header="קטגוריה"
                                     Width="226"
                                     ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
-                                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}">
-                    <DataGridTextColumn.Binding>
-                        <Binding Path="Amount">
-                            <Binding.ValidationRules>
-                                <!--     <domain:NotEmptyValidationRule xmlns:domain="clr-namespace:MaterialDesignDemo.Domain" /> -->
-                            </Binding.ValidationRules>
-                        </Binding>
-                    </DataGridTextColumn.Binding>
-                </DataGridTextColumn>
+                                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}"/>
+
                 <DataGridTextColumn Header="נקנה בתאריך"
                                     Width="200"
                                     ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"

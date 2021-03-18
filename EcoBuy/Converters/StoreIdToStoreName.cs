@@ -28,8 +28,11 @@ namespace EcoBuy.Converters
         public string toName(int id)
         {
             Stores = new ObservableCollection<Store>(DataSource.Stores);
-            Store currStore = (Store)Stores.Where(st => st.Id == id);
-            return "aba";
+            Store currStore = Stores.Where(st => st.StoreId == id).FirstOrDefault();
+            if (currStore==null)
+                return "חנות לא זמינה";
+            else
+                return currStore.Name;
         }
     }
 }

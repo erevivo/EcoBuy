@@ -25,12 +25,10 @@ namespace EcoBuy
     /// </summary>
     public partial class MainWindow : Window
     {
-        UIElementCollection _children;
 
         public MainWindow()
         {
             InitializeComponent();
-            DecodeGenerateProduct d = new DecodeGenerateProduct();
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -49,6 +47,18 @@ namespace EcoBuy
             Grid.SetColumnSpan(uc, 3);
             MainUIGrid.Children.Add(uc);
         }
+        private void ConfirmProductClick(object sender, RoutedEventArgs e)
+        {
+            MainUIGrid.Children.Clear();
+            MainUIGrid.Height = 864;
+            MainUIGrid.Width = 1920;
+            var uc = new PurchaseConfirmUC();
+            uc.Height = 864;
+            uc.Width = 1920;
+            Grid.SetRowSpan(uc, 2);
+            Grid.SetColumnSpan(uc, 3);
+            MainUIGrid.Children.Add(uc);
+        }
         private void MainClick(object sender, RoutedEventArgs e)
         {
             MainUIGrid.Children.Clear();
@@ -57,8 +67,6 @@ namespace EcoBuy
             MainUIGrid.Children.Add(LastPurchaseUC);
             MainUIGrid.Children.Add(ShopRecoUI);
             MainUIGrid.Children.Add(ExpensesGraphUC);
-
-
         }
     }
 }

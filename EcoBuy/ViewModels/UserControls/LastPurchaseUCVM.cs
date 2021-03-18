@@ -17,7 +17,7 @@ namespace EcoBuy.ViewModels
         #region Properties
         public ObservableCollection<PurchasedProduct> PurchasedProducts { get; set; }
         public PrintCommand PrintCmd { get; set; }
-        public string LpLable;
+        public string LpLable { get; set; }
         public ObservableCollection<PurchasedProduct> LastPurchasedList { get; set; }
         public DataGrid DataGridPurchasedList { get; set; }
         #endregion
@@ -29,7 +29,7 @@ namespace EcoBuy.ViewModels
             Test();
             LastPurchase();
             PrintCmd = new PrintCommand(this);
-            LpLable = PurchasedProducts.Max(p => p.PurchaseDate).Date.ToString();
+            LpLable = "(" + PurchasedProducts.Max(p => p.PurchaseDate).Date.ToString("dd/MM/yyyy") + ")";
             DataGridPurchasedList = new DataGrid();
             DataGridPurchasedList.ItemsSource = PurchasedProducts;
         }

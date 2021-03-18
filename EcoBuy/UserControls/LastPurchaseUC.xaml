@@ -30,11 +30,9 @@
         </Style>
     </UserControl.Style>
     <Grid>
-        
         <local:UserControlBG Height="410"
                              Width="610"
                              VerticalAlignment="Center" />
-        <TextBlock Text="{Binding LpLable}" Margin="184,45,276.6,371.6" />
         <Label Content="הקניה האחרונה שלך"
                FontSize="26"
                Margin="333,34,24,0"
@@ -42,6 +40,7 @@
                FlowDirection="RightToLeft"
                HorizontalContentAlignment="Center"
                Height="61" />
+        <Label Content="{Binding LpLable}" Height="50" FontSize="20" Margin="209,38,274,362"/>
         <DataGrid ItemsSource="{Binding PurchasedProducts, UpdateSourceTrigger=PropertyChanged}"
                   x:Name="LPurchaseDataGrid"
                   VerticalScrollBarVisibility="Visible"
