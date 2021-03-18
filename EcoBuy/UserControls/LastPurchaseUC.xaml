@@ -41,7 +41,7 @@
                HorizontalContentAlignment="Center"
                Height="61" />
         <Label Content="{Binding LpLable}" Height="50" FontSize="20" Margin="209,38,274,362"/>
-        <DataGrid ItemsSource="{Binding PurchasedProducts, UpdateSourceTrigger=PropertyChanged}"
+        <DataGrid ItemsSource="{Binding LastPurchasedList, UpdateSourceTrigger=PropertyChanged}"
                   x:Name="LPurchaseDataGrid"
                   VerticalScrollBarVisibility="Visible"
                   HorizontalScrollBarVisibility="Disabled"

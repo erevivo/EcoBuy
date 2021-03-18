@@ -140,7 +140,7 @@
                                          Grid.Row="1" Grid.Column="1"
                                          DataContext="{Binding LastPurchaseVM}" Margin="622,0,37,0" Grid.ColumnSpan="2" />
 
-            <UserControls:ShopRecoUI x:Name ="ShopRecoUI"
+            <UserControls:ShopRecoUC x:Name ="ShopRecoUI"
                                     Height="auto" Width="611" Margin="6,0,23,0" 
                                      HorizontalAlignment="Center" VerticalAlignment="Stretch"
                                      Grid.Row="1" Grid.Column="1" />

@@ -13,13 +13,15 @@ namespace BL
     public class Recommender
     {
         private static string FileName = "PurchasedProducts.txt";
-        private static string BaseDataSetRelativePath = @"..\..\..\Data";
+        private static string BaseDataSetRelativePath = @"Data";
         private static string TrainingDataRelativePath = $"{BaseDataSetRelativePath}\\" + FileName;
         private static string TrainingDataLocation = GetAbsolutePath(TrainingDataRelativePath);
 
         private static string BaseModelRelativePath = @"..\..\..\Model";
         private static string ModelRelativePath = $"{BaseModelRelativePath}/model.zip";
         private static string ModelPath = GetAbsolutePath(ModelRelativePath);
+
+        //return top n products comptiable with productid
 
         public static IEnumerable<(int, float)> GetTopNPredictions(uint productId, int n)
         {

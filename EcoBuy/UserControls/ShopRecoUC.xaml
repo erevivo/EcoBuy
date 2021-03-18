@@ -4,7 +4,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:EcoBuy.UserControls"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-             x:Class="EcoBuy.UserControls.ShopRecoUI"
+             x:Class="EcoBuy.UserControls.ShopRecoUC"
              mc:Ignorable="d"
              d:DesignHeight="450"
              d:DesignWidth="610">
@@ -28,89 +28,47 @@
         <local:UserControlBG Height="410"
                              Width="610"
                              VerticalAlignment="Center" />
-        <Label Content="המלצת הקניה היומית שלך"
+        <Label Content="אולי שכחת משהו ?"
                FontSize="26"
-               Margin="264,34,22,0"
+               Margin="332,34,24,0"
                VerticalAlignment="Top"
                FlowDirection="RightToLeft"
                HorizontalContentAlignment="Center"
                Height="61" />
-        <DataGrid ItemsSource="{Binding Items1}"
+        <DataGrid ItemsSource="{Binding PurchasedProducts, UpdateSourceTrigger=PropertyChanged}"
+                  x:Name="LPurchaseDataGrid"
+                  VerticalScrollBarVisibility="Visible"
+                  HorizontalScrollBarVisibility="Disabled"
                   FlowDirection="RightToLeft"
                   BorderThickness="2"
                   CanUserAddRows="False"
                   AutoGenerateColumns="False"
                   HeadersVisibility="All"
                   Margin="45,100,44.6,87.6">
-            <DataGrid.Resources>
-                <!-- put here bidding-->
-                <!--<domain:BindingProxy
-                x:Key="DataContextProxy"
-                Data="{Binding}" xmlns:domain="clr-namespace:MaterialDesignDemo.Domain" />-->
-            </DataGrid.Resources>
+
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding Code}"
-                                    Width="70"
-                                    Header="תמונה"
+                <!-- Image -->
+                    <DataGridTemplateColumn Header="תמונה" Width="80"
+                        IsReadOnly="True">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Image Source="{Binding ImageUrl}" Width="40" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <!-- Product ID -->
+                    <materialDesign:DataGridTextColumn Header="מק&quot;ט" Width="65" Binding="{Binding ProductId}"
+                                    ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
+                                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}" />
+
+                    <!-- Product Name -->
+                    <DataGridTextColumn Header="שם המוצר" Binding="{Binding ProductName}" Width="250"
                                     ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
                                     EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" />
-                <!-- if you want to use the pop up style (MaterialDesignDataGridTextColumnPopupEditingStyle), you must use MaterialDataGridTextColumn -->
-                <materialDesign:DataGridTextColumn Header="מק&quot;ט"
-                                                   Width="80"
-                                                   ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
-                                                   EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}">
-                    <materialDesign:DataGridTextColumn.Binding>
-                        <Binding Path="ProductID">
-                            <!-- put here bidding-->
-                            <!--<Binding.ValidationRules>
-                            <domain:NotEmptyValidationRule xmlns:domain="clr-namespace:MaterialDesignDemo.Domain" />
-                            </Binding.ValidationRules>-->
-                        </Binding>
-                    </materialDesign:DataGridTextColumn.Binding>
-                </materialDesign:DataGridTextColumn>
-                <!-- set a max length to get an indicator in the editor -->
-                <DataGridTextColumn Header="שם המוצר"
-                                    Width="250"
+                <!-- Price -->
+                <DataGridTextColumn Header="מחיר ליח'" Binding="{Binding Price, StringFormat= '\{0\} ₪'}" Width="90"
                                     ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
-                                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}">
-                    <DataGridTextColumn.Binding>
-                        <Binding Path="Name">
-                            <!-- put here bidding-->
-                            <!--<Binding.ValidationRules>
-            <domain:NotEmptyValidationRule xmlns:domain="clr-namespace:MaterialDesignDemo.Domain" />
-          </Binding.ValidationRules>-->
-                        </Binding>
-                    </DataGridTextColumn.Binding>
-                </DataGridTextColumn>
-                <materialDesign:DataGridTextColumn Binding="{Binding Numeric}"
-                                                   Header="מחיר"
-                                                   Width="80"
-                                                   EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}">
-                    <DataGridTextColumn.HeaderStyle>
-                        <Style TargetType="{x:Type DataGridColumnHeader}"
-                               BasedOn="{StaticResource MaterialDesignDataGridColumnHeader}">
-                            <Setter Property="HorizontalContentAlignment"
-                                    Value="Right" />
-                            <Setter Property="ContentTemplate">
-                                <Setter.Value>
-                                    <DataTemplate>
-                                        <TextBlock TextWrapping="Wrap"
-                                                   Text="{Binding}"
-                                                   TextAlignment="Right" />
-                                    </DataTemplate>
-                                </Setter.Value>
-                            </Setter>
-                        </Style>
-                    </DataGridTextColumn.HeaderStyle>
-                    <DataGridTextColumn.ElementStyle>
-                        <Style TargetType="{x:Type TextBlock}"
-                               BasedOn="{StaticResource MaterialDesignDataGridTextColumnStyle}">
-                            <Setter Property="HorizontalAlignment"
-                                    Value="Right" />
-                        </Style>
-                    </DataGridTextColumn.ElementStyle>
-                </materialDesign:DataGridTextColumn>
-                <!-- use custom combo box column to get better combos. Use ItemsSourceBinding as your binding template to be applied to each combo -->
+                                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" />
             </DataGrid.Columns>
         </DataGrid>
         <Canvas>

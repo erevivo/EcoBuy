@@ -1,4 +1,6 @@
-﻿using System;
+﻿using EcoBuy.ViewModels;
+using EcoBuy.ViewModels.UserControls;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,11 +20,12 @@ namespace EcoBuy.UserControls
     /// <summary>
     /// Interaction logic for ShopRecoUI.xaml
     /// </summary>
-    public partial class ShopRecoUI : UserControl
+    public partial class ShopRecoUC : UserControl
     {
-        public ShopRecoUI()
+        public ShopRecoUC()
         {
             InitializeComponent();
+            this.DataContext = new ShopRecoUCVM();
         }
     }
 }

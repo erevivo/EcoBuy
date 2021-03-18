@@ -26,8 +26,8 @@ namespace EcoBuy.ViewModels
         #region Constractor
         public LastPurchaseUCVM()
         {
-            Test();
-            LastPurchase();
+            PurchasedProducts = new ObservableCollection<PurchasedProduct>(DataSource.PurchasedProducts);
+            LastPurchasedList = LastPurchase(PurchasedProducts);
             PrintCmd = new PrintCommand(this);
             LpLable = "(" + PurchasedProducts.Max(p => p.PurchaseDate).Date.ToString("dd/MM/yyyy") + ")";
             DataGridPurchasedList = new DataGrid();
@@ -35,15 +35,10 @@ namespace EcoBuy.ViewModels
         }
         #endregion
 
-        public void Test()
-        {
-            PurchasedProducts = new ObservableCollection<PurchasedProduct>(DataSource.PurchasedProducts);
-        }
-
-        public void LastPurchase()
+        public ObservableCollection<PurchasedProduct> LastPurchase(ObservableCollection<PurchasedProduct> AllPurchase)
         {
             DateTime? lastDate = PurchasedProducts.Max(p => p.PurchaseDate).Date;
-            PurchasedProducts = new ObservableCollection<PurchasedProduct>(PurchasedProducts.Where(p => p.PurchaseDate == lastDate));
+            return new ObservableCollection<PurchasedProduct>(PurchasedProducts.Where(p => p.PurchaseDate == lastDate));
         }
     }
 }
