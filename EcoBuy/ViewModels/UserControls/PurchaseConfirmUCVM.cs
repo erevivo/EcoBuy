@@ -42,7 +42,5 @@ namespace EcoBuy.ViewModels
             writer.Close();
             fs.Close();
         }
-
-
     }
 }

@@ -23,10 +23,6 @@ namespace EcoBuy.UserControls
     public partial class DigitalClock : UserControl
     {
         System.Windows.Threading.DispatcherTimer Timer = new System.Windows.Threading.DispatcherTimer();
-
-
-
-
         public DigitalClock()
         {
 
