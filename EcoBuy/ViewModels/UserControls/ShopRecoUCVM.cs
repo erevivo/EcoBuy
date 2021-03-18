@@ -23,7 +23,7 @@ namespace EcoBuy.ViewModels
 
             foreach(var p in LastPurchasedProducts)
             {
-                Recommender.GetTopNPredictions((uint)p.ProductId, 2);
+                var d = Recommender.GetTopNPredictions((uint)p.ProductId, 2);
             }
             
         }
