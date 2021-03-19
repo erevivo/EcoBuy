@@ -15,34 +15,43 @@ namespace EcoBuy.ConnectToGoogleDrive
 {
     public class DecodeGenerateProduct
     {
-        private GoogleDriveApi downloadQr;
+        //private GoogleDriveApi downloadQr;
         public ObservableCollection<PurchasedProduct> TempPurchasedProducts { get; set; }
         public DecodeGenerateProduct()
         {
-            //    downloadQr = new GoogleDriveApi();
-            //  downloadQr.Connect(); // add check condintion if new files download
+            //downloadQr = new GoogleDriveApi();
+            //downloadQr.Connect(); // add check condintion if new files download
             TempPurchasedProducts = new ObservableCollection<PurchasedProduct>();
-            //GenerateProduct();
         }
         public ObservableCollection<PurchasedProduct> GenerateProduct()
         {
             QRCodeHandler DecodeQrImage = new QRCodeHandler();
             string productText;
+            /*FileStream fs = new FileStream(@"C:\Users\Evyatar\Documents\GitHub\EcoBuy\BL\Data\Qrs.txt", FileMode.Append, FileAccess.Write);
+            StreamReader reader = new StreamReader(fs);
+            string str = reader.ReadLine();
+             || str.Contains(Path.GetFileName(file))
+            */
             var cultureInfo = new CultureInfo("de-DE");
             string folderPath = @"C:\Users\Evyatar\Documents\GitHub\EcoBuy\EcoBuy\Images\QrScans\";
             foreach (string file in Directory.EnumerateFiles(folderPath, "*.png"))
             {
                 productText = DecodeQrImage.DecodeData(folderPath + Path.GetFileName(file));
                 if (productText.Contains("Error"))
-                {/*show message for user*/
-                    var url = productText.Substring(5);
+                {
+                    continue;
+                    /*show message for user
+                    var url = productText.Substring(5);*/
                 }
-
-                string[] p = productText.Split(',');
-                DateTime p_date = DateTime.Parse(p[0], cultureInfo, DateTimeStyles.NoCurrentDateDefault);
-                PurchasedProduct Temp = new PurchasedProduct(p_date, Convert.ToDouble(p[1]), Int32.Parse(p[2]), Int32.Parse(p[3]), p[4], p[5], (ProductsCategory)Int32.Parse(p[6]), Int32.Parse(p[7]));
-                //todo אם הקובץ קיים במסד אז לא להוסיף אותו  
-                TempPurchasedProducts.Add(Temp);
+                else
+                {
+                    var datePurchased = Path.GetFileName(file).Substring(0, Path.GetFileName(file).IndexOf("at"));
+                    DateTime p_date = DateTime.Parse(datePurchased, cultureInfo, DateTimeStyles.NoCurrentDateDefault);
+                    string[] p = productText.Split(',');
+                    PurchasedProduct Temp = new PurchasedProduct(p_date, Convert.ToDouble(p[1]), Int32.Parse(p[2]), Int32.Parse(p[3]), p[4], p[5], (ProductsCategory)Int32.Parse(p[6]), Int32.Parse(p[7]));
+                    //todo if file exist
+                    TempPurchasedProducts.Add(Temp);
+                }
             }
             return TempPurchasedProducts;
 
