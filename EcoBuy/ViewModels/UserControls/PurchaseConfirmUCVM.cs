@@ -14,16 +14,16 @@ namespace EcoBuy.ViewModels
     {
         #region Properties
         public ObservableCollection<PurchasedProduct> PurchasedProductsTemp { get; set; }
-        public DecodeGenerateProduct Productim { get; set; }
+        public DecodeGenerateProduct ProductsFromQr { get; set; }
         #endregion
         public PurchaseConfirmUCVM()
         {
             
             PurchasedProductsTemp = new ObservableCollection<PurchasedProduct>();
-            Productim = new DecodeGenerateProduct();
-            PurchasedProductsTemp = Productim.GenerateProduct();
+            ProductsFromQr = new DecodeGenerateProduct();
+            PurchasedProductsTemp = ProductsFromQr.GenerateProduct();
             RecommendPurchase(PurchasedProductsTemp);
-            //todo פה להוסיף את הרשימה אחרי לחיצה על שלח לתוך מסד הנתונים
+            //todo 
         }
 
 

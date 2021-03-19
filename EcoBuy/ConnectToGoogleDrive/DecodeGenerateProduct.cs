@@ -27,34 +27,61 @@ namespace EcoBuy.ConnectToGoogleDrive
         {
             QRCodeHandler DecodeQrImage = new QRCodeHandler();
             string productText;
-            /*FileStream fs = new FileStream(@"C:\Users\Evyatar\Documents\GitHub\EcoBuy\BL\Data\Qrs.txt", FileMode.Append, FileAccess.Write);
-            StreamReader reader = new StreamReader(fs);
-            string str = reader.ReadLine();
-             || str.Contains(Path.GetFileName(file))
-            */
             var cultureInfo = new CultureInfo("de-DE");
             string folderPath = @"C:\Users\Evyatar\Documents\GitHub\EcoBuy\EcoBuy\Images\QrScans\";
             foreach (string file in Directory.EnumerateFiles(folderPath, "*.png"))
             {
                 productText = DecodeQrImage.DecodeData(folderPath + Path.GetFileName(file));
-                if (productText.Contains("Error"))
+                if (productText.Contains("Error") || CheckExists(Convert.ToInt32(new System.IO.FileInfo(file).Length)))
                 {
                     continue;
-                    /*show message for user
-                    var url = productText.Substring(5);*/
                 }
                 else
                 {
+                    DocumentProduct(Convert.ToInt32(new System.IO.FileInfo(file).Length));
                     var datePurchased = Path.GetFileName(file).Substring(0, Path.GetFileName(file).IndexOf("at"));
                     DateTime p_date = DateTime.Parse(datePurchased, cultureInfo, DateTimeStyles.NoCurrentDateDefault);
                     string[] p = productText.Split(',');
-                    PurchasedProduct Temp = new PurchasedProduct(p_date, Convert.ToDouble(p[1]), Int32.Parse(p[2]), Int32.Parse(p[3]), p[4], p[5], (ProductsCategory)Int32.Parse(p[6]), Int32.Parse(p[7]));
-                    //todo if file exist
+                    PurchasedProduct Temp = new PurchasedProduct(p_date, Convert.ToDouble(p[1]), Int32.Parse(p[2]), Int32.Parse(p[3]), p[4], 
+                        p[5], (ProductsCategory)Int32.Parse(p[6]), Int32.Parse(p[7]));
                     TempPurchasedProducts.Add(Temp);
                 }
             }
             return TempPurchasedProducts;
 
+        }
+        public bool CheckExists(int FileSize)
+        {
+            FileStream fs = new FileStream(@"C:\Users\Evyatar\Documents\GitHub\EcoBuy\BL\Data\Qrs.txt", FileMode.Open, FileAccess.Read);
+
+            StreamReader reader = new StreamReader(fs);
+
+            string str = reader.ReadToEnd();
+            if (str.Contains(FileSize.ToString()))
+            {
+                reader.Close();
+                fs.Close();
+                return true;
+            }
+            else
+            {
+                reader.Close();
+                fs.Close();
+                return false; 
+            }
+
+
+        }
+        public void DocumentProduct(int FileSize)
+        {
+            FileStream fs = new FileStream(@"C:\Users\Evyatar\Documents\GitHub\EcoBuy\BL\Data\Qrs.txt", FileMode.Append, FileAccess.Write);
+
+            StreamWriter writer = new StreamWriter(fs);
+
+            writer.WriteLine(FileSize);
+
+            writer.Close();
+            fs.Close();
         }
     }
 }

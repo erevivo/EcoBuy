@@ -1,0 +1,87 @@
+﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:EcoBuy.UserControls"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             x:Class="EcoBuy.UserControls.ShopRecoUC"
+             mc:Ignorable="d"
+             d:DesignHeight="450"
+             d:DesignWidth="610">
+    <UserControl.Style>
+        <Style>
+            <Style.Triggers>
+                <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="Opacity" Duration="00:00:01" From="0" To="1" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <Trigger Property="FrameworkElement.Visibility" Value="Collapsed">
+                    <Setter Property="FrameworkElement.Opacity" Value="0"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Style>
+    <Grid>
+        <local:UserControlBG Height="410"
+                             Width="610"
+                             VerticalAlignment="Center" />
+        <Label Content="אולי שכחת משהו ?"
+               FontSize="26"
+               Margin="332,34,24,0"
+               VerticalAlignment="Top"
+               FlowDirection="RightToLeft"
+               HorizontalContentAlignment="Center"
+               Height="61" />
+        <DataGrid ItemsSource="{Binding RecoProduct, UpdateSourceTrigger=PropertyChanged}"
+                  x:Name="LPurchaseDataGrid"
+                  VerticalScrollBarVisibility="Visible"
+                  HorizontalScrollBarVisibility="Disabled"
+                  FlowDirection="RightToLeft"
+                  BorderThickness="2"
+                  CanUserAddRows="False"
+                  AutoGenerateColumns="False"
+                  HeadersVisibility="All"
+                  Margin="45,100,44.6,87.6">
+
+            <DataGrid.Columns>
+                <!-- Image -->
+                    <DataGridTemplateColumn Header="תמונה" Width="80"
+                        IsReadOnly="True">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Image Source="{Binding ImageUrl}" Width="40" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <!-- Product ID -->
+                    <materialDesign:DataGridTextColumn Header="מק&quot;ט" Width="65" Binding="{Binding ProductId}"
+                                    ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
+                                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}" />
+
+                    <!-- Product Name -->
+                    <DataGridTextColumn Header="שם המוצר" Binding="{Binding ProductName}" Width="250"
+                                    ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
+                                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" />
+                <!-- Price -->
+                <DataGridTextColumn Header="מחיר ליח'" Binding="{Binding Price, StringFormat= '\{0\} ₪'}" Width="90"
+                                    ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
+                                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Canvas>
+            <Button Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}"
+                    ToolTip="PDF יצא לקובץ"
+                    Canvas.Left="25"
+                    Canvas.Top="352"
+                    Height="43"
+                    Width="43">
+                <materialDesign:PackIcon Kind="FilePdf"
+                                         Width="26"
+                                         Height="26" />
+            </Button>
+        </Canvas>
+    </Grid>
+</UserControl>
