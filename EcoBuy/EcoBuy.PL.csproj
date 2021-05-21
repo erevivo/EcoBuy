@@ -73,6 +73,9 @@
     <ErrorReport>prompt</ErrorReport>
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>logoMini.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="FFImageLoading, Version=2.4.11.982, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Xamarin.FFImageLoading.2.4.11.982\lib\netstandard1.0\FFImageLoading.dll</HintPath>
@@ -403,6 +406,24 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Product\1.jpg" />
+    <Resource Include="Images\Product\10.png" />
+    <Resource Include="Images\Product\11.png" />
+    <Resource Include="Images\Product\12.png" />
+    <Resource Include="Images\Product\13.png" />
+    <Resource Include="Images\Product\14.png" />
+    <Resource Include="Images\Product\15.png" />
+    <Resource Include="Images\Product\2.jpg" />
+    <Resource Include="Images\Product\3.jpg" />
+    <Resource Include="Images\Product\4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Product\6.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="logoMini.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.0.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.0.0\build\MaterialDesignThemes.targets')" />

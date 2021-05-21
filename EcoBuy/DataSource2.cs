@@ -27,10 +27,10 @@ namespace EcoBuy
         public static ObservableCollection<PurchasedProduct> PurchasedProducts = new ObservableCollection<PurchasedProduct>()
         {
             //
-                new PurchasedProduct(new DateTime(2021, 3, 16), 10, 1, 11, "פתיתים אפויים 500 גר' אסם", "C:\\Users\\Evyatar\\Desktop\\2.jpg", ProductsCategory.Food, 200),
-                new PurchasedProduct(new DateTime(2021, 3, 16), 5, 2, 22, "לחם אחיד פרוס אנג'ל", "C:\\Users\\Evyatar\\Desktop\\1.jpg", ProductsCategory.Food, 200),
-                new PurchasedProduct(new DateTime(2021, 3, 16), 20, 3, 33, "חלב 3% שומן תנובה", "C:\\Users\\Evyatar\\Desktop\\3.jpg", ProductsCategory.Food, 200),
-                new PurchasedProduct(new DateTime(2021, 3, 16), 5, 4, 44, "גבינת קוטג' 5% תנובה", "C:\\Users\\Evyatar\\Desktop\\4.jpg", ProductsCategory.Food, 200),
+                new PurchasedProduct(new DateTime(2021, 3, 16), 10, 1, 11, "פתיתים אפויים 500 גר' אסם", "C:\\Users\\Evyatar\\Documents\\GitHub\\EcoBuy\\EcoBuy\\Images\\Product\\2.jpg", ProductsCategory.Food, 200),
+                new PurchasedProduct(new DateTime(2021, 3, 16), 5, 2, 22, "לחם אחיד פרוס אנג'ל", "C:\\Users\\Evyatar\\Documents\\GitHub\\EcoBuy\\EcoBuy\\Images\\Product\\1.jpg", ProductsCategory.Food, 200),
+                new PurchasedProduct(new DateTime(2021, 3, 16), 20, 3, 33, "חלב 3% שומן תנובה", "C:\\Users\\Evyatar\\Documents\\GitHub\\EcoBuy\\EcoBuy\\Images\\Product\\3.jpg", ProductsCategory.Food, 200),
+                new PurchasedProduct(new DateTime(2021, 3, 16), 5, 4, 44, "גבינת קוטג' 5% תנובה", "C:\\Users\\Evyatar\\Documents\\GitHub\\EcoBuy\\EcoBuy\\Images\\Product\\4.jpg", ProductsCategory.Food, 200),
                 new PurchasedProduct(new DateTime(2021, 3, 16), 20, 5, 55, "ממרח נוטלה 350 גר'", "https://www.farfel.co.il/wp-content/uploads/2018/01/127.jpg", ProductsCategory.Food, 200),
                 new PurchasedProduct(new DateTime(2021, 3, 16), 5, 6, 66, "בושם לגברים Lacoste Essential 75 מ\"ל ", "https://superpharmstorage.blob.core.windows.net/hybris/products/desktop/medium/737052483214.jpg", ProductsCategory.Health, 136),
                 new PurchasedProduct(new DateTime(2021, 3, 16), 20, 7, 77, "חולצת פולו ראלף לורן M", "C:\\Users\\Evyatar\\Desktop\\ral.jpg", ProductsCategory.Fashion, 137),
@@ -42,7 +42,7 @@ namespace EcoBuy
                 new PurchasedProduct(new DateTime(2021, 3, 18), 5.90, 3, 3, "קערות חד פעמי", "https://office-master.co.il/image/cache/catalog/hadpami/OM_dessert_bowl-200x200.jpg", ProductsCategory.Food, 200),
                 new PurchasedProduct(new DateTime(2021, 3, 18), 12.90, 4, 4, "כפיות חד פעמי", "https://www.peamitstore.co.il/sites/peamitstore/cache/w_1500/4324(6).png", ProductsCategory.Food, 200),
                 new PurchasedProduct(new DateTime(2021, 3, 18), 10.90, 5, 5, "שמן קנולה", "https://storage.googleapis.com/sp-public/gs1-products/1107/large/7290002374312.jpg", ProductsCategory.Food, 200),
-                new PurchasedProduct(new DateTime(2021, 3, 18), 13.90, 6, 6, "סוכר 1 ק''ג", ",https://m.pricez.co.il/ProductPictures/7290000211503.jpg", ProductsCategory.Food, 200),
+                new PurchasedProduct(new DateTime(2021, 3, 18), 13.90, 6, 6, "סוכר 1 ק''ג", "https://m.pricez.co.il/ProductPictures/7290000211503.jpg", ProductsCategory.Food, 200),
             };
 
         public static ObservableCollection<PurchasedProduct> LastPurchasedProducts = new ObservableCollection<PurchasedProduct>()
