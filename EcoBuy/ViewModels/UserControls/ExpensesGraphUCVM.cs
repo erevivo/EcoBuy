@@ -45,22 +45,24 @@ namespace EcoBuy.ViewModels
             CategoriesExpenses.Food = new List<double>() { 0, 0, 0, 0, 0 };
             CategoriesExpenses.Health = new List<double>() { 0, 0, 0, 0, 0 };
             CategoriesExpenses.Fashion = new List<double>() { 0, 0, 0, 0, 0 };
-
-            foreach (KeyValuePair<int, double> entry in dict[ProductsCategory.Electricity])
+            while (dict.Count != 0)
             {
-                CategoriesExpenses.Electricity[4 - entry.Key] = entry.Value;
-            }
-            foreach (KeyValuePair<int, double> entry in dict[ProductsCategory.Food])
-            {
-                CategoriesExpenses.Food[4 - entry.Key] = entry.Value;
-            }
-            foreach (KeyValuePair<int, double> entry in dict[ProductsCategory.Health])
-            {
-                CategoriesExpenses.Health[4 - entry.Key] = entry.Value;
-            }
-            foreach (KeyValuePair<int, double> entry in dict[ProductsCategory.Fashion])
-            {
-                CategoriesExpenses.Fashion[4 - entry.Key] = entry.Value;
+                foreach (KeyValuePair<int, double> entry in dict[ProductsCategory.Electricity])
+                {
+                    CategoriesExpenses.Electricity[4 - entry.Key] = entry.Value;
+                }
+                foreach (KeyValuePair<int, double> entry in dict[ProductsCategory.Food])
+                {
+                    CategoriesExpenses.Food[4 - entry.Key] = entry.Value;
+                }
+                foreach (KeyValuePair<int, double> entry in dict[ProductsCategory.Health])
+                {
+                    CategoriesExpenses.Health[4 - entry.Key] = entry.Value;
+                }
+                foreach (KeyValuePair<int, double> entry in dict[ProductsCategory.Fashion])
+                {
+                    CategoriesExpenses.Fashion[4 - entry.Key] = entry.Value;
+                }
             }
         }
         public void LabelsGen()

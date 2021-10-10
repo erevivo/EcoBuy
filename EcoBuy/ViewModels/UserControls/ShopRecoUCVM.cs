@@ -27,23 +27,25 @@ namespace EcoBuy.ViewModels
             List<int> LastPurchasedList = new List<int>();
             List<int> RecoProductList = new List<int>();
 
-
-            foreach (var p in LastPurchasedProducts)
+            while (LastPurchasedProducts.Count != 0)
             {
-                LastPurchasedList.Add(p.ProductId);
-                IEnumerable<(int, float)> topProduct = Recommender.GetTopNPredictions((uint)p.ProductId, 2);
-                //RecoProductList.Add(topProduct.FirstOrDefault());
-                RecoProductList.AddRange(topProduct.Select(x => x.Item1).ToList());
+                foreach (var p in LastPurchasedProducts)
+                {
+                    LastPurchasedList.Add(p.ProductId);
+                    IEnumerable<(int, float)> topProduct = Recommender.GetTopNPredictions((uint)p.ProductId, 2);
+                    //RecoProductList.Add(topProduct.FirstOrDefault());
+                    RecoProductList.AddRange(topProduct.Select(x => x.Item1).ToList());
+                }
             }
             RecoProductList = RecoProductList.Distinct().ToList();
             RecoProductList = RecoProductList.Except(LastPurchasedList).ToList();
             foreach (var p in AllProducts)
             {
-                    if (p.ProductId == RecoProductList[0])
-                    {
-                        RecoProduct.Add(p);
-                        //RecoProductList.RemoveAt(0);
-                    }
+                if (p.ProductId == RecoProductList[0])
+                {
+                    RecoProduct.Add(p);
+                    //RecoProductList.RemoveAt(0);
+                }
             }
 
         }
