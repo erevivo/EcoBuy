@@ -65,7 +65,7 @@ namespace EcoBuy
             MainUIGrid.Children.Add(PieChartUC);
             MainUIGrid.Children.Add(SearchEngineUC);
             MainUIGrid.Children.Add(LastPurchaseUC);
-            MainUIGrid.Children.Add(ShopRecoUI);
+            //MainUIGrid.Children.Add(ShopRecoUI);
             MainUIGrid.Children.Add(ExpensesGraphUC);
         }
     }
