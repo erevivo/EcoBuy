@@ -1,9 +1,7 @@
 ﻿using EcoBuy.Models;
-using EcoBuy.ViewModels;
 using LiveCharts;
 using LiveCharts.Wpf;
 using System;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;

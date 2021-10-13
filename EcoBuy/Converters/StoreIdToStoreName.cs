@@ -1,12 +1,8 @@
 ﻿using EcoBuy.Models;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Globalization;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Data;
 
 namespace EcoBuy.Converters
@@ -29,7 +25,7 @@ namespace EcoBuy.Converters
         {
             Stores = new ObservableCollection<Store>(DataSource.Stores);
             Store currStore = Stores.Where(st => st.StoreId == id).FirstOrDefault();
-            if (currStore==null)
+            if (currStore == null)
                 return "חנות לא זמינה";
             else
                 return currStore.Name;

@@ -45,7 +45,7 @@
                     <DropShadowEffect BlurRadius="10" ShadowDepth="6" Color="#adadad" />
                 </Border.Effect>
 
-                <TextBox Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                <TextBox Style="{DynamicResource MaterialDesignOutlinedTextBox}"
                         materialDesign:HintAssist.Hint="חפש מוצר" FontSize="20"
                          Width="1100"
                          Height="70"
@@ -83,28 +83,28 @@
                     </DataGridTemplateColumn>
                     <!-- Product ID -->
                     <materialDesign:DataGridTextColumn Header="מק&quot;ט" Width="130" Binding="{Binding ProductId}"
-                                    ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
-                                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}" />
+                                    ElementStyle="{DynamicResource MaterialDesignDataGridTextColumnStyle}"
+                                    EditingElementStyle="{DynamicResource MaterialDesignDataGridTextColumnPopupEditingStyle}" />
 
                     <!-- Product Name -->
                     <DataGridTextColumn Header="שם המוצר" Binding="{Binding ProductName}" Width="370"
-                                    ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
-                                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" />
+                                    ElementStyle="{DynamicResource MaterialDesignDataGridTextColumnStyle}"
+                                    EditingElementStyle="{DynamicResource MaterialDesignDataGridTextColumnEditingStyle}" />
 
                     <!-- Category  -->
                     <DataGridTextColumn Header="קטגוריה" Width="210" Binding="{Binding Category,  Converter={StaticResource EnumConverter}}"
-                                    ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
-                                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" />
+                                    ElementStyle="{DynamicResource MaterialDesignDataGridTextColumnStyle}"
+                                    EditingElementStyle="{DynamicResource MaterialDesignDataGridTextColumnEditingStyle}" />
 
                     <!-- Purchase Date -->
                     <DataGridTextColumn Header="נקנה בתאריך" Binding="{Binding PurchaseDate, StringFormat=\{0:dd.MM.yy\}}" Width="165"
-                                    ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
-                                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" />
+                                    ElementStyle="{DynamicResource MaterialDesignDataGridTextColumnStyle}"
+                                    EditingElementStyle="{DynamicResource MaterialDesignDataGridTextColumnEditingStyle}" />
 
                     <!-- Price -->
                     <DataGridTextColumn Header="מחיר" Binding="{Binding Price, StringFormat= '\{0\} ₪'}" Width="100"
-                                    ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
-                                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" />
+                                    ElementStyle="{DynamicResource MaterialDesignDataGridTextColumnStyle}"
+                                    EditingElementStyle="{DynamicResource MaterialDesignDataGridTextColumnEditingStyle}" />
                 </DataGrid.Columns>
 
             </DataGrid>

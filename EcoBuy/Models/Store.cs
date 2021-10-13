@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using EcoBuy.BE;
-
-namespace EcoBuy.Models
+﻿namespace EcoBuy.Models
 {
     public class Store
     {

@@ -58,27 +58,27 @@
                     </DataGridTemplateColumn>
                     <!-- Product ID -->
                     <materialDesign:DataGridTextColumn Header="מק&quot;ט" Width="65" Binding="{Binding ProductId}"
-                                    ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
-                                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}" />
+                                    ElementStyle="{DynamicResource MaterialDesignDataGridTextColumnStyle}"
+                                    EditingElementStyle="{DynamicResource MaterialDesignDataGridTextColumnPopupEditingStyle}" />
 
                     <!-- Product Name -->
                     <DataGridTextColumn Header="שם המוצר" Binding="{Binding ProductName}" Width="250"
-                                    ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
-                                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" />
+                                    ElementStyle="{DynamicResource MaterialDesignDataGridTextColumnStyle}"
+                                    EditingElementStyle="{DynamicResource MaterialDesignDataGridTextColumnEditingStyle}" />
                 <!-- Price -->
                 <DataGridTextColumn Header="מחיר ליח'" Binding="{Binding Price, StringFormat= '\{0\} ₪'}" Width="90"
-                                    ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
-                                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" />
+                                    ElementStyle="{DynamicResource MaterialDesignDataGridTextColumnStyle}"
+                                    EditingElementStyle="{DynamicResource MaterialDesignDataGridTextColumnEditingStyle}" />
             </DataGrid.Columns>
         </DataGrid>
         <Canvas>
-            <Button Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}"
+            <Button Style="{DynamicResource MaterialDesignFloatingActionMiniDarkButton}"
                     ToolTip="PDF יצא לקובץ"
                     Canvas.Left="25"
                     Canvas.Top="352"
                     Height="43"
                     Width="43">
-                <materialDesign:PackIcon Kind="FilePdf"
+                <materialDesign:PackIcon Kind="FilePdfBox"
                                          Width="26"
                                          Height="26" />
             </Button>

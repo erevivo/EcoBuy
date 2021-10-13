@@ -2,7 +2,6 @@
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Media;
 
@@ -19,7 +18,7 @@ namespace EcoBuy.PrintDataGrid
 
                 Paragraph p = new Paragraph(new Run(title));
                 p.FontStyle = new FontStyle();
-                p.FontFamily = new FontFamily() ;
+                p.FontFamily = new FontFamily();
                 p.FontSize = 18;
                 fd.Blocks.Add(p);
 

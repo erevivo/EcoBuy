@@ -52,8 +52,8 @@
                 <DataGrid.Columns>
                     <DataGridCheckBoxColumn
                           Binding="{Binding IsSelected, UpdateSourceTrigger=PropertyChanged}"
-                          ElementStyle="{StaticResource MaterialDesignDataGridCheckBoxColumnStyle}"
-                          EditingElementStyle="{StaticResource MaterialDesignDataGridCheckBoxColumnEditingStyle}">
+                          ElementStyle="{DynamicResource MaterialDesignDataGridCheckBoxColumnStyle}"
+                          EditingElementStyle="{DynamicResource MaterialDesignDataGridCheckBoxColumnEditingStyle}">
                         <DataGridCheckBoxColumn.Header>
                             <Border
           Background="Transparent">
@@ -64,7 +64,7 @@
                         <DataGridCheckBoxColumn.HeaderStyle>
                             <Style
           TargetType="{x:Type DataGridColumnHeader}"
-          BasedOn="{StaticResource MaterialDesignDataGridColumnHeader}">
+          BasedOn="{DynamicResource MaterialDesignDataGridColumnHeader}">
                                 <Setter
             Property="HorizontalContentAlignment"
             Value="Center" />
@@ -82,41 +82,41 @@
                     </DataGridTemplateColumn>
                     <!-- Product ID -->
                     <materialDesign:DataGridTextColumn Header="מק&quot;ט" Width="130" Binding="{Binding ProductId}"
-                                    ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
-                                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}"  IsReadOnly="True"/>
+                                    ElementStyle="{DynamicResource MaterialDesignDataGridTextColumnStyle}"
+                                    EditingElementStyle="{DynamicResource MaterialDesignDataGridTextColumnPopupEditingStyle}"  IsReadOnly="True"/>
 
                     <!-- Product Name -->
                     <DataGridTextColumn Header="שם המוצר" Binding="{Binding ProductName}" Width="300"
-                                    ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
-                                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}"  IsReadOnly="True"/>
+                                    ElementStyle="{DynamicResource MaterialDesignDataGridTextColumnStyle}"
+                                    EditingElementStyle="{DynamicResource MaterialDesignDataGridTextColumnEditingStyle}"  IsReadOnly="True"/>
 
                     <!-- Category  -->
                     <DataGridTextColumn Header="קטגוריה" Width="210" Binding="{Binding Category,  Converter={StaticResource EnumConverter}}"
-                                    ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
-                                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}"  IsReadOnly="True"/>
+                                    ElementStyle="{DynamicResource MaterialDesignDataGridTextColumnStyle}"
+                                    EditingElementStyle="{DynamicResource MaterialDesignDataGridTextColumnEditingStyle}"  IsReadOnly="True"/>
 
                     <!-- Purchase Date -->
                     <DataGridTextColumn Header="נקנה בתאריך" Binding="{Binding PurchaseDate, StringFormat=\{0:dd.MM.yy\}}" Width="165"
-                                    ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
-                                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}"  IsReadOnly="True"/>
+                                    ElementStyle="{DynamicResource MaterialDesignDataGridTextColumnStyle}"
+                                    EditingElementStyle="{DynamicResource MaterialDesignDataGridTextColumnEditingStyle}"  IsReadOnly="True"/>
 
                     <!-- Amount -->
                     <DataGridTextColumn Header="כמות" Binding="{Binding Amount}" Width="80"
-                                    ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
-                                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" />
+                                    ElementStyle="{DynamicResource MaterialDesignDataGridTextColumnStyle}"
+                                    EditingElementStyle="{DynamicResource MaterialDesignDataGridTextColumnEditingStyle}" />
 
                     <!-- Price -->
                     <DataGridTextColumn Header="מחיר ליח'" Binding="{Binding Price, StringFormat= '\{0\} ₪'}" Width="120"
-                                    ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
-                                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}"  IsReadOnly="True"/>
+                                    ElementStyle="{DynamicResource MaterialDesignDataGridTextColumnStyle}"
+                                    EditingElementStyle="{DynamicResource MaterialDesignDataGridTextColumnEditingStyle}"  IsReadOnly="True"/>
                     <!--Store-->
                     <DataGridTextColumn Header="חנות" Binding="{Binding StoreId, Converter={StaticResource StoreConverter}}" Width="150"
-                                    ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
-                                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}"  IsReadOnly="True"/>
+                                    ElementStyle="{DynamicResource MaterialDesignDataGridTextColumnStyle}"
+                                    EditingElementStyle="{DynamicResource MaterialDesignDataGridTextColumnEditingStyle}"  IsReadOnly="True"/>
 
                 </DataGrid.Columns>
             </DataGrid>
-            <Button Style="{StaticResource MaterialDesignOutlinedButton}"
+            <Button Style="{DynamicResource MaterialDesignOutlinedButton}"
                     ToolTip="MaterialDesignOutlinedButton"
                     Content="שלח"
                     FontSize="22"

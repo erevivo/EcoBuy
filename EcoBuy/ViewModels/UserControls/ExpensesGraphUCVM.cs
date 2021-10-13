@@ -5,7 +5,6 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Globalization;
-using System.Linq;
 
 
 namespace EcoBuy.ViewModels
@@ -45,7 +44,7 @@ namespace EcoBuy.ViewModels
             CategoriesExpenses.Food = new List<double>() { 0, 0, 0, 0, 0 };
             CategoriesExpenses.Health = new List<double>() { 0, 0, 0, 0, 0 };
             CategoriesExpenses.Fashion = new List<double>() { 0, 0, 0, 0, 0 };
-            while (dict.Count != 0)
+            if (dict.Count != 0)
             {
                 foreach (KeyValuePair<int, double> entry in dict[ProductsCategory.Electricity])
                 {

@@ -1,7 +1,4 @@
-﻿using EcoBuy.Models;
-using EcoBuy.ViewModels.UserControls;
-
-namespace EcoBuy.ViewModels
+﻿namespace EcoBuy.ViewModels
 {
     public class MainWindowVM : ViewModelBase
     {

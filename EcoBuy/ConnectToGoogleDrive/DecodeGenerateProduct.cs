@@ -1,15 +1,10 @@
 ﻿using BE;
 using EcoBuy.BE;
 using EcoBuy.Models;
-using PL.ConnectToGoogleDrive;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Globalization;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EcoBuy.ConnectToGoogleDrive
 {
@@ -42,7 +37,7 @@ namespace EcoBuy.ConnectToGoogleDrive
                     var datePurchased = Path.GetFileName(file).Substring(0, Path.GetFileName(file).IndexOf("at"));
                     DateTime p_date = DateTime.Parse(datePurchased, cultureInfo, DateTimeStyles.NoCurrentDateDefault);
                     string[] p = productText.Split(',');
-                    PurchasedProduct Temp = new PurchasedProduct(p_date, Convert.ToDouble(p[1]), Int32.Parse(p[2]), Int32.Parse(p[3]), p[4], 
+                    PurchasedProduct Temp = new PurchasedProduct(p_date, Convert.ToDouble(p[1]), Int32.Parse(p[2]), Int32.Parse(p[3]), p[4],
                         p[5], (ProductsCategory)Int32.Parse(p[6]), Int32.Parse(p[7]));
                     TempPurchasedProducts.Add(Temp);
                 }
@@ -67,7 +62,7 @@ namespace EcoBuy.ConnectToGoogleDrive
             {
                 reader.Close();
                 fs.Close();
-                return false; 
+                return false;
             }
 
 

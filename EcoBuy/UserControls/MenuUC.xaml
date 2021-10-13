@@ -17,7 +17,7 @@
             <ColumnDefinition Width="1*" />
             <ColumnDefinition Width="1*" />
         </Grid.ColumnDefinitions>
-        <Button Style="{StaticResource MaterialDesignRaisedDarkButton}"
+        <Button Style="{DynamicResource MaterialDesignRaisedDarkButton}"
                 Grid.Column="0"
                 Height="70"
                 Width="250"
@@ -28,7 +28,7 @@
                        Text="ראשי" />
         </Button>
         <!--Command="Confirmation"-->
-        <Button Style="{StaticResource MaterialDesignRaisedDarkButton}"
+        <Button Style="{DynamicResource MaterialDesignRaisedDarkButton}"
 
                 Grid.Column="1"
                 Height="70"
@@ -39,7 +39,7 @@
                        FontSize="28"
                        Text="אישור קניה" />
         </Button>
-        <Button Style="{StaticResource MaterialDesignRaisedDarkButton}"
+        <Button Style="{DynamicResource MaterialDesignRaisedDarkButton}"
                 Grid.Column="2"
                 Height="70"
                 Width="250"

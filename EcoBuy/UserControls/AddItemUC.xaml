@@ -63,14 +63,14 @@
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
                 <StackPanel Width="900">
-                    <TextBox Style="{StaticResource MaterialDesignFilledTextBox}"
+                    <TextBox Style="{DynamicResource MaterialDesignFilledTextBox}"
                          FontSize="26"
                          VerticalAlignment="Top"
                          AcceptsReturn="False"
                          TextWrapping="NoWrap"
                          materialDesign:HintAssist.Hint="מק&quot;ט"
                          IsEnabled="{Binding ElementName=MaterialDesignFilledTextBoxEnabledComboBox}" />
-                    <TextBox Style="{StaticResource MaterialDesignFilledTextBox}"
+                    <TextBox Style="{DynamicResource MaterialDesignFilledTextBox}"
                          FontSize="26"
                          VerticalAlignment="Top"
                          AcceptsReturn="False"
@@ -99,20 +99,20 @@
                 </Image.Effect>
             </Image>
             <Button Command="{Binding addImage}"
-  Style="{StaticResource MaterialDesignFloatingActionDarkButton}"
+  Style="{DynamicResource MaterialDesignFloatingActionDarkButton}"
   ToolTip="MaterialDesignFloatingActionDarkButton" Margin="445,647,1419,161">
                 <materialDesign:PackIcon
     Kind="ImagePlus"
     Height="30"
     Width="30" />
             </Button>
-            <Button Style="{StaticResource MaterialDesignOutlinedButton}"
+            <Button Style="{DynamicResource MaterialDesignOutlinedButton}"
                     ToolTip="MaterialDesignOutlinedButton"
                     Content="שלח"
                     FontSize="22"
                     Margin="735,647,1049,163"
                     Height="Auto" />
-            <Button Style="{StaticResource MaterialDesignOutlinedButton}"
+            <Button Style="{DynamicResource MaterialDesignOutlinedButton}"
                     ToolTip="MaterialDesignOutlinedButton"
                     Content="נקה"
                     FontSize="22"

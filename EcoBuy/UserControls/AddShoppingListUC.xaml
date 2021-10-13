@@ -35,28 +35,28 @@
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
                 <StackPanel Width="900">
-                    <TextBox Style="{StaticResource MaterialDesignFilledTextBox}"
+                    <TextBox Style="{DynamicResource MaterialDesignFilledTextBox}"
                              FontSize="26"
                              VerticalAlignment="Top"
                              AcceptsReturn="False"
                              TextWrapping="NoWrap"
                              materialDesign:HintAssist.Hint="מק&quot;ט"
                              IsEnabled="{Binding ElementName=MaterialDesignFilledTextBoxEnabledComboBox}" />
-                    <TextBox Style="{StaticResource MaterialDesignFilledTextBox}"
+                    <TextBox Style="{DynamicResource MaterialDesignFilledTextBox}"
                              FontSize="26"
                              VerticalAlignment="Top"
                              AcceptsReturn="False"
                              TextWrapping="NoWrap"
                              materialDesign:HintAssist.Hint="שם המוצר"
                              IsEnabled="{Binding ElementName=MaterialDesignFilledTextBoxEnabledComboBox}" />
-                    <TextBox Style="{StaticResource MaterialDesignFilledTextBox}"
+                    <TextBox Style="{DynamicResource MaterialDesignFilledTextBox}"
                              FontSize="26"
                              VerticalAlignment="Top"
                              AcceptsReturn="False"
                              TextWrapping="NoWrap"
                              materialDesign:HintAssist.Hint="חנות"
                              IsEnabled="{Binding ElementName=MaterialDesignFilledTextBoxEnabledComboBox}" />
-                    <TextBox Style="{StaticResource MaterialDesignFilledTextBox}"
+                    <TextBox Style="{DynamicResource MaterialDesignFilledTextBox}"
                              FontSize="26"
                              VerticalAlignment="Top"
                              AcceptsReturn="False"
@@ -65,13 +65,13 @@
                              IsEnabled="{Binding ElementName=MaterialDesignFilledTextBoxEnabledComboBox}" />
                 </StackPanel>
             </Grid>
-            <Button Style="{StaticResource MaterialDesignOutlinedButton}"
+            <Button Style="{DynamicResource MaterialDesignOutlinedButton}"
                     ToolTip="MaterialDesignOutlinedButton"
                     Content="שלח"
                     FontSize="22"
                     Margin="739,647,1045,163"
                     Height="Auto" />
-            <Button Style="{StaticResource MaterialDesignOutlinedButton}"
+            <Button Style="{DynamicResource MaterialDesignOutlinedButton}"
                     ToolTip="MaterialDesignOutlinedButton"
                     Content="נקה"
                     FontSize="22"

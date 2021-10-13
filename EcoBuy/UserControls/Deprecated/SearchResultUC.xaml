@@ -37,13 +37,13 @@
                 <DataGridTextColumn Binding="{Binding Image}"
                                     Header="תמונה"
                                     Width="100"
-                                    ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
-                                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" />
+                                    ElementStyle="{DynamicResource MaterialDesignDataGridTextColumnStyle}"
+                                    EditingElementStyle="{DynamicResource MaterialDesignDataGridTextColumnEditingStyle}" />
                 <!-- if you want to use the pop up style (MaterialDesignDataGridTextColumnPopupEditingStyle), you must use MaterialDataGridTextColumn -->
                 <materialDesign:DataGridTextColumn Header="מק&quot;ט"
                                                    Width="130"
-                                                   ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
-                                                   EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}">
+                                                   ElementStyle="{DynamicResource MaterialDesignDataGridTextColumnStyle}"
+                                                   EditingElementStyle="{DynamicResource MaterialDesignDataGridTextColumnPopupEditingStyle}">
                     <materialDesign:DataGridTextColumn.Binding>
                         <Binding Path="ProductID">
                             <!--<Binding.ValidationRules>
@@ -55,8 +55,8 @@
                 <!-- set a max length to get an indicator in the editor -->
                 <DataGridTextColumn Header="שם המוצר"
                                     Width="226"
-                                    ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
-                                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}">
+                                    ElementStyle="{DynamicResource MaterialDesignDataGridTextColumnStyle}"
+                                    EditingElementStyle="{DynamicResource MaterialDesignDataGridTextColumnEditingStyle}">
                     <DataGridTextColumn.Binding>
                         <Binding Path="Amount">
                             <Binding.ValidationRules>
@@ -67,13 +67,13 @@
                 </DataGridTextColumn>
                 <DataGridTextColumn Header="קטגוריה"
                                     Width="226"
-                                    ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
-                                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}"/>
+                                    ElementStyle="{DynamicResource MaterialDesignDataGridTextColumnStyle}"
+                                    EditingElementStyle="{DynamicResource MaterialDesignDataGridTextColumnEditingStyle}"/>
 
                 <DataGridTextColumn Header="נקנה בתאריך"
                                     Width="200"
-                                    ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
-                                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}">
+                                    ElementStyle="{DynamicResource MaterialDesignDataGridTextColumnStyle}"
+                                    EditingElementStyle="{DynamicResource MaterialDesignDataGridTextColumnEditingStyle}">
                     <DataGridTextColumn.Binding>
                         <Binding Path="Amount">
                             <Binding.ValidationRules>
@@ -84,8 +84,8 @@
                 </DataGridTextColumn>
                 <DataGridTextColumn Header="חנות"
                                     Width="200"
-                                    ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
-                                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}">
+                                    ElementStyle="{DynamicResource MaterialDesignDataGridTextColumnStyle}"
+                                    EditingElementStyle="{DynamicResource MaterialDesignDataGridTextColumnEditingStyle}">
                     <DataGridTextColumn.Binding>
                         <Binding Path="Amount">
                             <Binding.ValidationRules>
@@ -96,8 +96,8 @@
                 </DataGridTextColumn>
                 <DataGridTextColumn Header="מחיר"
                                     Width=""
-                                    ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
-                                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}">
+                                    ElementStyle="{DynamicResource MaterialDesignDataGridTextColumnStyle}"
+                                    EditingElementStyle="{DynamicResource MaterialDesignDataGridTextColumnEditingStyle}">
                     <DataGridTextColumn.Binding>
                         <Binding Path="Amount">
                             <Binding.ValidationRules>

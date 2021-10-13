@@ -1,13 +1,8 @@
 ﻿using EcoBuy.BE;
-using EcoBuy.Commands.PieChart;
 using EcoBuy.Models;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Data;
 using System.Windows.Input;
 
 namespace EcoBuy.ViewModels
@@ -31,7 +26,7 @@ namespace EcoBuy.ViewModels
             WeekCmd = new RelayCommand(() => FilterByWeek());
             MonthCmd = new RelayCommand(() => FilterByMonth());
 
-           
+
         }
 
         private void Test()
@@ -89,7 +84,7 @@ namespace EcoBuy.ViewModels
             DateTime date = DateTime.Now;
             var Start = date.Date.AddDays(-(int)date.DayOfWeek);
             var End = Start.AddDays(7).AddSeconds(-1);
-            var items = this.PurchasedProducts.Where(prod => prod.PurchaseDate >= Start && prod.PurchaseDate<=End);
+            var items = this.PurchasedProducts.Where(prod => prod.PurchaseDate >= Start && prod.PurchaseDate <= End);
             PurchasedProducts = new ObservableCollection<PurchasedProduct>(items);
             GroupByCategory();
             CategoriesCount = new CategoriesCount(CategoriesCount);

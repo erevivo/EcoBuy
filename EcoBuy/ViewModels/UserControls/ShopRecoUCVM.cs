@@ -1,11 +1,8 @@
 ﻿using BL;
 using EcoBuy.Models;
-using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EcoBuy.ViewModels
 {
@@ -27,7 +24,7 @@ namespace EcoBuy.ViewModels
             List<int> LastPurchasedList = new List<int>();
             List<int> RecoProductList = new List<int>();
 
-            while (LastPurchasedProducts.Count != 0)
+            if (LastPurchasedProducts.Count != 0)
             {
                 foreach (var p in LastPurchasedProducts)
                 {

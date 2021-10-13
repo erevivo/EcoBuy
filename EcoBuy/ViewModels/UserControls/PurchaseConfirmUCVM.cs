@@ -1,12 +1,7 @@
 ﻿using EcoBuy.ConnectToGoogleDrive;
 using EcoBuy.Models;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EcoBuy.ViewModels
 {
@@ -18,7 +13,7 @@ namespace EcoBuy.ViewModels
         #endregion
         public PurchaseConfirmUCVM()
         {
-            
+
             PurchasedProductsTemp = new ObservableCollection<PurchasedProduct>();
             ProductsFromQr = new DecodeGenerateProduct();
             PurchasedProductsTemp = ProductsFromQr.GenerateProduct();

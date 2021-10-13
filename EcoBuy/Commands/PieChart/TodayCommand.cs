@@ -1,9 +1,5 @@
 ﻿using EcoBuy.ViewModels;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace EcoBuy.Commands.PieChart
@@ -25,7 +21,7 @@ namespace EcoBuy.Commands.PieChart
 
         public void Execute(object parameter)
         {
-          
+
         }
     }
 }

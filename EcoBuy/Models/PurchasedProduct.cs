@@ -11,9 +11,9 @@ namespace EcoBuy.Models
         public int StoreId { get; set; }
         public double Price { get; set; }
         public int Amount { get; set; }
-        public PurchasedProduct(DateTime purchaseDate, double price, 
-                                int id, int productId, string productName, 
-                                string ImageUrl, ProductsCategory category, int storeId , int amount=1) : 
+        public PurchasedProduct(DateTime purchaseDate, double price,
+                                int id, int productId, string productName,
+                                string ImageUrl, ProductsCategory category, int storeId, int amount = 1) :
             base(id, productId, productName, ImageUrl, category)
         {
             PurchaseDate = purchaseDate;
