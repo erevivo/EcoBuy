@@ -35,7 +35,7 @@ namespace EcoBuy
 
                 new PurchasedProduct(new DateTime(2021, 3, 18), 6.90, 1, 1, "חלב 3% שומן", "https://www.nfarm.co.il/wp-content/uploads/2020/04/%D7%97%D7%9C%D7%91-3-%D7%90%D7%97%D7%95%D7%96.jpg", ProductsCategory.Food, 200),
                 new PurchasedProduct(new DateTime(2021, 3, 18), 4.90, 2, 2, "כריות תלמה", "https://www.telma-cereals.co.il/wp-content/uploads/2016/05/children_kariot-nugat-686.png", ProductsCategory.Food, 200),
-                new PurchasedProduct(new DateTime(2021, 3, 18), 5.90, 3, 3, "קערות חד פעמי", "https://office-master.co.il/image/cache/catalog/hadpami/OM_dessert_bowl-200x200.jpg", ProductsCategory.Food, 200),
+                new PurchasedProduct(new DateTime(2021, 3, 18), 5.90, 3, 3, "קערות חד פעמי", "C:\\Users\\Evyatar\\Documents\\GitHub\\EcoBuy\\EcoBuy\\Images\\Products\\kaara.jpg", ProductsCategory.Food, 200),
                 new PurchasedProduct(new DateTime(2021, 3, 18), 12.90, 4, 4, "כפיות חד פעמי", "https://www.peamitstore.co.il/sites/peamitstore/cache/w_1500/4324(6).png", ProductsCategory.Food, 200),
                 new PurchasedProduct(new DateTime(2021, 3, 18), 10.90, 5, 5, "שמן קנולה", "https://storage.googleapis.com/sp-public/gs1-products/1107/large/7290002374312.jpg", ProductsCategory.Food, 200),
                 new PurchasedProduct(new DateTime(2021, 3, 18), 13.90, 6, 6, "סוכר 1 ק''ג", "https://m.pricez.co.il/ProductPictures/7290000211503.jpg", ProductsCategory.Food, 200),

@@ -23,22 +23,37 @@ namespace EcoBuy
         public static ObservableCollection<PurchasedProduct> PurchasedProducts = new ObservableCollection<PurchasedProduct>()
         {
             //
-                new PurchasedProduct(new DateTime(2021, 10, 11), 10, 1, 11, "פתיתים אפויים 500 גר' אסם", "C:\\Users\\Evyatar\\Documents\\GitHub\\EcoBuy\\EcoBuy\\Images\\Product\\2.jpg", ProductsCategory.Food, 200),
-                new PurchasedProduct(new DateTime(2021, 10, 11), 5, 2, 22, "לחם אחיד פרוס אנג'ל", "C:\\Users\\Evyatar\\Documents\\GitHub\\EcoBuy\\EcoBuy\\Images\\Product\\1.jpg", ProductsCategory.Food, 200),
-                new PurchasedProduct(new DateTime(2021, 10, 11), 20, 3, 33, "חלב 3% שומן תנובה", "C:\\Users\\Evyatar\\Documents\\GitHub\\EcoBuy\\EcoBuy\\Images\\Product\\3.jpg", ProductsCategory.Food, 200),
-                new PurchasedProduct(new DateTime(2021, 10, 11), 5, 4, 44, "גבינת קוטג' 5% תנובה", "C:\\Users\\Evyatar\\Documents\\GitHub\\EcoBuy\\EcoBuy\\Images\\Product\\4.jpg", ProductsCategory.Food, 200),
-                new PurchasedProduct(new DateTime(2021, 10, 8), 20, 5, 55, "ממרח נוטלה 350 גר'", "https://www.farfel.co.il/wp-content/uploads/2018/01/127.jpg", ProductsCategory.Food, 200),
-                new PurchasedProduct(new DateTime(2021, 10, 8), 5, 6, 66, "בושם לגברים Lacoste Essential 75 מ\"ל ", "https://superpharmstorage.blob.core.windows.net/hybris/products/desktop/medium/737052483214.jpg", ProductsCategory.Health, 136),
-                new PurchasedProduct(new DateTime(2021, 10, 8), 20, 7, 77, "חולצת פולו ראלף לורן M", "C:\\Users\\Evyatar\\Desktop\\ral.jpg", ProductsCategory.Fashion, 137),
-                new PurchasedProduct(new DateTime(2021, 10, 11), 35, 8, 88, "טלוויזיה Samsung QE65Q60T 4K ‏65 ‏אינטש", "https://img.zap.co.il/pics/3/2/5/1/56591523c.gif", ProductsCategory.Electricity, 138),
-                new PurchasedProduct(new DateTime(2021, 11, 2), 45, 9, 99, "מחשב אינטל NUC", "https://www.ivory.co.il/files/catalog/org/1566199487C87HL.jpg", ProductsCategory.Electricity, 138),
+                new PurchasedProduct(DateTime.Today.Date,               System.Math.Round(10.90,2), 1, 11, "פתיתים אפויים 500 גר' אסם", "C:\\Users\\Evyatar\\Documents\\GitHub\\EcoBuy\\EcoBuy\\Images\\Products\\ptitim.jpg", ProductsCategory.Food, 200),
+                new PurchasedProduct(DateTime.Today.Date,               System.Math.Round(5.90,2), 2, 22, "לחם אחיד פרוס אנג'ל", "C:\\Users\\Evyatar\\Documents\\GitHub\\EcoBuy\\EcoBuy\\Images\\Products\\braid.jpg", ProductsCategory.Food, 200),
+                new PurchasedProduct(DateTime.Today.Date.AddDays(-4),   System.Math.Round(5.70,2), 3, 33, "חלב 3% שומן תנובה", "C:\\Users\\Evyatar\\Documents\\GitHub\\EcoBuy\\EcoBuy\\Images\\Products\\milk.jpg", ProductsCategory.Food, 200),
+                new PurchasedProduct(DateTime.Today.Date,               System.Math.Round(6.90,2), 4, 44, "גבינת קוטג' 5% תנובה", "C:\\Users\\Evyatar\\Documents\\GitHub\\EcoBuy\\EcoBuy\\Images\\Products\\koteg.jpg", ProductsCategory.Food, 200),
+                new PurchasedProduct(DateTime.Today.Date,               System.Math.Round(10.90,2), 5, 55, "ממרח נוטלה 350 גר'", "C:\\Users\\Evyatar\\Documents\\GitHub\\EcoBuy\\EcoBuy\\Images\\Products\\nutela.jpg", ProductsCategory.Food, 200),
+                new PurchasedProduct(DateTime.Today.Date.AddDays(-3), System.Math.Round(99.90,2), 6, 66, "בושם לגברים Lacoste Essential 75 מ\"ל ", "C:\\Users\\Evyatar\\Documents\\GitHub\\EcoBuy\\EcoBuy\\Images\\Products\\lacoste.jpg", ProductsCategory.Health, 136),
+                new PurchasedProduct(DateTime.Today.Date.AddDays(-3), 349, 7, 77, "חולצת פולו ראלף לורן M", "C:\\Users\\Evyatar\\Documents\\GitHub\\EcoBuy\\EcoBuy\\Images\\Products\\polo.jpg", ProductsCategory.Fashion, 137),
+                new PurchasedProduct(DateTime.Today.Date.AddDays(-3), 2899, 8, 88, "טלוויזיה Samsung QE65Q60T 4K ‏65 ‏אינטש", "C:\\Users\\Evyatar\\Documents\\GitHub\\EcoBuy\\EcoBuy\\Images\\Products\\tv.png", ProductsCategory.Electricity, 138),
+                new PurchasedProduct(DateTime.Today.Date.AddDays(-3), 650, 9, 99, "מחשב אינטל NUC", "https://www.ivory.co.il/files/catalog/org/1566199487C87HL.jpg", ProductsCategory.Electricity, 138),
+                new PurchasedProduct(DateTime.Today.Date, System.Math.Round(14.90,2), 10, 1010, "כריות תלמה 750 גר'", "C:\\Users\\Evyatar\\Documents\\GitHub\\EcoBuy\\EcoBuy\\Images\\Products\\kariot.png", ProductsCategory.Food, 200),
+                new PurchasedProduct(DateTime.Today.Date, System.Math.Round(5.90,2), 11, 111, "קערות חד פעמי 50 יחידות", "C:\\Users\\Evyatar\\Documents\\GitHub\\EcoBuy\\EcoBuy\\Images\\Products\\kaara.jpg", ProductsCategory.Food, 200),
+                new PurchasedProduct(DateTime.Today.Date.AddDays(-12), System.Math.Round(12.90,2), 12, 1212, "כפיות חד פעמי 100 יח'", "C:\\Users\\Evyatar\\Documents\\GitHub\\EcoBuy\\EcoBuy\\Images\\Products\\kapit.png", ProductsCategory.Food, 200),
+                new PurchasedProduct(DateTime.Today.Date.AddDays(-12), System.Math.Round(5.90,2), 13, 1313, "שמן קנולה", "C:\\Users\\Evyatar\\Documents\\GitHub\\EcoBuy\\EcoBuy\\Images\\Products\\shemen.jpg", ProductsCategory.Food, 200),
+                new PurchasedProduct(DateTime.Today.Date.AddDays(-12), System.Math.Round(5.90,2), 14, 1414, "סוכר 1 ק''ג", "C:\\Users\\Evyatar\\Documents\\GitHub\\EcoBuy\\EcoBuy\\Images\\Products\\sugar.jpg", ProductsCategory.Food, 200),
 
-                new PurchasedProduct(new DateTime(2021, 10, 1), 6.90, 1, 1, "חלב 3% שומן", "https://www.nfarm.co.il/wp-content/uploads/2020/04/%D7%97%D7%9C%D7%91-3-%D7%90%D7%97%D7%95%D7%96.jpg", ProductsCategory.Food, 200),
-                new PurchasedProduct(new DateTime(2021, 10, 1), 4.90, 2, 2, "כריות תלמה", "https://www.telma-cereals.co.il/wp-content/uploads/2016/05/children_kariot-nugat-686.png", ProductsCategory.Food, 200),
-                new PurchasedProduct(new DateTime(2021, 10, 1), 5.90, 3, 3, "קערות חד פעמי", "https://office-master.co.il/image/cache/catalog/hadpami/OM_dessert_bowl-200x200.jpg", ProductsCategory.Food, 200),
-                new PurchasedProduct(new DateTime(2021, 10, 18), 12.90, 4, 4, "כפיות חד פעמי", "https://www.peamitstore.co.il/sites/peamitstore/cache/w_1500/4324(6).png", ProductsCategory.Food, 200),
-                //new PurchasedProduct(new DateTime(2021, 3, 18), 10.90, 5, 5, "שמן קנולה", "https://storage.googleapis.com/sp-public/gs1-products/1107/large/7290002374312.jpg", ProductsCategory.Food, 200),
-                //new PurchasedProduct(new DateTime(2021, 3, 18), 13.90, 6, 6, "סוכר 1 ק''ג", ",https://m.pricez.co.il/ProductPictures/7290000211503.jpg", ProductsCategory.Food, 200),
+
+
+                new PurchasedProduct(DateTime.Today.Date.AddDays(-30),             System.Math.Round(10.90,2), 1, 11, "פתיתים אפויים 500 גר' אסם", "C:\\Users\\Evyatar\\Documents\\GitHub\\EcoBuy\\EcoBuy\\Images\\Products\\ptitim.jpg", ProductsCategory.Food, 200),
+                new PurchasedProduct(DateTime.Today.Date.AddDays(-30),             System.Math.Round(5.90,2), 2, 22, "לחם אחיד פרוס אנג'ל", "C:\\Users\\Evyatar\\Documents\\GitHub\\EcoBuy\\EcoBuy\\Images\\Products\\braid.jpg", ProductsCategory.Food, 200),
+                new PurchasedProduct(DateTime.Today.Date.AddDays(-30),   System.Math.Round(5.70,2), 3, 33, "חלב 3% שומן תנובה", "C:\\Users\\Evyatar\\Documents\\GitHub\\EcoBuy\\EcoBuy\\Images\\Products\\milk.jpg", ProductsCategory.Food, 200),
+                new PurchasedProduct(DateTime.Today.Date.AddDays(-30),        System.Math.Round(6.90,2), 4, 44, "גבינת קוטג' 5% תנובה", "C:\\Users\\Evyatar\\Documents\\GitHub\\EcoBuy\\EcoBuy\\Images\\Products\\koteg.jpg", ProductsCategory.Food, 200),
+                new PurchasedProduct(DateTime.Today.Date.AddDays(-120),          System.Math.Round(10.90,2), 5, 55, "ממרח נוטלה 350 גר'", "C:\\Users\\Evyatar\\Documents\\GitHub\\EcoBuy\\EcoBuy\\Images\\Products\\nutela.jpg", ProductsCategory.Food, 200),
+                new PurchasedProduct(DateTime.Today.Date.AddDays(-90), System.Math.Round(99.90,2), 6, 66, "בושם לגברים Lacoste Essential 75 מ\"ל ", "C:\\Users\\Evyatar\\Documents\\GitHub\\EcoBuy\\EcoBuy\\Images\\Products\\lacoste.jpg", ProductsCategory.Health, 136),
+                new PurchasedProduct(DateTime.Today.Date.AddDays(-90), 349, 7, 77, "חולצת פולו ראלף לורן M", "C:\\Users\\Evyatar\\Documents\\GitHub\\EcoBuy\\EcoBuy\\Images\\Products\\polo.jpg", ProductsCategory.Fashion, 137),
+                new PurchasedProduct(DateTime.Today.Date.AddDays(-90), 2899, 8, 88, "טלוויזיה Samsung QE65Q60T 4K ‏65 ‏אינטש", "C:\\Users\\Evyatar\\Documents\\GitHub\\EcoBuy\\EcoBuy\\Images\\Products\\tv.png", ProductsCategory.Electricity, 138),
+                new PurchasedProduct(DateTime.Today.Date.AddDays(-60), 650, 9, 99, "מחשב אינטל NUC", "https://www.ivory.co.il/files/catalog/org/1566199487C87HL.jpg", ProductsCategory.Electricity, 138),
+                new PurchasedProduct(DateTime.Today.Date.AddDays(-120), System.Math.Round(14.90,2), 10, 1010, "כריות תלמה 750 גר'", "C:\\Users\\Evyatar\\Documents\\GitHub\\EcoBuy\\EcoBuy\\Images\\Products\\kariot.png", ProductsCategory.Food, 200),
+                new PurchasedProduct(DateTime.Today.Date.AddDays(-60), System.Math.Round(5.90,2), 11, 111, "קערות חד פעמי 50 יחידות", "C:\\Users\\Evyatar\\Documents\\GitHub\\EcoBuy\\EcoBuy\\Images\\Products\\kaara.jpg", ProductsCategory.Food, 200),
+                new PurchasedProduct(DateTime.Today.Date.AddDays(-60), System.Math.Round(12.90,2), 12, 1212, "כפיות חד פעמי 100 יח'", "C:\\Users\\Evyatar\\Documents\\GitHub\\EcoBuy\\EcoBuy\\Images\\Products\\kapit.png", ProductsCategory.Food, 200),
+                new PurchasedProduct(DateTime.Today.Date.AddDays(-120), System.Math.Round(5.90,2), 13, 1313, "שמן קנולה", "C:\\Users\\Evyatar\\Documents\\GitHub\\EcoBuy\\EcoBuy\\Images\\Products\\shemen.jpg", ProductsCategory.Food, 200),
+
             };
 
         public static ObservableCollection<PurchasedProduct> LastPurchasedProducts = new ObservableCollection<PurchasedProduct>()

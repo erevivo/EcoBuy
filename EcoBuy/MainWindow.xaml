@@ -7,7 +7,7 @@
         xmlns:UserControls="clr-namespace:EcoBuy.UserControls"
         x:Name="MyMainWindow"
         mc:Ignorable="d"
-        TextElement.Foreground="{DynamicResource MaterialDesignDarkForeground}"
+        TextElement.Foreground="{DynamicResource MaterialDesignLightForeground}"
         TextElement.FontWeight="Medium"
         TextElement.FontSize="14"
         FontFamily="{materialDesign:MaterialDesignFont}"
