@@ -38,8 +38,6 @@ namespace EcoBuy
                 new PurchasedProduct(DateTime.Today.Date.AddDays(-12), System.Math.Round(5.90,2), 13, 1313, "שמן קנולה", "C:\\Users\\Evyatar\\Documents\\GitHub\\EcoBuy\\EcoBuy\\Images\\Products\\shemen.jpg", ProductsCategory.Food, 200),
                 new PurchasedProduct(DateTime.Today.Date.AddDays(-12), System.Math.Round(5.90,2), 14, 1414, "סוכר 1 ק''ג", "C:\\Users\\Evyatar\\Documents\\GitHub\\EcoBuy\\EcoBuy\\Images\\Products\\sugar.jpg", ProductsCategory.Food, 200),
 
-
-
                 new PurchasedProduct(DateTime.Today.Date.AddDays(-30),             System.Math.Round(10.90,2), 1, 11, "פתיתים אפויים 500 גר' אסם", "C:\\Users\\Evyatar\\Documents\\GitHub\\EcoBuy\\EcoBuy\\Images\\Products\\ptitim.jpg", ProductsCategory.Food, 200),
                 new PurchasedProduct(DateTime.Today.Date.AddDays(-30),             System.Math.Round(5.90,2), 2, 22, "לחם אחיד פרוס אנג'ל", "C:\\Users\\Evyatar\\Documents\\GitHub\\EcoBuy\\EcoBuy\\Images\\Products\\braid.jpg", ProductsCategory.Food, 200),
                 new PurchasedProduct(DateTime.Today.Date.AddDays(-30),   System.Math.Round(5.70,2), 3, 33, "חלב 3% שומן תנובה", "C:\\Users\\Evyatar\\Documents\\GitHub\\EcoBuy\\EcoBuy\\Images\\Products\\milk.jpg", ProductsCategory.Food, 200),

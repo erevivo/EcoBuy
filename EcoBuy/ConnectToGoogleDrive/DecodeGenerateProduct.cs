@@ -37,7 +37,7 @@ namespace EcoBuy.ConnectToGoogleDrive
                     var datePurchased = Path.GetFileName(file).Substring(0, Path.GetFileName(file).IndexOf("at"));
                     DateTime p_date = DateTime.Parse(datePurchased, cultureInfo, DateTimeStyles.NoCurrentDateDefault);
                     string[] p = productText.Split(',');
-                    PurchasedProduct Temp = new PurchasedProduct(p_date, Convert.ToDouble(p[1]), Int32.Parse(p[2]), Int32.Parse(p[3]), p[4],
+                    PurchasedProduct Temp = new PurchasedProduct(new System.IO.FileInfo(file).LastWriteTime.Date, Convert.ToDouble(p[1]), Int32.Parse(p[2]), Int32.Parse(p[3]), p[4],
                         p[5], (ProductsCategory)Int32.Parse(p[6]), Int32.Parse(p[7]));
                     TempPurchasedProducts.Add(Temp);
                 }
