@@ -17,7 +17,7 @@ namespace EcoBuy.ViewModels
         public ShopRecoUCVM()
         {
             LastPurchasedProducts = new ObservableCollection<PurchasedProduct>(DataSource.PurchasedProducts);
-            AllProducts = new ObservableCollection<PurchasedProduct>(DataSource2.PurchasedProducts);
+            AllProducts = new ObservableCollection<PurchasedProduct>(DataSource.PurchasedProducts);
             RecoProduct = new ObservableCollection<PurchasedProduct>();
             LastPurchaseUCVM lastPurchaseUCVM = new LastPurchaseUCVM();
             LastPurchasedProducts = lastPurchaseUCVM.LastPurchase(LastPurchasedProducts);
@@ -38,14 +38,16 @@ namespace EcoBuy.ViewModels
             RecoProductList = RecoProductList.Except(LastPurchasedList).ToList();
             foreach (var p in AllProducts)
             {
-                if (p.ProductId == RecoProductList[0])
+                //if (p.ProductId == RecoProductList[0])
+                if (RecoProductList.Contains(p.ProductId) && !RecoProduct.Any(x => x.ProductId==p.ProductId))
                 {
                     RecoProduct.Add(p);
                     //RecoProductList.RemoveAt(0);
                 }
-            }
 
+            }
         }
 
     }
+
 }

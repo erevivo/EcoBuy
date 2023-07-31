@@ -17,7 +17,7 @@ namespace EcoBuy.Models
             base(id, productId, productName, ImageUrl, category)
         {
             PurchaseDate = purchaseDate;
-            Price = price;
+            Price = Convert.ToDouble(price.ToString("0.00"));
             StoreId = storeId;
             Amount = amount;
         }

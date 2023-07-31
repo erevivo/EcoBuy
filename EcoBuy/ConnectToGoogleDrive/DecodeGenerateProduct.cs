@@ -1,6 +1,7 @@
 ﻿using BE;
 using EcoBuy.BE;
 using EcoBuy.Models;
+using PL.ConnectToGoogleDrive;
 using System;
 using System.Collections.ObjectModel;
 using System.Globalization;
@@ -10,12 +11,12 @@ namespace EcoBuy.ConnectToGoogleDrive
 {
     public class DecodeGenerateProduct
     {
-        //private GoogleDriveApi downloadQr;
+        private GoogleDriveApi downloadQr;
         public ObservableCollection<PurchasedProduct> TempPurchasedProducts { get; set; }
         public DecodeGenerateProduct()
         {
-            //downloadQr = new GoogleDriveApi();
-            //downloadQr.Connect(); // add check condintion if new files download
+            downloadQr = new GoogleDriveApi();
+            downloadQr.Connect(); // add check condintion if new files download
             TempPurchasedProducts = new ObservableCollection<PurchasedProduct>();
         }
         public ObservableCollection<PurchasedProduct> GenerateProduct()
@@ -27,7 +28,10 @@ namespace EcoBuy.ConnectToGoogleDrive
             foreach (string file in Directory.EnumerateFiles(folderPath, "*.png"))
             {
                 productText = DecodeQrImage.DecodeData(folderPath + Path.GetFileName(file));
-                if (productText.Contains("Error") || CheckExists(Convert.ToInt32(new System.IO.FileInfo(file).Length)))
+                var a = productText.Contains("Error");
+                var b = !CheckExists(Convert.ToInt32(new System.IO.FileInfo(file).Length));
+
+                if (productText.Contains("Error") || !CheckExists(Convert.ToInt32(new System.IO.FileInfo(file).Length)))
                 {
                     continue;
                 }
@@ -37,8 +41,8 @@ namespace EcoBuy.ConnectToGoogleDrive
                     var datePurchased = Path.GetFileName(file).Substring(0, Path.GetFileName(file).IndexOf("at"));
                     DateTime p_date = DateTime.Parse(datePurchased, cultureInfo, DateTimeStyles.NoCurrentDateDefault);
                     string[] p = productText.Split(',');
-                    PurchasedProduct Temp = new PurchasedProduct(new System.IO.FileInfo(file).LastWriteTime.Date, Convert.ToDouble(p[1]), Int32.Parse(p[2]), Int32.Parse(p[3]), p[4],
-                        p[5], (ProductsCategory)Int32.Parse(p[6]), Int32.Parse(p[7]));
+                    PurchasedProduct Temp = new PurchasedProduct(/*new System.IO.FileInfo(file).LastWriteTime.Date*/p_date, Convert.ToDouble(p[0]), Int32.Parse(p[1]), Int32.Parse(p[2]), p[3],
+                        p[4], (ProductsCategory)Int32.Parse(p[5]), Int32.Parse(p[6]));
                     TempPurchasedProducts.Add(Temp);
                 }
             }

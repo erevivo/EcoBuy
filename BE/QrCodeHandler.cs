@@ -15,7 +15,7 @@ namespace BE
             var qrCodeReader = new BarcodeReader();
             var qrCodeResult = qrCodeReader.Decode(qrcodebitmap);
             if (qrCodeResult != null)
-                return qrCodeResult.Text;
+                return qrCodeResult.Text.ToString();
             else
                 return "Error" + url;
         }

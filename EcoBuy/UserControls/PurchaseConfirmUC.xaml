@@ -51,9 +51,7 @@
                   HeadersVisibility="All" Margin="271,342,263,226">
                 <DataGrid.Columns>
                     <DataGridCheckBoxColumn
-                          Binding="{Binding IsSelected, UpdateSourceTrigger=PropertyChanged}"
-                          ElementStyle="{DynamicResource MaterialDesignDataGridCheckBoxColumnStyle}"
-                          EditingElementStyle="{DynamicResource MaterialDesignDataGridCheckBoxColumnEditingStyle}">
+                          Binding="{Binding IsSelected, UpdateSourceTrigger=PropertyChanged}">
                         <DataGridCheckBoxColumn.Header>
                             <Border
           Background="Transparent">
@@ -63,8 +61,7 @@
                         </DataGridCheckBoxColumn.Header>
                         <DataGridCheckBoxColumn.HeaderStyle>
                             <Style
-          TargetType="{x:Type DataGridColumnHeader}"
-          BasedOn="{DynamicResource MaterialDesignDataGridColumnHeader}">
+          TargetType="{x:Type DataGridColumnHeader}">
                                 <Setter
             Property="HorizontalContentAlignment"
             Value="Center" />
