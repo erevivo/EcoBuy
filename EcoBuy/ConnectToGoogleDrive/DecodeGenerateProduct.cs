@@ -28,10 +28,10 @@ namespace EcoBuy.ConnectToGoogleDrive
             foreach (string file in Directory.EnumerateFiles(folderPath, "*.png"))
             {
                 productText = DecodeQrImage.DecodeData(folderPath + Path.GetFileName(file));
-                var a = productText.Contains("Error");
-                var b = !CheckExists(Convert.ToInt32(new System.IO.FileInfo(file).Length));
-
-                if (productText.Contains("Error") || !CheckExists(Convert.ToInt32(new System.IO.FileInfo(file).Length)))
+                bool cannotDecoder = productText.Contains("Error");
+                bool fileExist = CheckExists(file);
+                //var b = Path.GetF(file);
+                if (cannotDecoder || !fileExist)
                 {
                     continue;
                 }
@@ -49,27 +49,12 @@ namespace EcoBuy.ConnectToGoogleDrive
             return TempPurchasedProducts;
 
         }
-        public bool CheckExists(int FileSize)
+        public bool CheckExists(string file)
         {
-            FileStream fs = new FileStream(@"C:\Users\Evyatar\Documents\GitHub\EcoBuy\BL\Data\Qrs.txt", FileMode.Open, FileAccess.Read);
-
-            StreamReader reader = new StreamReader(fs);
-
-            string str = reader.ReadToEnd();
-            if (str.Contains(FileSize.ToString()))
-            {
-                reader.Close();
-                fs.Close();
-                return true;
-            }
-            else
-            {
-                reader.Close();
-                fs.Close();
-                return false;
-            }
-
-
+            string folderPath = @"C:\Users\Evyatar\Documents\GitHub\EcoBuy\EcoBuy\Images\QrScans\";
+            string fileName = file;
+            string filePath = Path.Combine(folderPath, fileName);
+            return File.Exists(filePath);
         }
         public void DocumentProduct(int FileSize)
         {
